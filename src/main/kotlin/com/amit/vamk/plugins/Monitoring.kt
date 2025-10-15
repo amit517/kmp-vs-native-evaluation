@@ -7,6 +7,7 @@ import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.SerializationException
 import org.slf4j.event.Level
 
 /**
@@ -49,6 +50,19 @@ fun Application.configureMonitoring() {
     
     // Status Pages - Error handling
     install(StatusPages) {
+        // Handle serialization exceptions (400 Bad Request)
+        exception<SerializationException> { call, cause ->
+            call.application.environment.log.warn("Serialization error: ${cause.message}")
+            call.respond(
+                HttpStatusCode.BadRequest,
+                ErrorResponse(
+                    error = "Bad Request",
+                    message = "Invalid request body: ${cause.message}. Please check that all required fields are provided and correctly formatted.",
+                    statusCode = HttpStatusCode.BadRequest.value
+                )
+            )
+        }
+        
         // Handle all exceptions
         exception<Throwable> { call, cause ->
             call.application.environment.log.error("Unhandled exception", cause)
