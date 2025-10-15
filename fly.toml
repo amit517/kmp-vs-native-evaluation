@@ -1,0 +1,38 @@
+# fly.toml app configuration file for KMP Research News Backend
+# Generated for kmp-research-backend
+
+app = 'kmp-research-backend'
+primary_region = 'arn'  # Stockholm (closest to Finland)
+
+# Build configuration
+[build]
+  # Use Dockerfile for building
+
+# HTTP service configuration
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+  
+  # Health check
+  [http_service.checks]
+    [http_service.checks.health]
+      interval = "15s"
+      timeout = "2s"
+      grace_period = "5s"
+      method = "GET"
+      path = "/health"
+
+# VM configuration
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+# Environment variables
+[env]
+  # Ktor will use these if needed
+  # Add any environment-specific configs here

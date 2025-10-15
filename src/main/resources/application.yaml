@@ -3,4 +3,10 @@ ktor:
     modules:
       - com.amit.vamk.ApplicationKt.module
   deployment:
+    # Listen on all network interfaces (not just localhost)
+    # This allows access from other devices on your WiFi network
+    host: 0.0.0.0
     port: 8080
+    
+  # Development mode settings
+  development: true
