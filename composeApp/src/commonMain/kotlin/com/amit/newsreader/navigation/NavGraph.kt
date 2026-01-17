@@ -13,55 +13,46 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
+import androidx.navigation.toRoute
 import com.amit.newsreader.presentation.news.detail.ArticleDetailScreen
 import com.amit.newsreader.presentation.news.list.NewsListEvent
 import com.amit.newsreader.presentation.news.list.NewsListScreen
 import org.koin.compose.viewmodel.koinViewModel
 
 /**
- * Main navigation graph for the app
+ * Main navigation graph for the app with type-safe navigation
  */
 @Composable
 fun NavGraph(
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
-    startDestination: String = Screen.NewsList.route
+    navController: NavHostController = rememberNavController()
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = Screen.NewsList,
         modifier = modifier
     ) {
         // News List Screen
-        composable(route = Screen.NewsList.route) {
+        composable<Screen.NewsList> {
             NewsListScreen(
                 onArticleClick = { articleId ->
-                    navController.navigate(Screen.ArticleDetail.createRoute(articleId))
+                    navController.navigate(Screen.ArticleDetail(articleId))
                 },
                 onFavoritesClick = {
-                    navController.navigate(Screen.Favorites.route)
+                    navController.navigate(Screen.Favorites)
                 }
             )
         }
 
-        // Article Detail Screen
-        composable(
-            route = Screen.ArticleDetail.route,
-            arguments = listOf(
-                navArgument("articleId") {
-                    type = NavType.StringType
-                }
-            )
-        ) { backStackEntry ->
-            val articleId = backStackEntry.arguments?.getString("articleId") ?: return@composable
+        // Article Detail Screen - Type-safe with automatic parameter extraction
+        composable<Screen.ArticleDetail> { backStackEntry ->
+            val articleDetail: Screen.ArticleDetail = backStackEntry.toRoute()
 
             ArticleDetailScreen(
-                articleId = articleId,
+                articleId = articleDetail.articleId,
                 onNavigateBack = {
                     navController.popBackStack()
                 },
@@ -73,10 +64,10 @@ fun NavGraph(
         }
 
         // Favorites Screen (reuses NewsListScreen with favorites filter)
-        composable(route = Screen.Favorites.route) {
+        composable<Screen.Favorites> {
             FavoritesScreen(
                 onArticleClick = { articleId ->
-                    navController.navigate(Screen.ArticleDetail.createRoute(articleId))
+                    navController.navigate(Screen.ArticleDetail(articleId))
                 },
                 onBackClick = {
                     navController.popBackStack()

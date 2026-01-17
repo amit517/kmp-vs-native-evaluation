@@ -1,12 +1,18 @@
 package com.amit.newsreader.navigation
 
+import kotlinx.serialization.Serializable
+
 /**
- * Sealed class representing app navigation destinations
+ * Type-safe navigation destinations using Kotlin Serialization
  */
-sealed class Screen(val route: String) {
-    data object NewsList : Screen("news_list")
-    data object ArticleDetail : Screen("article_detail/{articleId}") {
-        fun createRoute(articleId: String) = "article_detail/$articleId"
-    }
-    data object Favorites : Screen("favorites")
+sealed interface Screen {
+    
+    @Serializable
+    data object NewsList : Screen
+    
+    @Serializable
+    data class ArticleDetail(val articleId: String) : Screen
+    
+    @Serializable
+    data object Favorites : Screen
 }

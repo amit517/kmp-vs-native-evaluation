@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -54,11 +55,14 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
 
             // Navigation
-            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.1")
+            implementation(libs.navigation.compose)
+            
+            // Kotlinx Serialization for type-safe navigation
+            implementation(libs.kotlinx.serialization.json)
 
             // Coil for Image Loading
-            implementation("io.coil-kt.coil3:coil-compose:3.0.4")
-            implementation("io.coil-kt.coil3:coil-network-ktor3:3.0.4")
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor3)
             
             // Kotlinx DateTime
             implementation(libs.kotlinx.datetime)
