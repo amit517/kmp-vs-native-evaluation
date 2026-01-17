@@ -1,6 +1,6 @@
 # Multi-stage build for KMP Research News Backend
 # Stage 1: Build the application
-FROM gradle:8.10-jdk21 AS builder
+FROM gradle:8.14-jdk21 AS builder
 
 # Set working directory
 WORKDIR /app
