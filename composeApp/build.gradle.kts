@@ -32,16 +32,35 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            // Shared module
+            implementation(projects.shared)
+
+            // Koin for Dependency Injection
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+
+            // Navigation
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.1")
+
+            // Kamel for Image Loading
+            implementation(libs.kamel.image)
+            
+            // Kotlinx DateTime
+            implementation(libs.kotlinx.datetime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -50,11 +69,11 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.thesisproject"
+    namespace = "com.amit.newsreader"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.example.thesisproject"
+        applicationId = "com.amit.newsreader"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

@@ -1,0 +1,96 @@
+-- Article table matching backend model
+CREATE TABLE IF NOT EXISTS ArticleEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    summary TEXT NOT NULL,
+    imageUrl TEXT,
+    author TEXT NOT NULL,
+    publishedAt INTEGER NOT NULL,
+    category TEXT NOT NULL,
+    readTimeMinutes INTEGER NOT NULL,
+    tags TEXT NOT NULL,
+    isFavorite INTEGER AS kotlin.Boolean NOT NULL DEFAULT 0,
+    cachedAt INTEGER NOT NULL
+);
+
+-- Create index for category filtering
+CREATE INDEX IF NOT EXISTS idx_article_category ON ArticleEntity(category);
+
+-- Create index for favorites
+CREATE INDEX IF NOT EXISTS idx_article_favorite ON ArticleEntity(isFavorite);
+
+-- Create index for publishedAt (for sorting)
+CREATE INDEX IF NOT EXISTS idx_article_published ON ArticleEntity(publishedAt DESC);
+
+-- Queries
+selectAll:
+SELECT *
+FROM ArticleEntity
+ORDER BY publishedAt DESC;
+
+selectByCategory:
+SELECT *
+FROM ArticleEntity
+WHERE category = ?
+ORDER BY publishedAt DESC;
+
+selectById:
+SELECT *
+FROM ArticleEntity
+WHERE id = ?;
+
+searchArticles:
+SELECT *
+FROM ArticleEntity
+WHERE title LIKE '%' || ? || '%'
+   OR content LIKE '%' || ? || '%'
+   OR author LIKE '%' || ? || '%'
+   OR tags LIKE '%' || ? || '%'
+ORDER BY publishedAt DESC;
+
+selectFavorites:
+SELECT *
+FROM ArticleEntity
+WHERE isFavorite = 1
+ORDER BY publishedAt DESC;
+
+insertArticle:
+INSERT OR REPLACE INTO ArticleEntity(
+    id,
+    title,
+    content,
+    summary,
+    imageUrl,
+    author,
+    publishedAt,
+    category,
+    readTimeMinutes,
+    tags,
+    isFavorite,
+    cachedAt
+)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+updateFavoriteStatus:
+UPDATE ArticleEntity
+SET isFavorite = ?
+WHERE id = ?;
+
+deleteAll:
+DELETE FROM ArticleEntity;
+
+deleteById:
+DELETE FROM ArticleEntity
+WHERE id = ?;
+
+selectByIds:
+SELECT *
+FROM ArticleEntity
+WHERE id IN ?;
+
+countAll:
+SELECT COUNT(*) FROM ArticleEntity;
+
+countByCategory:
+SELECT COUNT(*) FROM ArticleEntity WHERE category = ?;
