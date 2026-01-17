@@ -1,0 +1,17 @@
+# Copy this file to terraform.tfvars and update with your values
+
+# AWS Region - Choose one closest to you in Europe
+# Options: eu-central-1 (Frankfurt), eu-west-1 (Ireland), eu-north-1 (Stockholm)
+aws_region = "eu-central-1"
+
+# Environment name
+environment = "production"
+
+# Project name (used for resource naming)
+project_name = "kmp-news-backend"
+
+# EC2 Instance type (t2.micro is free tier eligible)
+instance_type = "t2.micro"
+
+# Docker image name (you'll build and push this)
+docker_image = "your-dockerhub-username/kmp-news-backend:latest"

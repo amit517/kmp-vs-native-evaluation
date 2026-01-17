@@ -1,87 +1,63 @@
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform.tfvars
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# Deployment artifacts
+deployment-info.json
+deployment-info.txt
+local.properties
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-# Gradle
+# Build directories
+.kotlin/
 .gradle/
 build/
-!gradle/wrapper/gradle-wrapper.jar
-gradlew
-gradlew.bat
-gradle-wrapper.jar
-gradle-wrapper.properties
+.claude/
 
-# IntelliJ IDEA
+# IDE
 .idea/
 *.iml
-*.ipr
-*.iws
-out/
+.vscode/
 
-# macOS
-.DS_Store
+# Docker
+.docker/
 
 # Logs
 *.log
-logs/
 
-# Application properties (if contains sensitive data)
-# Uncomment if you have secrets in application.yaml
-# src/main/resources/application.yaml
-# src/main/resources/application-*.yaml
+# OS
+.DS_Store
+Thumbs.db
 
-# Local environment files
-.env
-.env.local
+# Temporary files
+*.tmp
+*.swp
+*~
 
-# Test reports
-**/test-results/
-**/reports/
+# Optional documentation (uncomment if you don't want to commit these)
+# AWS_DEPLOYMENT_SUMMARY.md
+# BACKEND_SESSION_SUMMARY.md
+# CHECKLIST.md
+# HOSTING_STRATEGY.md
+# NETWORK_*.md
+# NGINX_*.md
+# START_HERE.md
+# VISUAL_SUMMARY.md
+# MY_NETWORK_CONFIG.md
+# UPDATE_FILES_OVERVIEW.md
+# QUICK_AWS_DEPLOY.md
 
-# Compiled class files
-*.class
-
-# Package files
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# Virtual machine crash logs
-hs_err_pid*
+# Unused deployment scripts
+deploy-flyio.sh
+fly.toml
+setup-nginx.sh
+nginx-config/
+*network*.sh
+fresh-start.sh
+rebuild.sh
+stop-server.sh
+test-fixes.sh
+quick-commands.sh
+get-network-config.sh
