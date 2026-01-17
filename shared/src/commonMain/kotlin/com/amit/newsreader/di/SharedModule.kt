@@ -1,5 +1,6 @@
 package com.amit.newsreader.di
 
+import com.amit.newsreader.config.ApiConfig
 import com.amit.newsreader.data.local.DatabaseDriverFactory
 import com.amit.newsreader.data.local.LocalDataSource
 import com.amit.newsreader.data.remote.HttpClientFactory
@@ -23,7 +24,7 @@ expect val platformModule: Module
 val sharedModule = module {
     // Network
     single { HttpClientFactory.create() }
-    single { NewsApiService(get(), getBaseUrl()) }
+    single { NewsApiService(get(), ApiConfig.BASE_URL) }
 
     // Database
     singleOf(::LocalDataSource)
@@ -39,6 +40,3 @@ val sharedModule = module {
     singleOf(::GetArticleDetailUseCase)
     singleOf(::GetFavoriteArticlesUseCase)
 }
-
-// Helper function to get base URL based on platform
-expect fun getBaseUrl(): String
