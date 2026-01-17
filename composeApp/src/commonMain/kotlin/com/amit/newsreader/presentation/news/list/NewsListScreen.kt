@@ -111,7 +111,9 @@ private fun NewsListContent(
                 ArticleList(
                     articles = state.articles,
                     isRefreshing = state.isRefreshing,
-                    onRefresh = { onEvent(NewsListEvent.RefreshArticles) },
+                    isLoadingMore = state.isLoadingMore,
+                    hasMorePages = state.hasMorePages,
+                    onLoadMore = { onEvent(NewsListEvent.LoadMoreArticles) },
                     onArticleClick = onArticleClick,
                     onFavoriteClick = { articleId ->
                         onEvent(NewsListEvent.ToggleFavorite(articleId))
@@ -142,7 +144,9 @@ private fun NewsListContent(
 private fun ArticleList(
     articles: List<com.amit.newsreader.domain.model.Article>,
     isRefreshing: Boolean,
-    onRefresh: () -> Unit,
+    isLoadingMore: Boolean,
+    hasMorePages: Boolean,
+    onLoadMore: () -> Unit,
     onArticleClick: (String) -> Unit,
     onFavoriteClick: (String) -> Unit,
     modifier: Modifier = Modifier
@@ -175,6 +179,27 @@ private fun ArticleList(
                 onClick = { onArticleClick(article.id) },
                 onFavoriteClick = { onFavoriteClick(article.id) }
             )
+            
+            // Trigger load more when reaching near the end
+            if (articles.indexOf(article) >= articles.size - 3 && hasMorePages && !isLoadingMore) {
+                LaunchedEffect(article.id) {
+                    onLoadMore()
+                }
+            }
+        }
+        
+        // Show loading indicator at bottom when loading more
+        if (isLoadingMore) {
+            item {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    contentAlignment = androidx.compose.ui.Alignment.Center
+                ) {
+                    CircularProgressIndicator()
+                }
+            }
         }
     }
 }

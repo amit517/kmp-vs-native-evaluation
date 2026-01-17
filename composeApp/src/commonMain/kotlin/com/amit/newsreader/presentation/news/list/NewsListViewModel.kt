@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.amit.newsreader.domain.model.ArticleCategory
 import com.amit.newsreader.domain.usecase.GetArticlesUseCase
+import com.amit.newsreader.domain.usecase.GetFavoriteArticlesUseCase
 import com.amit.newsreader.domain.usecase.RefreshArticlesUseCase
 import com.amit.newsreader.domain.usecase.SearchArticlesUseCase
 import com.amit.newsreader.domain.usecase.ToggleFavoriteUseCase
@@ -22,6 +23,7 @@ import kotlinx.coroutines.launch
  */
 class NewsListViewModel(
     private val getArticlesUseCase: GetArticlesUseCase,
+    private val getFavoriteArticlesUseCase: GetFavoriteArticlesUseCase,
     private val refreshArticlesUseCase: RefreshArticlesUseCase,
     private val searchArticlesUseCase: SearchArticlesUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase
@@ -41,6 +43,7 @@ class NewsListViewModel(
         when (event) {
             is NewsListEvent.LoadArticles -> loadArticles()
             is NewsListEvent.RefreshArticles -> refreshArticles()
+            is NewsListEvent.LoadMoreArticles -> loadMoreArticles()
             is NewsListEvent.SelectCategory -> selectCategory(event.category)
             is NewsListEvent.SearchArticles -> searchArticles(event.query)
             is NewsListEvent.ToggleFavorite -> toggleFavorite(event.articleId)
@@ -48,13 +51,19 @@ class NewsListViewModel(
                 // Navigation handled by UI
             }
             is NewsListEvent.ClearError -> clearError()
+            is NewsListEvent.LoadFavorites -> loadFavorites()
         }
     }
 
-    private fun loadArticles() {
+    private fun loadArticles(resetPagination: Boolean = true) {
         loadJob?.cancel()
         loadJob = viewModelScope.launch {
+            if (resetPagination) {
+                _state.update { it.copy(currentPage = 1, hasMorePages = true) }
+            }
+            
             getArticlesUseCase(
+                page = _state.value.currentPage,
                 category = _state.value.selectedCategory,
                 forceRefresh = false
             )
@@ -77,7 +86,8 @@ class NewsListViewModel(
                                     articles = result.data,
                                     isLoading = false,
                                     isRefreshing = false,
-                                    error = null
+                                    error = null,
+                                    hasMorePages = result.data.isNotEmpty() && result.data.size >= 20
                                 )
                             }
                         }
@@ -87,6 +97,54 @@ class NewsListViewModel(
                                     isLoading = false,
                                     isRefreshing = false,
                                     error = result.message ?: "An error occurred"
+                                )
+                            }
+                        }
+                    }
+                }
+        }
+    }
+
+    private fun loadMoreArticles() {
+        if (_state.value.isLoadingMore || !_state.value.hasMorePages) return
+        
+        loadJob?.cancel()
+        loadJob = viewModelScope.launch {
+            _state.update { it.copy(currentPage = it.currentPage + 1) }
+            
+            getArticlesUseCase(
+                page = _state.value.currentPage,
+                category = _state.value.selectedCategory,
+                forceRefresh = false
+            )
+                .catch { e ->
+                    _state.update {
+                        it.copy(
+                            isLoadingMore = false,
+                            error = e.message ?: "Failed to load more articles"
+                        )
+                    }
+                }
+                .collect { result ->
+                    when (result) {
+                        is Result.Loading -> {
+                            _state.update { it.copy(isLoadingMore = true, error = null) }
+                        }
+                        is Result.Success -> {
+                            _state.update {
+                                it.copy(
+                                    articles = it.articles + result.data, // Append new articles
+                                    isLoadingMore = false,
+                                    error = null,
+                                    hasMorePages = result.data.isNotEmpty() && result.data.size >= 20
+                                )
+                            }
+                        }
+                        is Result.Error -> {
+                            _state.update {
+                                it.copy(
+                                    isLoadingMore = false,
+                                    error = result.message ?: "Failed to load more"
                                 )
                             }
                         }
@@ -192,6 +250,47 @@ class NewsListViewModel(
 
     private fun clearError() {
         _state.update { it.copy(error = null) }
+    }
+
+    private fun loadFavorites() {
+        loadJob?.cancel()
+        loadJob = viewModelScope.launch {
+            _state.update { it.copy(showFavoritesOnly = true, searchQuery = "", selectedCategory = null) }
+            
+            getFavoriteArticlesUseCase()
+                .catch { e ->
+                    _state.update {
+                        it.copy(
+                            isLoading = false,
+                            error = e.message ?: "Failed to load favorites"
+                        )
+                    }
+                }
+                .collect { result ->
+                    when (result) {
+                        is Result.Loading -> {
+                            _state.update { it.copy(isLoading = true, error = null) }
+                        }
+                        is Result.Success -> {
+                            _state.update {
+                                it.copy(
+                                    articles = result.data,
+                                    isLoading = false,
+                                    error = null
+                                )
+                            }
+                        }
+                        is Result.Error -> {
+                            _state.update {
+                                it.copy(
+                                    isLoading = false,
+                                    error = result.message ?: "Failed to load favorites"
+                                )
+                            }
+                        }
+                    }
+                }
+        }
     }
 
     override fun onCleared() {

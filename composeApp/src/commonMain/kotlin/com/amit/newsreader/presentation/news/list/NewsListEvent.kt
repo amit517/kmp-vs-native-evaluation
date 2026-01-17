@@ -9,9 +9,11 @@ import com.amit.newsreader.domain.model.ArticleCategory
 sealed interface NewsListEvent {
     data object LoadArticles : NewsListEvent
     data object RefreshArticles : NewsListEvent
+    data object LoadMoreArticles : NewsListEvent
     data class SelectCategory(val category: ArticleCategory?) : NewsListEvent
     data class SearchArticles(val query: String) : NewsListEvent
     data class ToggleFavorite(val articleId: String) : NewsListEvent
     data class NavigateToDetail(val articleId: String) : NewsListEvent
     data object ClearError : NewsListEvent
+    data object LoadFavorites : NewsListEvent
 }

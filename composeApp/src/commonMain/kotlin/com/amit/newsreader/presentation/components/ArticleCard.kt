@@ -14,10 +14,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 import com.amit.newsreader.domain.model.Article
 import com.amit.newsreader.theme.*
-import io.kamel.image.KamelImage
-import io.kamel.image.asyncPainterResource
 
 @Composable
 fun ArticleCard(
@@ -38,8 +37,8 @@ fun ArticleCard(
         ) {
             // Article Image
             article.imageUrl?.let { imageUrl ->
-                KamelImage(
-                    resource = asyncPainterResource(imageUrl),
+                AsyncImage(
+                    model = imageUrl,
                     contentDescription = article.title,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -102,7 +101,7 @@ fun ArticleCard(
                         Icon(
                             imageVector = if (article.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                             contentDescription = if (article.isFavorite) "Remove from favorites" else "Add to favorites",
-                            tint = if (article.isFavorite) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant
+                            tint = if (article.isFavorite) androidx.compose.ui.graphics.Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
                 }

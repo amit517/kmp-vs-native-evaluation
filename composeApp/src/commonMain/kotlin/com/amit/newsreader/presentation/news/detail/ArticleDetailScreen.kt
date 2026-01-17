@@ -19,11 +19,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.amit.newsreader.domain.model.Article
+import coil3.compose.AsyncImage
 import com.amit.newsreader.presentation.components.ErrorView
 import com.amit.newsreader.presentation.components.LoadingIndicator
 import com.amit.newsreader.theme.*
-import io.kamel.image.KamelImage
-import io.kamel.image.asyncPainterResource
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.koin.compose.viewmodel.koinViewModel
@@ -61,7 +60,7 @@ fun ArticleDetailScreen(
                             Icon(
                                 imageVector = if (article.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                                 contentDescription = if (article.isFavorite) "Remove from favorites" else "Add to favorites",
-                                tint = if (article.isFavorite) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface
+                                tint = if (article.isFavorite) androidx.compose.ui.graphics.Color.Red else MaterialTheme.colorScheme.onSurface
                             )
                         }
                         IconButton(onClick = onShareClick) {
@@ -109,8 +108,8 @@ private fun ArticleDetailContent(
     ) {
         // Article Image
         article.imageUrl?.let { imageUrl ->
-            KamelImage(
-                resource = asyncPainterResource(imageUrl),
+            AsyncImage(
+                model = imageUrl,
                 contentDescription = article.title,
                 modifier = Modifier
                     .fillMaxWidth()

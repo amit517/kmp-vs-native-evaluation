@@ -56,8 +56,9 @@ kotlin {
             // Navigation
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.1")
 
-            // Kamel for Image Loading
-            implementation(libs.kamel.image)
+            // Coil for Image Loading
+            implementation("io.coil-kt.coil3:coil-compose:3.0.4")
+            implementation("io.coil-kt.coil3:coil-network-ktor3:3.0.4")
             
             // Kotlinx DateTime
             implementation(libs.kotlinx.datetime)

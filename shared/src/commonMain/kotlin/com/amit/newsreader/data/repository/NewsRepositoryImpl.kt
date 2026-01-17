@@ -39,27 +39,32 @@ class NewsRepositoryImpl(
             val response = apiService.getArticles(
                 page = page,
                 limit = limit,
-                category = category?.name
+                category = category?.displayName  // Use displayName (e.g., "Technology") instead of name (e.g., "TECHNOLOGY")
             )
             response.articles
         }
 
         when (networkResult) {
             is Result.Success -> {
-                // Cache the network response
-                val entities = networkResult.data.toEntityList()
-                localDataSource.insertArticles(entities)
-
-                // Emit the fresh data
+                // Clear cache before inserting new data to avoid mixing categories
+                // Only cache when no category filter (showing all articles)
+                if (category == null) {
+                    localDataSource.deleteAllArticles()
+                    val entities = networkResult.data.toEntityList()
+                    localDataSource.insertArticles(entities)
+                }
+                
+                // Always emit the fresh network data
                 emit(Result.Success(networkResult.data.toDomainList()))
             }
             is Result.Error -> {
                 // Try to emit cached data if network fails
                 val cachedCount = localDataSource.countArticles()
+                
                 if (cachedCount > 0L && !forceRefresh) {
                     // Emit cached data
                     val cachedArticles = if (category != null) {
-                        localDataSource.getArticlesByCategory(category.name)
+                        localDataSource.getArticlesByCategory(category.displayName)
                     } else {
                         localDataSource.getAllArticles()
                     }
@@ -156,7 +161,7 @@ class NewsRepositoryImpl(
             val response = apiService.getArticles(
                 page = page,
                 limit = limit,
-                category = category?.name
+                category = category?.displayName  // Use displayName for API compatibility
             )
 
             // Cache the articles
