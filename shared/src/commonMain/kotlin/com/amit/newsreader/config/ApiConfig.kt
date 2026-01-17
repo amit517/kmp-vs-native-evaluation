@@ -17,7 +17,7 @@ object ApiConfig {
      *
      * TODO: Replace with your AWS endpoint after deployment
      */
-    const val BASE_URL = "http://63.177.119.99:8080/"  // Default: Android emulator with local backend
+    const val BASE_URL = "http://63.177.119.99:8080"  // AWS Production endpoint
 
     /**
      * Alternative endpoints for easy switching

@@ -11,9 +11,3 @@ import org.koin.dsl.module
 actual val platformModule: Module = module {
     single { DatabaseDriverFactory() }
 }
-
-/**
- * Base URL for iOS simulator
- * localhost works directly on iOS simulator
- */
-actual fun getBaseUrl(): String = "http://localhost:8080"

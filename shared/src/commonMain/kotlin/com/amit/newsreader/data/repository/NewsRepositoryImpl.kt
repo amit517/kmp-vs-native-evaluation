@@ -34,21 +34,6 @@ class NewsRepositoryImpl(
     ): Flow<Result<List<Article>>> = flow {
         emit(Result.Loading)
 
-        // If not forcing refresh, emit cached data first
-        if (!forceRefresh) {
-            val cachedArticles = if (category != null) {
-                localDataSource.getArticlesByCategory(category.name)
-            } else {
-                localDataSource.getAllArticles()
-            }
-
-            cachedArticles.collect { entities ->
-                if (entities.isNotEmpty()) {
-                    emit(Result.Success(entities.entityToDomainList()))
-                }
-            }
-        }
-
         // Fetch fresh data from network
         val networkResult = safeCall {
             val response = apiService.getArticles(
@@ -69,10 +54,25 @@ class NewsRepositoryImpl(
                 emit(Result.Success(networkResult.data.toDomainList()))
             }
             is Result.Error -> {
-                // If we have cached data, we already emitted it
-                // Only emit error if we don't have cached data
+                // Try to emit cached data if network fails
                 val cachedCount = localDataSource.countArticles()
-                if (cachedCount == 0L || forceRefresh) {
+                if (cachedCount > 0L && !forceRefresh) {
+                    // Emit cached data
+                    val cachedArticles = if (category != null) {
+                        localDataSource.getArticlesByCategory(category.name)
+                    } else {
+                        localDataSource.getAllArticles()
+                    }
+                    
+                    // Take first emission from cache and emit it
+                    cachedArticles.collect { entities ->
+                        if (entities.isNotEmpty()) {
+                            emit(Result.Success(entities.entityToDomainList()))
+                            return@collect // Exit after first emission
+                        }
+                    }
+                } else {
+                    // No cached data or force refresh - emit error
                     emit(networkResult)
                 }
             }
@@ -87,14 +87,7 @@ class NewsRepositoryImpl(
     override fun getArticleById(id: String): Flow<Result<Article>> = flow {
         emit(Result.Loading)
 
-        // First, try to get from cache
-        localDataSource.getArticleById(id).collect { entity ->
-            if (entity != null) {
-                emit(Result.Success(entity.toDomain()))
-            }
-        }
-
-        // Then fetch from network for latest data
+        // Fetch from network for latest data
         val networkResult = safeCall {
             apiService.getArticleById(id)
         }
@@ -106,9 +99,11 @@ class NewsRepositoryImpl(
                 emit(Result.Success(networkResult.data.toDomain()))
             }
             is Result.Error -> {
-                // If we have cached data, we already emitted it
+                // Try to get from cache if network fails
                 val cached = localDataSource.getArticleByIdSync(id)
-                if (cached == null) {
+                if (cached != null) {
+                    emit(Result.Success(cached.toDomain()))
+                } else {
                     emit(networkResult)
                 }
             }
