@@ -9,6 +9,11 @@ plugins {
 }
 
 kotlin {
+    // Suppress expect/actual classes Beta warning
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
+    }
+    
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {

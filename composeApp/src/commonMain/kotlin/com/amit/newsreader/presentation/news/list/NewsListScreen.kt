@@ -48,12 +48,18 @@ fun NewsListScreen(
 
                 if (showSearchBar) {
                     SearchBar(
-                        query = state.searchQuery,
-                        onQueryChange = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
-                        onSearch = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
-                        active = false,
-                        onActiveChange = {},
-                        placeholder = { Text("Search articles...") },
+                        inputField = {
+                            SearchBarDefaults.InputField(
+                                query = state.searchQuery,
+                                onQueryChange = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
+                                onSearch = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
+                                expanded = false,
+                                onExpandedChange = {},
+                                placeholder = { Text("Search articles...") }
+                            )
+                        },
+                        expanded = false,
+                        onExpandedChange = {},
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp, vertical = 8.dp)

@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.*
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -157,7 +158,7 @@ private fun ArticleDetailContent(
                 )
             }
 
-            Divider()
+            HorizontalDivider()
 
             // Summary
             Text(
@@ -166,7 +167,7 @@ private fun ArticleDetailContent(
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
-            Divider()
+            HorizontalDivider()
 
             // Content
             Text(
@@ -177,7 +178,7 @@ private fun ArticleDetailContent(
 
             // Tags
             if (article.tags.isNotEmpty()) {
-                Divider()
+                HorizontalDivider()
                 Text(
                     text = "Tags",
                     style = MaterialTheme.typography.titleSmall
@@ -230,5 +231,5 @@ private fun TagsRow(tags: List<String>) {
 }
 
 private fun formatPublishedDate(date: kotlinx.datetime.LocalDateTime): String {
-    return "${date.dayOfMonth} ${date.month.name.lowercase().replaceFirstChar { it.uppercase() }} ${date.year}"
+    return "${date.date.day} ${date.month.name.lowercase().replaceFirstChar { it.uppercase() }} ${date.year}"
 }
