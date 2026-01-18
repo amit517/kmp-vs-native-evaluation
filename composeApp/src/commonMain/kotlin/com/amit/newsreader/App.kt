@@ -12,9 +12,7 @@ import org.koin.compose.KoinContext
  */
 @Composable
 fun App(modifier: Modifier = Modifier) {
-    KoinContext {
-        NewsReaderTheme {
-            NavGraph(modifier = modifier)
-        }
+    NewsReaderTheme {
+        NavGraph(modifier = modifier)
     }
 }

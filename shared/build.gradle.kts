@@ -24,6 +24,12 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "shared"
             isStatic = true
+            
+            // Set bundle ID
+            binaryOption("bundleId", "com.amit.newsreader.shared")
+
+            // Link SQLite3 library
+            linkerOpts("-lsqlite3")
 
             // Optimization flags for release builds
             freeCompilerArgs += listOf(
@@ -46,9 +52,9 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)
 
-            // SQLDelight
-            implementation(libs.sqldelight.runtime)
-            implementation(libs.sqldelight.coroutines)
+            // SQLDelight - use api to expose to consumers
+            api(libs.sqldelight.runtime)
+            api(libs.sqldelight.coroutines)
 
             // Koin
             api(libs.koin.core)
@@ -65,7 +71,7 @@ kotlin {
 
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
-            implementation(libs.sqldelight.native)
+            api(libs.sqldelight.native)
         }
 
         commonTest.dependencies {

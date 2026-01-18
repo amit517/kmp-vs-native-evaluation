@@ -1,11 +1,13 @@
+@file:OptIn(kotlin.time.ExperimentalTime::class)
+
 package com.amit.newsreader.data.mapper
 
 import com.amit.newsreader.data.remote.dto.ArticleDto
 import com.amit.newsreader.database.ArticleEntity
 import com.amit.newsreader.domain.model.Article
 import com.amit.newsreader.domain.model.ArticleCategory
-import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
+import kotlin.time.Clock
+import kotlin.time.Instant
 
 /**
  * Mapper for converting between different article representations
@@ -43,7 +45,7 @@ fun ArticleDto.toEntity(isFavorite: Boolean = false): ArticleEntity {
         readTimeMinutes = readTimeMinutes.toLong(),
         tags = tags.joinToString(","),
         isFavorite = isFavorite,
-        cachedAt = Clock.System.now().toEpochMilliseconds()
+        cachedAt = Clock.System.now().toEpochMilliseconds().toLong()
     )
 }
 

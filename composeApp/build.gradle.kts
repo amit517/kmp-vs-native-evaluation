@@ -26,14 +26,28 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
             isStatic = true
+
+            // Set bundle ID
+            binaryOption("bundleId", "com.amit.newsreader.ComposeApp")
+
+            // Link SQLite3 library for database support
+            linkerOpts("-lsqlite3")
+
+            // Export required dependencies for iOS
+            export(projects.shared)
+            export(libs.androidx.lifecycle.viewmodelCompose)
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
+        }
+        iosMain.dependencies {
+            api(libs.androidx.lifecycle.viewmodelCompose)
+            api(libs.androidx.lifecycle.runtimeCompose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -43,11 +57,11 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(libs.androidx.lifecycle.viewmodelCompose)
-            implementation(libs.androidx.lifecycle.runtimeCompose)
+            api(libs.androidx.lifecycle.viewmodelCompose)
+            api(libs.androidx.lifecycle.runtimeCompose)
 
             // Shared module
-            implementation(projects.shared)
+            api(projects.shared)
 
             // Koin for Dependency Injection
             implementation(libs.koin.core)
@@ -55,7 +69,7 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
 
             // Navigation
-            implementation(libs.navigation.compose)
+            implementation(libs.androidx.navigation.compose)
             
             // Kotlinx Serialization for type-safe navigation
             implementation(libs.kotlinx.serialization.json)

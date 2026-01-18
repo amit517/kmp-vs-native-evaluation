@@ -1,3 +1,5 @@
+@file:OptIn(kotlin.time.ExperimentalTime::class)
+
 package com.amit.newsreader.presentation.news.detail
 
 import androidx.compose.foundation.horizontalScroll
