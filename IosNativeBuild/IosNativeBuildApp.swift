@@ -2,7 +2,7 @@
 //  IosNativeBuildApp.swift
 //  IosNativeBuild
 //
-//  Created by Amit Kundu on 18.1.2026.
+//  Native iOS News Reader App
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct IosNativeBuildApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewsListView()
         }
     }
 }
