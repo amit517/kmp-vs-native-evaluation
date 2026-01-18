@@ -43,7 +43,7 @@ class NewsListViewModel: ObservableObject {
         errorMessage = nil
 
         do {
-            let fetchedArticles = try await repository.getArticles(page: 1, pageSize: 50)
+            let fetchedArticles = try await repository.getArticles(page: 1, pageSize: 100)
             articles = fetchedArticles
             filteredArticles = fetchedArticles
             isLoading = false
@@ -58,7 +58,7 @@ class NewsListViewModel: ObservableObject {
         errorMessage = nil
 
         do {
-            let fetchedArticles = try await repository.getArticles(page: 1, pageSize: 50)
+            let fetchedArticles = try await repository.getArticles(page: 1, pageSize: 100)
             articles = fetchedArticles
             filterArticles()
             isRefreshing = false
