@@ -10,7 +10,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.*
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
@@ -35,7 +34,6 @@ import org.koin.compose.viewmodel.koinViewModel
 fun ArticleDetailScreen(
     articleId: String,
     onNavigateBack: () -> Unit,
-    onShareClick: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: ArticleDetailViewModel = koinViewModel()
 ) {
@@ -64,12 +62,6 @@ fun ArticleDetailScreen(
                                 imageVector = if (article.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                                 contentDescription = if (article.isFavorite) "Remove from favorites" else "Add to favorites",
                                 tint = if (article.isFavorite) androidx.compose.ui.graphics.Color.Red else MaterialTheme.colorScheme.onSurface
-                            )
-                        }
-                        IconButton(onClick = onShareClick) {
-                            Icon(
-                                imageVector = Icons.Default.Share,
-                                contentDescription = "Share"
                             )
                         }
                     }

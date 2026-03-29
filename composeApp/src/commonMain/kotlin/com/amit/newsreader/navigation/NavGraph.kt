@@ -58,10 +58,6 @@ fun NavGraph(
                 articleId = articleDetail.articleId,
                 onNavigateBack = {
                     navController.popBackStack()
-                },
-                onShareClick = {
-                    // Platform-specific sharing will be handled here
-                    // For now, we'll just log or show a message
                 }
             )
         }
