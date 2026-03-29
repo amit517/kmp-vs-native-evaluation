@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum AppRoute: Hashable {
     case articleDetail(articleId: String)
@@ -15,6 +16,8 @@ enum AppRoute: Hashable {
 @main
 struct IosNativeBuildApp: App {
     @State private var path = NavigationPath()
+
+    let container = DependencyContainer.shared
 
     var body: some Scene {
         WindowGroup {
@@ -48,6 +51,7 @@ struct IosNativeBuildApp: App {
                     }
                 }
             }
+            .modelContainer(container.modelContainer)
         }
     }
 }

@@ -160,5 +160,8 @@ struct NewsListView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.syncFavorites()
+        }
     }
 }

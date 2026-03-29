@@ -2,7 +2,7 @@
 //  NewsListViewModel.swift
 //  IosNativeBuild
 //
-//  ViewModel for News List Screen
+//  ViewModel for News List Screen — uses Use Cases + AppResult
 //
 
 import Foundation
@@ -22,13 +22,29 @@ class NewsListViewModel: ObservableObject {
     @Published var currentPage = 1
     @Published var hasMorePages = true
 
-    private let repository: NewsRepository
+    private let getArticlesUseCase: GetArticlesUseCase
+    private let searchArticlesUseCase: SearchArticlesUseCase
+    private let getFavoriteArticlesUseCase: GetFavoriteArticlesUseCase
+    private let toggleFavoriteUseCase: ToggleFavoriteUseCase
+    private let refreshArticlesUseCase: RefreshArticlesUseCase
+
     private var cancellables = Set<AnyCancellable>()
     private var searchTask: Task<Void, Never>?
     private let pageSize = 20
 
-    init(repository: NewsRepository = NewsRepositoryImpl(), autoLoad: Bool = true) {
-        self.repository = repository
+    init(
+        getArticlesUseCase: GetArticlesUseCase,
+        searchArticlesUseCase: SearchArticlesUseCase,
+        getFavoriteArticlesUseCase: GetFavoriteArticlesUseCase,
+        toggleFavoriteUseCase: ToggleFavoriteUseCase,
+        refreshArticlesUseCase: RefreshArticlesUseCase,
+        autoLoad: Bool = true
+    ) {
+        self.getArticlesUseCase = getArticlesUseCase
+        self.searchArticlesUseCase = searchArticlesUseCase
+        self.getFavoriteArticlesUseCase = getFavoriteArticlesUseCase
+        self.toggleFavoriteUseCase = toggleFavoriteUseCase
+        self.refreshArticlesUseCase = refreshArticlesUseCase
 
         // Setup search debouncing
         $searchQuery
@@ -42,12 +58,22 @@ class NewsListViewModel: ObservableObject {
             }
             .store(in: &cancellables)
 
-        // Load initial articles (skip for favorites-only usage)
         if autoLoad {
-            Task {
-                await loadArticles()
-            }
+            Task { await loadArticles() }
         }
+    }
+
+    // Convenience init using DI container (keeps Views unchanged)
+    convenience init(autoLoad: Bool = true) {
+        let container = DependencyContainer.shared
+        self.init(
+            getArticlesUseCase: container.getArticlesUseCase,
+            searchArticlesUseCase: container.searchArticlesUseCase,
+            getFavoriteArticlesUseCase: container.getFavoriteArticlesUseCase,
+            toggleFavoriteUseCase: container.toggleFavoriteUseCase,
+            refreshArticlesUseCase: container.refreshArticlesUseCase,
+            autoLoad: autoLoad
+        )
     }
 
     func loadArticles() async {
@@ -57,22 +83,22 @@ class NewsListViewModel: ObservableObject {
         hasMorePages = true
         showFavoritesOnly = false
 
-        do {
-            let fetched: [Article]
-            if let category = selectedCategory {
-                fetched = try await repository.getArticlesByCategory(category, page: 1, pageSize: pageSize)
-            } else {
-                fetched = try await repository.getArticles(page: 1, pageSize: pageSize)
-            }
+        let result = await getArticlesUseCase.execute(
+            page: 1, limit: pageSize, category: selectedCategory, forceRefresh: false
+        )
+
+        switch result {
+        case .success(let fetched):
             articles = fetched
             hasMorePages = fetched.count >= pageSize
-        } catch {
+        case .error(_, let message):
             if articles.isEmpty {
-                self.error = error.localizedDescription
+                self.error = message ?? "Failed to load articles"
             } else {
-                // Keep existing articles, show snackbar error
-                self.error = error.localizedDescription
+                self.error = message ?? "Failed to load articles"
             }
+        case .loading:
+            break
         }
 
         isLoading = false
@@ -84,18 +110,19 @@ class NewsListViewModel: ObservableObject {
         isLoadingMore = true
         let nextPage = currentPage + 1
 
-        do {
-            let fetched: [Article]
-            if let category = selectedCategory {
-                fetched = try await repository.getArticlesByCategory(category, page: nextPage, pageSize: pageSize)
-            } else {
-                fetched = try await repository.getArticles(page: nextPage, pageSize: pageSize)
-            }
+        let result = await getArticlesUseCase.execute(
+            page: nextPage, limit: pageSize, category: selectedCategory, forceRefresh: false
+        )
+
+        switch result {
+        case .success(let fetched):
             articles.append(contentsOf: fetched)
             currentPage = nextPage
             hasMorePages = fetched.count >= pageSize
-        } catch {
-            // Silently fail for load-more; user can scroll again
+        case .error:
+            break
+        case .loading:
+            break
         }
 
         isLoadingMore = false
@@ -107,17 +134,18 @@ class NewsListViewModel: ObservableObject {
         currentPage = 1
         hasMorePages = true
 
-        do {
-            let fetched: [Article]
-            if let category = selectedCategory {
-                fetched = try await repository.getArticlesByCategory(category, page: 1, pageSize: pageSize)
-            } else {
-                fetched = try await repository.getArticles(page: 1, pageSize: pageSize)
-            }
+        let result = await getArticlesUseCase.execute(
+            page: 1, limit: pageSize, category: selectedCategory, forceRefresh: true
+        )
+
+        switch result {
+        case .success(let fetched):
             articles = fetched
             hasMorePages = fetched.count >= pageSize
-        } catch {
-            self.error = error.localizedDescription
+        case .error(_, let message):
+            self.error = message ?? "Failed to refresh"
+        case .loading:
+            break
         }
 
         isRefreshing = false
@@ -128,9 +156,7 @@ class NewsListViewModel: ObservableObject {
         searchQuery = ""
         isSearching = false
         searchTask?.cancel()
-        Task {
-            await loadArticles()
-        }
+        Task { await loadArticles() }
     }
 
     private func performSearch(_ query: String) async {
@@ -147,18 +173,18 @@ class NewsListViewModel: ObservableObject {
         selectedCategory = nil
 
         searchTask = Task {
-            do {
-                let results = try await repository.searchArticles(query: query)
-                if !Task.isCancelled {
+            let result = await searchArticlesUseCase.execute(query: query)
+
+            if !Task.isCancelled {
+                switch result {
+                case .success(let results):
                     articles = results
                     hasMorePages = false
+                case .error(_, let message):
+                    self.error = message ?? "Search failed"
+                case .loading:
+                    break
                 }
-            } catch {
-                if !Task.isCancelled {
-                    self.error = error.localizedDescription
-                }
-            }
-            if !Task.isCancelled {
                 isSearching = false
             }
         }
@@ -170,7 +196,7 @@ class NewsListViewModel: ObservableObject {
             articles[index].isFavorite.toggle()
         }
         Task {
-            await repository.toggleFavorite(articleId: articleId)
+            _ = await toggleFavoriteUseCase.execute(articleId: articleId)
         }
     }
 
@@ -181,8 +207,31 @@ class NewsListViewModel: ObservableObject {
         hasMorePages = false
         isSearching = false
 
-        let favorites = repository.getFavoriteArticles()
-        articles = favorites
+        Task {
+            isLoading = true
+            let result = await getFavoriteArticlesUseCase.execute()
+            switch result {
+            case .success(let favorites):
+                articles = favorites
+            case .error(_, let message):
+                self.error = message ?? "Failed to load favorites"
+            case .loading:
+                break
+            }
+            isLoading = false
+        }
+    }
+
+    func syncFavorites() {
+        Task {
+            let result = await getFavoriteArticlesUseCase.execute()
+            if case .success(let favorites) = result {
+                let favoriteIds = Set(favorites.map { $0.id })
+                for i in articles.indices {
+                    articles[i].isFavorite = favoriteIds.contains(articles[i].id)
+                }
+            }
+        }
     }
 
     func clearError() {

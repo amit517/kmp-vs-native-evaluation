@@ -33,7 +33,7 @@ class NewsAPIService {
     private let baseURL = "http://63.177.119.99:8080"
     private let session: URLSession
 
-    private init() {
+    init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30

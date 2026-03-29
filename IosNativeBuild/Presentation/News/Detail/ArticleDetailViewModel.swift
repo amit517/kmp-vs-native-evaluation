@@ -2,7 +2,7 @@
 //  ArticleDetailViewModel.swift
 //  IosNativeBuild
 //
-//  ViewModel for Article Detail Screen
+//  ViewModel for Article Detail Screen — uses Use Cases + AppResult
 //
 
 import Foundation
@@ -14,21 +14,39 @@ class ArticleDetailViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: String? = nil
 
-    private let repository: NewsRepository
+    private let getArticleDetailUseCase: GetArticleDetailUseCase
+    private let toggleFavoriteUseCase: ToggleFavoriteUseCase
 
-    nonisolated init(repository: NewsRepository = NewsRepositoryImpl()) {
-        self.repository = repository
+    init(
+        getArticleDetailUseCase: GetArticleDetailUseCase,
+        toggleFavoriteUseCase: ToggleFavoriteUseCase
+    ) {
+        self.getArticleDetailUseCase = getArticleDetailUseCase
+        self.toggleFavoriteUseCase = toggleFavoriteUseCase
+    }
+
+    // Convenience init using DI container (keeps Views unchanged)
+    convenience init() {
+        let container = DependencyContainer.shared
+        self.init(
+            getArticleDetailUseCase: container.getArticleDetailUseCase,
+            toggleFavoriteUseCase: container.toggleFavoriteUseCase
+        )
     }
 
     func loadArticle(id: String) async {
         isLoading = true
         error = nil
 
-        do {
-            let fetched = try await repository.getArticleById(id: id)
+        let result = await getArticleDetailUseCase.execute(articleId: id)
+
+        switch result {
+        case .success(let fetched):
             article = fetched
-        } catch {
-            self.error = error.localizedDescription
+        case .error(_, let message):
+            self.error = message ?? "Failed to load article"
+        case .loading:
+            break
         }
 
         isLoading = false
@@ -41,7 +59,7 @@ class ArticleDetailViewModel: ObservableObject {
         article = current
 
         Task {
-            await repository.toggleFavorite(articleId: current.id)
+            _ = await toggleFavoriteUseCase.execute(articleId: current.id)
         }
     }
 }
