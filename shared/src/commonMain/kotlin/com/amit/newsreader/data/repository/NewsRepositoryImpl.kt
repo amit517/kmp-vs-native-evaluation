@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import kotlin.time.ExperimentalTime
 
 /**
  * Repository implementation with offline-first architecture
@@ -46,16 +47,19 @@ class NewsRepositoryImpl(
 
         when (networkResult) {
             is Result.Success -> {
-                // Clear cache before inserting new data to avoid mixing categories
-                // Only cache when no category filter (showing all articles)
+                // Cache when no category filter (showing all articles)
+                // Use upsert to preserve isFavorite status
                 if (category == null) {
-                    localDataSource.deleteAllArticles()
                     val entities = networkResult.data.toEntityList()
-                    localDataSource.insertArticles(entities)
+                    localDataSource.upsertArticlesPreservingFavorites(entities)
+                    // Read back from DB to get correct isFavorite values
+                    localDataSource.getAllArticles().collect { dbEntities ->
+                        emit(Result.Success(dbEntities.entityToDomainList()))
+                        return@collect
+                    }
+                } else {
+                    emit(Result.Success(networkResult.data.toDomainList()))
                 }
-                
-                // Always emit the fresh network data
-                emit(Result.Success(networkResult.data.toDomainList()))
             }
             is Result.Error -> {
                 // Try to emit cached data if network fails
@@ -89,6 +93,7 @@ class NewsRepositoryImpl(
         emit(Result.Error(e as? Exception ?: Exception(e.message), e.message))
     }
 
+    @OptIn(ExperimentalTime::class)
     override fun getArticleById(id: String): Flow<Result<Article>> = flow {
         emit(Result.Loading)
 
@@ -99,9 +104,11 @@ class NewsRepositoryImpl(
 
         when (networkResult) {
             is Result.Success -> {
-                val entity = networkResult.data.toEntity()
+                val existing = localDataSource.getArticleByIdSync(id)
+                val isFavorite = existing?.isFavorite ?: false
+                val entity = networkResult.data.toEntity(isFavorite = isFavorite)
                 localDataSource.insertArticle(entity)
-                emit(Result.Success(networkResult.data.toDomain()))
+                emit(Result.Success(networkResult.data.toDomain().copy(isFavorite = isFavorite)))
             }
             is Result.Error -> {
                 // Try to get from cache if network fails

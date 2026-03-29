@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlin.time.ExperimentalTime
 
 /**
  * ViewModel for News List Screen
@@ -34,10 +35,6 @@ class NewsListViewModel(
 
     private var searchJob: Job? = null
     private var loadJob: Job? = null
-
-    init {
-        loadArticles()
-    }
 
     fun onEvent(event: NewsListEvent) {
         when (event) {
@@ -241,10 +238,18 @@ class NewsListViewModel(
         }
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun toggleFavorite(articleId: String) {
         viewModelScope.launch {
             toggleFavoriteUseCase(articleId)
-            // The flow will automatically update the UI
+            _state.update { currentState ->
+                currentState.copy(
+                    articles = currentState.articles.map { article ->
+                        if (article.id == articleId) article.copy(isFavorite = !article.isFavorite)
+                        else article
+                    }
+                )
+            }
         }
     }
 
@@ -276,7 +281,8 @@ class NewsListViewModel(
                                 it.copy(
                                     articles = result.data,
                                     isLoading = false,
-                                    error = null
+                                    error = null,
+                                    hasMorePages = false
                                 )
                             }
                         }

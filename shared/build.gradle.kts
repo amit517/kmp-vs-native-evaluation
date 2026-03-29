@@ -5,7 +5,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.sqldelight)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.room)
 }
 
 kotlin {
@@ -13,7 +14,7 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
-    
+
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
@@ -29,12 +30,9 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "shared"
             isStatic = true
-            
+
             // Set bundle ID
             binaryOption("bundleId", "com.amit.newsreader.shared")
-
-            // Link SQLite3 library
-            linkerOpts("-lsqlite3")
 
             // Optimization flags for release builds
             freeCompilerArgs += listOf(
@@ -57,9 +55,9 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)
 
-            // SQLDelight - use api to expose to consumers
-            api(libs.sqldelight.runtime)
-            api(libs.sqldelight.coroutines)
+            // Room Database
+            implementation(libs.androidx.room.runtime)
+            implementation(libs.androidx.sqlite.bundled)
 
             // Koin
             api(libs.koin.core)
@@ -70,13 +68,11 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
-            implementation(libs.sqldelight.android)
             implementation(libs.kotlinx.coroutines.android)
         }
 
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
-            api(libs.sqldelight.native)
         }
 
         commonTest.dependencies {
@@ -99,12 +95,13 @@ android {
     }
 }
 
-sqldelight {
-    databases {
-        create("NewsReaderDatabase") {
-            packageName.set("com.amit.newsreader.database")
-            schemaOutputDirectory.set(file("src/commonMain/sqldelight/databases"))
-            verifyMigrations.set(true)
-        }
-    }
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+dependencies {
+    add("kspAndroid", libs.androidx.room.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
+    add("kspIosX64", libs.androidx.room.compiler)
+    add("kspIosArm64", libs.androidx.room.compiler)
 }

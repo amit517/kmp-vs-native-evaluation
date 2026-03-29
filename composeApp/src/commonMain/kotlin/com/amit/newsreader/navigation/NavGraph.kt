@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -18,6 +19,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.amit.newsreader.presentation.news.detail.ArticleDetailScreen
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.amit.newsreader.presentation.news.list.NewsListContent
 import com.amit.newsreader.presentation.news.list.NewsListEvent
 import com.amit.newsreader.presentation.news.list.NewsListScreen
 import org.koin.compose.viewmodel.koinViewModel
@@ -84,6 +87,8 @@ private fun FavoritesScreen(
     onBackClick: () -> Unit,
     viewModel: com.amit.newsreader.presentation.news.list.NewsListViewModel = koinViewModel()
 ) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
+
     LaunchedEffect(Unit) {
         viewModel.onEvent(NewsListEvent.LoadFavorites)
     }
@@ -103,11 +108,11 @@ private fun FavoritesScreen(
             )
         }
     ) { paddingValues ->
-        NewsListScreen(
+        NewsListContent(
+            state = state,
+            onEvent = viewModel::onEvent,
             onArticleClick = onArticleClick,
-            onFavoritesClick = onBackClick,
-            modifier = Modifier.padding(paddingValues),
-            viewModel = viewModel
+            modifier = Modifier.padding(paddingValues)
         )
     }
 }

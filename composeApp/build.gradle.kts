@@ -30,9 +30,6 @@ kotlin {
             // Set bundle ID
             binaryOption("bundleId", "com.amit.newsreader.ComposeApp")
 
-            // Link SQLite3 library for database support
-            linkerOpts("-lsqlite3")
-
             // Export required dependencies for iOS
             export(projects.shared)
             export(libs.androidx.lifecycle.viewmodelCompose)

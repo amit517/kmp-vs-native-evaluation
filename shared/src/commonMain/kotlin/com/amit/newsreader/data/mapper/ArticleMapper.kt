@@ -3,7 +3,7 @@
 package com.amit.newsreader.data.mapper
 
 import com.amit.newsreader.data.remote.dto.ArticleDto
-import com.amit.newsreader.database.ArticleEntity
+import com.amit.newsreader.data.local.ArticleEntity
 import com.amit.newsreader.domain.model.Article
 import com.amit.newsreader.domain.model.ArticleCategory
 import kotlin.time.Clock
@@ -42,10 +42,10 @@ fun ArticleDto.toEntity(isFavorite: Boolean = false): ArticleEntity {
         author = author,
         publishedAt = publishedAt,
         category = category,
-        readTimeMinutes = readTimeMinutes.toLong(),
+        readTimeMinutes = readTimeMinutes,
         tags = tags.joinToString(","),
         isFavorite = isFavorite,
-        cachedAt = Clock.System.now().toEpochMilliseconds().toLong()
+        cachedAt = Clock.System.now().toEpochMilliseconds()
     )
 }
 
@@ -60,7 +60,7 @@ fun ArticleEntity.toDomain(): Article {
         author = author,
         publishedAt = Instant.fromEpochMilliseconds(publishedAt),
         category = ArticleCategory.fromString(category),
-        readTimeMinutes = readTimeMinutes.toInt(),
+        readTimeMinutes = readTimeMinutes,
         tags = if (tags.isNotEmpty()) tags.split(",") else emptyList(),
         isFavorite = isFavorite
     )
@@ -77,7 +77,7 @@ fun Article.toEntity(): ArticleEntity {
         author = author,
         publishedAt = publishedAt.toEpochMilliseconds(),
         category = category.name,
-        readTimeMinutes = readTimeMinutes.toLong(),
+        readTimeMinutes = readTimeMinutes,
         tags = tags.joinToString(","),
         isFavorite = isFavorite,
         cachedAt = Clock.System.now().toEpochMilliseconds()

@@ -25,6 +25,10 @@ fun NewsListScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     var showSearchBar by remember { mutableStateOf(false) }
 
+    LaunchedEffect(Unit) {
+        viewModel.onEvent(NewsListEvent.LoadArticles)
+    }
+
     Scaffold(
         topBar = {
             Column {
@@ -47,23 +51,16 @@ fun NewsListScreen(
                 )
 
                 if (showSearchBar) {
-                    SearchBar(
-                        inputField = {
-                            SearchBarDefaults.InputField(
-                                query = state.searchQuery,
-                                onQueryChange = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
-                                onSearch = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
-                                expanded = false,
-                                onExpandedChange = {},
-                                placeholder = { Text("Search articles...") }
-                            )
-                        },
-                        expanded = false,
-                        onExpandedChange = {},
+                    OutlinedTextField(
+                        value = state.searchQuery,
+                        onValueChange = { viewModel.onEvent(NewsListEvent.SearchArticles(it)) },
+                        placeholder = { Text("Search articles...") },
+                        singleLine = true,
+                        shape = MaterialTheme.shapes.extraLarge,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 16.dp, vertical = 8.dp)
-                    ) {}
+                            .padding(horizontal = 16.dp, vertical = 4.dp)
+                    )
                 }
 
                 CategoryChips(
@@ -84,7 +81,7 @@ fun NewsListScreen(
 }
 
 @Composable
-private fun NewsListContent(
+internal fun NewsListContent(
     state: NewsListState,
     onEvent: (NewsListEvent) -> Unit,
     onArticleClick: (String) -> Unit,
@@ -147,7 +144,7 @@ private fun NewsListContent(
 }
 
 @Composable
-private fun ArticleList(
+internal fun ArticleList(
     articles: List<com.amit.newsreader.domain.model.Article>,
     isRefreshing: Boolean,
     isLoadingMore: Boolean,

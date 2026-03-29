@@ -1,7 +1,7 @@
 package com.amit.newsreader.di
 
 import com.amit.newsreader.config.ApiConfig
-import com.amit.newsreader.data.local.DatabaseDriverFactory
+import com.amit.newsreader.data.local.DatabaseBuilder
 import com.amit.newsreader.data.local.LocalDataSource
 import com.amit.newsreader.data.remote.HttpClientFactory
 import com.amit.newsreader.data.remote.NewsApiService
@@ -27,6 +27,7 @@ val sharedModule = module {
     single { NewsApiService(get(), ApiConfig.BASE_URL) }
 
     // Database
+    single { get<DatabaseBuilder>().build() }
     singleOf(::LocalDataSource)
 
     // Repository

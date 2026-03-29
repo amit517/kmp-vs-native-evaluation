@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlin.time.ExperimentalTime
 
 /**
  * ViewModel for Article Detail Screen
@@ -74,12 +75,17 @@ class ArticleDetailViewModel(
         }
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun toggleFavorite() {
-        val articleId = _state.value.article?.id ?: return
+        val article = _state.value.article ?: return
 
         viewModelScope.launch {
-            val result = toggleFavoriteUseCase(articleId)
-            // The flow will automatically update the article
+            toggleFavoriteUseCase(article.id)
+            _state.update { currentState ->
+                currentState.copy(
+                    article = currentState.article?.copy(isFavorite = !article.isFavorite)
+                )
+            }
         }
     }
 }
