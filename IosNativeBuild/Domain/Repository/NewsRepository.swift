@@ -11,6 +11,7 @@ protocol NewsRepository {
     func getArticles(page: Int, pageSize: Int) async throws -> [Article]
     func getArticlesByCategory(_ category: ArticleCategory, page: Int, pageSize: Int) async throws -> [Article]
     func searchArticles(query: String) async throws -> [Article]
+    func getArticleById(id: String) async throws -> Article
     func toggleFavorite(articleId: String) async
     func getFavoriteArticles() -> [Article]
 }
@@ -36,7 +37,14 @@ class NewsRepositoryImpl: NewsRepository {
             return updatedArticle
         }
 
-        cachedArticles = articles
+        if page == 1 {
+            cachedArticles = articles
+        } else {
+            // Append for pagination, avoiding duplicates
+            let existingIds = Set(cachedArticles.map { $0.id })
+            let newArticles = articles.filter { !existingIds.contains($0.id) }
+            cachedArticles.append(contentsOf: newArticles)
+        }
         return articles
     }
 
@@ -55,17 +63,29 @@ class NewsRepositoryImpl: NewsRepository {
     }
 
     func searchArticles(query: String) async throws -> [Article] {
-        let response = try await apiService.searchArticles(query: query)
-        var articles = ArticleMapper.toDomainList(response.articles)
-
-        // Apply favorite status
-        articles = articles.map { article in
-            var updatedArticle = article
-            updatedArticle.isFavorite = favoriteIds.contains(article.id)
-            return updatedArticle
+        // Search locally through cached articles (matches KMP behavior)
+        let lowercased = query.lowercased()
+        return cachedArticles.filter { article in
+            article.title.lowercased().contains(lowercased) ||
+            article.content.lowercased().contains(lowercased) ||
+            article.author.lowercased().contains(lowercased) ||
+            article.tags.contains { $0.lowercased().contains(lowercased) }
         }
+    }
 
-        return articles
+    func getArticleById(id: String) async throws -> Article {
+        do {
+            let dto = try await apiService.getArticleById(id: id)
+            var article = ArticleMapper.toDomain(dto)
+            article.isFavorite = favoriteIds.contains(article.id)
+            return article
+        } catch {
+            // Fallback to cached article
+            if let cached = cachedArticles.first(where: { $0.id == id }) {
+                return cached
+            }
+            throw error
+        }
     }
 
     func toggleFavorite(articleId: String) async {

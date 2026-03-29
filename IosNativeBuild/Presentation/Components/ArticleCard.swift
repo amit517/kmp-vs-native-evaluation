@@ -9,78 +9,111 @@ import SwiftUI
 
 struct ArticleCard: View {
     let article: Article
+    let onClick: () -> Void
     let onFavoriteClick: () -> Void
 
     var body: some View {
-        HStack(spacing: 12) {
-            // Article Image
-            AsyncImage(url: URL(string: article.imageUrl ?? "")) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .frame(width: 80, height: 80)
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 80, height: 80)
-                        .clipped()
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 80)
-                        .foregroundColor(.gray)
-                @unknown default:
-                    EmptyView()
+        Button(action: onClick) {
+            VStack(alignment: .leading, spacing: 0) {
+                // Article Image
+                if let imageUrl = article.imageUrl, let url = URL(string: imageUrl) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 200)
+                                .background(Color.gray.opacity(0.1))
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 200)
+                                .clipped()
+                        case .failure:
+                            Image(systemName: "photo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 200)
+                                .foregroundColor(.gray)
+                                .background(Color.gray.opacity(0.1))
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
                 }
-            }
-            .cornerRadius(8)
 
-            // Article Content
-            VStack(alignment: .leading, spacing: 4) {
-                Text(article.title)
-                    .font(.headline)
-                    .lineLimit(2)
-                    .foregroundColor(AppTheme.onSurface)
+                // Content
+                VStack(alignment: .leading, spacing: 0) {
+                    // Category Badge
+                    CategoryBadge(category: article.category)
 
-                Text(article.summary)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .lineLimit(2)
+                    Spacer().frame(height: 8)
 
-                HStack(spacing: 8) {
-                    Text(article.category.displayName)
-                        .font(.caption)
-                        .foregroundColor(AppTheme.categoryColor(for: article.category))
+                    // Title
+                    Text(article.title)
+                        .font(.headline)
+                        .foregroundColor(AppTheme.onSurface)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
 
-                    Text("•")
-                        .font(.caption)
+                    Spacer().frame(height: 4)
+
+                    // Summary
+                    Text(article.summary)
+                        .font(.subheadline)
                         .foregroundColor(.secondary)
+                        .lineLimit(3)
+                        .multilineTextAlignment(.leading)
 
-                    Text(formatDate(article.publishedAt))
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    Spacer().frame(height: 12)
+
+                    // Bottom Row: Author, Time, Favorite
+                    HStack(alignment: .center) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(article.author)
+                                .font(.caption)
+                                .foregroundColor(AppTheme.primary)
+
+                            Text("\(article.readTimeMinutes) min read")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+
+                        Spacer()
+
+                        Button(action: onFavoriteClick) {
+                            Image(systemName: article.isFavorite ? "heart.fill" : "heart")
+                                .foregroundColor(article.isFavorite ? .red : .secondary)
+                                .imageScale(.large)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
                 }
+                .padding(16)
             }
-
-            Spacer()
-
-            // Favorite Button
-            Button(action: onFavoriteClick) {
-                Image(systemName: article.isFavorite ? "heart.fill" : "heart")
-                    .foregroundColor(article.isFavorite ? .red : .gray)
-                    .imageScale(.large)
-            }
-            .buttonStyle(PlainButtonStyle())
         }
-        .padding(.vertical, 8)
+        .buttonStyle(PlainButtonStyle())
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
     }
+}
 
-    private func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        return formatter.string(from: date)
+private struct CategoryBadge: View {
+    let category: ArticleCategory
+
+    var body: some View {
+        let color = AppTheme.categoryColor(for: category)
+        Text(category.displayName)
+            .font(.caption2)
+            .fontWeight(.medium)
+            .foregroundColor(color)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(color.opacity(0.2))
+            .cornerRadius(4)
     }
 }

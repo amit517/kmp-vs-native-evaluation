@@ -9,12 +9,15 @@ import SwiftUI
 
 struct NewsListView: View {
     @StateObject private var viewModel = NewsListViewModel()
-    @State private var selectedArticle: Article?
+    @State private var showSearchBar = false
+
+    let onArticleClick: (String) -> Void
+    let onFavoritesClick: () -> Void
 
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                // Search Bar
+        VStack(spacing: 0) {
+            // Collapsible Search Bar
+            if showSearchBar {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
@@ -24,93 +27,138 @@ struct NewsListView: View {
                 }
                 .padding()
                 .background(Color.gray.opacity(0.1))
-                .cornerRadius(10)
-                .padding(.horizontal)
-                .padding(.top, 8)
+                .cornerRadius(20)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 4)
+                .transition(.move(edge: .top).combined(with: .opacity))
+            }
 
-                // Category Filter Chips
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
-                        // "All" chip
+            // Category Filter Chips
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    // "All" chip
+                    CategoryChip(
+                        category: nil,
+                        isSelected: viewModel.selectedCategory == nil
+                    ) {
+                        viewModel.selectCategory(nil)
+                    }
+
+                    // Category chips
+                    ForEach(ArticleCategory.allCases) { category in
                         CategoryChip(
-                            category: nil,
-                            isSelected: viewModel.selectedCategory == nil
+                            category: category,
+                            isSelected: viewModel.selectedCategory == category
                         ) {
-                            viewModel.selectCategory(nil)
-                        }
-
-                        // Category chips
-                        ForEach(ArticleCategory.allCases) { category in
-                            CategoryChip(
-                                category: category,
-                                isSelected: viewModel.selectedCategory == category
-                            ) {
-                                viewModel.selectCategory(category)
-                            }
+                            viewModel.selectCategory(category)
                         }
                     }
-                    .padding(.horizontal)
-                    .padding(.vertical, 12)
                 }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+            }
 
-                // Article List
+            // Content
+            ZStack {
                 if viewModel.isLoading && viewModel.articles.isEmpty {
-                    Spacer()
-                    ProgressView("Loading articles...")
-                    Spacer()
-                } else if let errorMessage = viewModel.errorMessage, viewModel.articles.isEmpty {
-                    Spacer()
-                    VStack(spacing: 16) {
-                        Image(systemName: "exclamationmark.triangle")
-                            .font(.largeTitle)
-                            .foregroundColor(AppTheme.error)
-
-                        Text("Error")
-                            .font(.headline)
-
-                        Text(errorMessage)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal)
-
-                        Button("Retry") {
-                            Task {
-                                await viewModel.loadArticles()
-                            }
+                    LoadingView(message: "Loading articles...")
+                } else if let errorMessage = viewModel.error, viewModel.articles.isEmpty {
+                    ErrorStateView(
+                        message: errorMessage,
+                        onRetry: {
+                            Task { await viewModel.loadArticles() }
                         }
-                        .buttonStyle(.bordered)
+                    )
+                } else if !viewModel.isLoading && viewModel.articles.isEmpty {
+                    if viewModel.searchQuery.isEmpty {
+                        EmptyStateView(message: "No articles available")
+                    } else {
+                        EmptyStateView(message: "No articles found for '\(viewModel.searchQuery)'")
                     }
-                    Spacer()
                 } else {
-                    List(viewModel.filteredArticles) { article in
-                        ArticleCard(
-                            article: article,
-                            onFavoriteClick: {
-                                viewModel.toggleFavorite(article.id)
+                    ScrollView {
+                        LazyVStack(spacing: 16) {
+                            ForEach(Array(viewModel.articles.enumerated()), id: \.element.id) { index, article in
+                                ArticleCard(
+                                    article: article,
+                                    onClick: {
+                                        onArticleClick(article.id)
+                                    },
+                                    onFavoriteClick: {
+                                        viewModel.toggleFavorite(article.id)
+                                    }
+                                )
+                                .onAppear {
+                                    // Pagination: load more when within 3 items of end
+                                    if index >= viewModel.articles.count - 3 {
+                                        Task { await viewModel.loadMoreArticles() }
+                                    }
+                                }
                             }
-                        )
-                        .onTapGesture {
-                            selectedArticle = article
+
+                            // Loading more indicator
+                            if viewModel.isLoadingMore {
+                                ProgressView()
+                                    .padding()
+                            }
                         }
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                        .padding(16)
                     }
-                    .listStyle(PlainListStyle())
                     .refreshable {
                         await viewModel.refreshArticles()
                     }
                 }
+
+                // Snackbar error overlay (when articles exist but fetch failed)
+                if viewModel.error != nil && !viewModel.articles.isEmpty {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Text(viewModel.error ?? "")
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                                .lineLimit(2)
+
+                            Spacer()
+
+                            Button("Dismiss") {
+                                viewModel.clearError()
+                            }
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        }
+                        .padding()
+                        .background(Color(.darkGray))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 16)
+                    }
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeInOut, value: viewModel.error)
+                }
             }
-            .navigationTitle("News Reader")
-            .navigationBarTitleDisplayMode(.large)
-            .sheet(item: $selectedArticle) { article in
-                ArticleDetailView(article: article)
+        }
+        .navigationTitle("News Reader")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack(spacing: 4) {
+                    Button {
+                        withAnimation {
+                            showSearchBar.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+
+                    Button {
+                        onFavoritesClick()
+                    } label: {
+                        Image(systemName: "heart")
+                    }
+                }
             }
         }
     }
-}
-
-#Preview {
-    NewsListView()
 }

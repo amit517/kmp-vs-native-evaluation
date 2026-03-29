@@ -73,7 +73,7 @@ class NewsAPIService {
     func getArticlesByCategory(category: ArticleCategory, page: Int = 1, pageSize: Int = 20) async throws -> ArticlesResponse {
         var components = URLComponents(string: "\(baseURL)/api/articles")!
         components.queryItems = [
-            URLQueryItem(name: "category", value: category.rawValue),
+            URLQueryItem(name: "category", value: category.displayName),
             URLQueryItem(name: "page", value: "\(page)"),
             URLQueryItem(name: "limit", value: "\(pageSize)")
         ]
@@ -93,6 +93,28 @@ class NewsAPIService {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             return try decoder.decode(ArticlesResponse.self, from: data)
+        } catch {
+            print("Decoding error: \(error)")
+            throw NetworkError.decodingError
+        }
+    }
+
+    func getArticleById(id: String) async throws -> ArticleDTO {
+        guard let url = URL(string: "\(baseURL)/api/articles/\(id)") else {
+            throw NetworkError.invalidURL
+        }
+
+        let (data, response) = try await session.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              (200...299).contains(httpResponse.statusCode) else {
+            throw NetworkError.serverError("Invalid response")
+        }
+
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try decoder.decode(ArticleDTO.self, from: data)
         } catch {
             print("Decoding error: \(error)")
             throw NetworkError.decodingError

@@ -10,21 +10,24 @@
 		EFE325082F1CE05800582C94 /* IosNativeBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosNativeBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		EFE3250A2F1CE05800582C94 /* IosNativeBuild */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				EFE325272F1CE08000582C94 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
-			);
-			path = IosNativeBuild;
-			sourceTree = "<group>";
-		};
-		EFE325272F1CE08000582C94 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EFE325272F1CE08000582C94 /* Exceptions for "IosNativeBuild" folder in "IosNativeBuild" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = EFE325072F1CE05800582C94 /* IosNativeBuild */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EFE3250A2F1CE05800582C94 /* IosNativeBuild */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EFE325272F1CE08000582C94 /* Exceptions for "IosNativeBuild" folder in "IosNativeBuild" target */,
+			);
+			path = IosNativeBuild;
+			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
