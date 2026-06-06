@@ -1,0 +1,52 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+server.log
+
+# Test results
+build/test-results/
+build/reports/
+
+# Local configuration
+local.properties
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Git
+.git/
+.gitignore
+
+# Documentation (not needed in container)
+*.md
+!README.md
+
+# Scripts (not needed in container)
+*.sh
+nginx-config/
+MY_NETWORK_CONFIG.md
+NETWORK_ACCESS_GUIDE.md
+API_FIXES_*.md
+BACKEND_SESSION_SUMMARY.md

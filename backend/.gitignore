@@ -1,0 +1,63 @@
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform.tfvars
+
+# Deployment artifacts
+deployment-info.json
+deployment-info.txt
+local.properties
+
+# Build directories
+.kotlin/
+.gradle/
+build/
+.claude/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Docker
+.docker/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Optional documentation (uncomment if you don't want to commit these)
+# AWS_DEPLOYMENT_SUMMARY.md
+# BACKEND_SESSION_SUMMARY.md
+# CHECKLIST.md
+# HOSTING_STRATEGY.md
+# NETWORK_*.md
+# NGINX_*.md
+# START_HERE.md
+# VISUAL_SUMMARY.md
+# MY_NETWORK_CONFIG.md
+# UPDATE_FILES_OVERVIEW.md
+# QUICK_AWS_DEPLOY.md
+
+# Unused deployment scripts
+deploy-flyio.sh
+fly.toml
+setup-nginx.sh
+nginx-config/
+*network*.sh
+fresh-start.sh
+rebuild.sh
+stop-server.sh
+test-fixes.sh
+quick-commands.sh
+get-network-config.sh
