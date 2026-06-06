@@ -10,6 +10,7 @@ import com.amit.newsreader.data.remote.NewsApiService
 import com.amit.newsreader.domain.model.Article
 import com.amit.newsreader.domain.model.ArticleCategory
 import com.amit.newsreader.domain.repository.NewsRepository
+import com.amit.newsreader.util.AppTrace
 import com.amit.newsreader.util.Result
 import com.amit.newsreader.util.safeCall
 import kotlinx.coroutines.flow.Flow
@@ -35,14 +36,20 @@ class NewsRepositoryImpl(
     ): Flow<Result<List<Article>>> = flow {
         emit(Result.Loading)
 
+        AppTrace.beginSection("NewsRepo.getArticles")
         // Fetch fresh data from network
         val networkResult = safeCall {
-            val response = apiService.getArticles(
-                page = page,
-                limit = limit,
-                category = category?.displayName  // Use displayName (e.g., "Technology") instead of name (e.g., "TECHNOLOGY")
-            )
-            response.articles
+            AppTrace.beginSection("NewsRepo.networkFetch")
+            try {
+                val response = apiService.getArticles(
+                    page = page,
+                    limit = limit,
+                    category = category?.displayName
+                )
+                response.articles
+            } finally {
+                AppTrace.endSection()
+            }
         }
 
         when (networkResult) {
@@ -90,6 +97,7 @@ class NewsRepositoryImpl(
             }
         }
     }.catch { e ->
+        AppTrace.endSection() // NewsRepo.getArticles
         emit(Result.Error(e as? Exception ?: Exception(e.message), e.message))
     }
 
@@ -128,13 +136,16 @@ class NewsRepositoryImpl(
     override fun searchArticles(query: String): Flow<Result<List<Article>>> = flow {
         emit(Result.Loading)
 
+        AppTrace.beginSection("NewsRepo.searchArticles")
         // Search in local database
         localDataSource.searchArticles(query)
             .map { entities -> entities.entityToDomainList() }
             .collect { articles ->
+                AppTrace.endSection() // NewsRepo.searchArticles
                 emit(Result.Success(articles))
             }
     }.catch { e ->
+        AppTrace.endSection() // NewsRepo.searchArticles
         emit(Result.Error(e as? Exception ?: Exception(e.message), e.message))
     }
 

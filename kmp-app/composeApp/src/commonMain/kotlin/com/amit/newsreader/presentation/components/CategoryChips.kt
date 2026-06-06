@@ -6,6 +6,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.amit.newsreader.domain.model.ArticleCategory
 
@@ -27,7 +28,8 @@ fun CategoryChips(
         FilterChip(
             selected = selectedCategory == null,
             onClick = { onCategorySelected(null) },
-            label = { Text("All") }
+            label = { Text("All") },
+            modifier = Modifier.testTag("category_chip_all")
         )
 
         // Category chips
@@ -35,7 +37,8 @@ fun CategoryChips(
             FilterChip(
                 selected = selectedCategory == category,
                 onClick = { onCategorySelected(category) },
-                label = { Text(category.displayName) }
+                label = { Text(category.displayName) },
+                modifier = Modifier.testTag("category_chip_${category.name}")
             )
         }
     }

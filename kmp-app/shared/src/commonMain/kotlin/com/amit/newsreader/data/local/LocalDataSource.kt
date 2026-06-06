@@ -1,5 +1,6 @@
 package com.amit.newsreader.data.local
 
+import com.amit.newsreader.util.AppTrace
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -37,7 +38,12 @@ class LocalDataSource(
     }
 
     suspend fun insertArticles(articles: List<ArticleEntity>) {
-        dao.insertArticles(articles)
+        AppTrace.beginSection("LocalDS.insertArticles")
+        try {
+            dao.insertArticles(articles)
+        } finally {
+            AppTrace.endSection()
+        }
     }
 
     suspend fun updateFavoriteStatus(id: String, isFavorite: Boolean) {
@@ -61,11 +67,16 @@ class LocalDataSource(
     }
 
     suspend fun upsertArticlesPreservingFavorites(articles: List<ArticleEntity>) {
-        articles.forEach { article ->
-            val existing = dao.selectByIdSync(article.id)
-            dao.insertArticle(
-                article.copy(isFavorite = existing?.isFavorite ?: false)
-            )
+        AppTrace.beginSection("LocalDS.upsertArticles")
+        try {
+            articles.forEach { article ->
+                val existing = dao.selectByIdSync(article.id)
+                dao.insertArticle(
+                    article.copy(isFavorite = existing?.isFavorite ?: false)
+                )
+            }
+        } finally {
+            AppTrace.endSection()
         }
     }
 }
