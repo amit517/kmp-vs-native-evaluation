@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.baselineprofile)
 }
 
 kotlin {
@@ -41,6 +42,8 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
+            implementation(libs.androidx.profileinstaller)
+            implementation(libs.jankstats)
         }
         iosMain.dependencies {
             api(libs.androidx.lifecycle.viewmodelCompose)
@@ -104,6 +107,12 @@ android {
         getByName("release") {
             isMinifyEnabled = false
         }
+        create("benchmark") {
+            initWith(getByName("release"))
+            signingConfig = signingConfigs.getByName("debug")
+            matchingFallbacks += listOf("release")
+            isDebuggable = false
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -113,5 +122,6 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+    baselineProfile(project(":baselineprofile"))
 }
 
