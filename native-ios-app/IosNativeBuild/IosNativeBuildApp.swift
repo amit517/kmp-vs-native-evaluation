@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import MetricKit
 
 enum AppRoute: Hashable {
     case articleDetail(articleId: String)
@@ -18,6 +19,18 @@ struct IosNativeBuildApp: App {
     @State private var path = NavigationPath()
 
     let container = DependencyContainer.shared
+
+    /// True when launched with BENCHMARK_MODE argument or env var.
+    static var isBenchmarkMode: Bool {
+        ProcessInfo.processInfo.arguments.contains("BENCHMARK_MODE") ||
+        ProcessInfo.processInfo.environment["BENCHMARK_MODE"] == "1"
+    }
+
+    init() {
+        Task { @MainActor in
+            MetricKitManager.shared.startReceiving()
+        }
+    }
 
     var body: some Scene {
         WindowGroup {

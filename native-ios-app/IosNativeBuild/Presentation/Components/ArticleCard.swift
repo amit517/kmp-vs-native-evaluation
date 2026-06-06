@@ -58,6 +58,7 @@ struct ArticleCard: View {
                         .foregroundColor(AppTheme.onSurface)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
+                        .accessibilityIdentifier("article_title_\(article.id)")
 
                     Spacer().frame(height: 4)
 
@@ -99,6 +100,7 @@ struct ArticleCard: View {
         .background(Color(.systemBackground))
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
+        .accessibilityIdentifier("article_card_\(article.id)")
     }
 }
 

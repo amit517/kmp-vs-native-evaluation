@@ -28,5 +28,6 @@ struct CategoryChip: View {
                 .cornerRadius(20)
         }
         .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("category_chip_\(category?.rawValue ?? "ALL")")
     }
 }

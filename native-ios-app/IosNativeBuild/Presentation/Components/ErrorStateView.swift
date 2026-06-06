@@ -31,7 +31,9 @@ struct ErrorStateView: View {
 
             Button("Retry", action: onRetry)
                 .buttonStyle(.bordered)
+                .accessibilityIdentifier("retry_button")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .accessibilityIdentifier("error_state_view")
     }
 }

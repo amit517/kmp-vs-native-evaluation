@@ -77,6 +77,7 @@ class NewsListViewModel: ObservableObject {
     }
 
     func loadArticles() async {
+        let spID = PerformanceMonitor.beginInterval("loadArticles", log: PerformanceMonitor.uiLog)
         isLoading = true
         error = nil
         currentPage = 1
@@ -102,6 +103,7 @@ class NewsListViewModel: ObservableObject {
         }
 
         isLoading = false
+        PerformanceMonitor.endInterval("loadArticles", log: PerformanceMonitor.uiLog, id: spID)
     }
 
     func loadMoreArticles() async {
