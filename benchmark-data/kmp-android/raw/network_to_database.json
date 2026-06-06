@@ -1,0 +1,419 @@
+{
+    "context": {
+        "build": {
+            "brand": "google",
+            "device": "shiba",
+            "fingerprint": "google/shiba_16kb/shiba:16/BP4A.260105.004.E1/14587043:user/release-keys",
+            "id": "BP4A.260105.004.E1",
+            "model": "Pixel 8",
+            "type": "user",
+            "version": {
+                "codename": "REL",
+                "sdk": 36
+            }
+        },
+        "cpuCoreCount": 9,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": 2914000000,
+        "memTotalBytes": 8052817920,
+        "sustainedPerformanceModeEnabled": false,
+        "artMainlineVersion": 361501120,
+        "osCodenameAbbreviated": "REL",
+        "compilationMode": "run-from-apk",
+        "payload": {}
+    },
+    "benchmarks": [
+        {
+            "name": "networkToDatabase",
+            "params": {},
+            "className": "com.amit.newsreader.benchmark.TraceSectionBenchmark",
+            "totalRunTimeNs": 172394974042,
+            "metrics": {
+                "LocalDS.insertArticlesCount": {
+                    "minimum": 0.0,
+                    "maximum": 0.0,
+                    "median": 0.0,
+                    "coefficientOfVariation": 0.0,
+                    "runs": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "LocalDS.insertArticlesSumMs": {
+                    "minimum": 0.0,
+                    "maximum": 0.0,
+                    "median": 0.0,
+                    "coefficientOfVariation": 0.0,
+                    "runs": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "NewsRepo.getArticlesCount": {
+                    "minimum": 0.0,
+                    "maximum": 0.0,
+                    "median": 0.0,
+                    "coefficientOfVariation": 0.0,
+                    "runs": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "NewsRepo.getArticlesSumMs": {
+                    "minimum": 0.0,
+                    "maximum": 0.0,
+                    "median": 0.0,
+                    "coefficientOfVariation": 0.0,
+                    "runs": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "NewsRepo.networkFetchCount": {
+                    "minimum": 1.0,
+                    "maximum": 1.0,
+                    "median": 1.0,
+                    "coefficientOfVariation": 0.0,
+                    "runs": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "NewsRepo.networkFetchSumMs": {
+                    "minimum": 167.946574,
+                    "maximum": 287.039877,
+                    "median": 215.325785,
+                    "coefficientOfVariation": 0.1468106298828456,
+                    "runs": [
+                        216.456502,
+                        180.553955,
+                        209.332032,
+                        273.003825,
+                        210.820231,
+                        234.788818,
+                        250.669597,
+                        238.516683,
+                        228.100911,
+                        229.650472,
+                        208.18221,
+                        265.509074,
+                        267.319336,
+                        173.480672,
+                        287.039877,
+                        210.243653,
+                        186.70516,
+                        178.109253,
+                        167.946574,
+                        214.195068,
+                        242.838949,
+                        179.408081,
+                        210.759277,
+                        279.354411,
+                        226.058065,
+                        188.997477,
+                        211.03654,
+                        232.621134,
+                        199.58134,
+                        229.137085
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 30,
+            "thermalThrottleSleepSeconds": 0,
+            "profilerOutputs": [
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 0",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter000_2026-04-26-12-04-23.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 1",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter001_2026-04-26-12-04-28.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 2",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter002_2026-04-26-12-04-33.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 3",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter003_2026-04-26-12-04-38.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 4",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter004_2026-04-26-12-04-43.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 5",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter005_2026-04-26-12-04-48.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 6",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter006_2026-04-26-12-04-54.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 7",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter007_2026-04-26-12-04-59.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 8",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter008_2026-04-26-12-05-04.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 9",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter009_2026-04-26-12-05-09.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 10",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter010_2026-04-26-12-05-14.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 11",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter011_2026-04-26-12-05-19.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 12",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter012_2026-04-26-12-05-24.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 13",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter013_2026-04-26-12-05-30.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 14",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter014_2026-04-26-12-05-35.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 15",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter015_2026-04-26-12-05-40.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 16",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter016_2026-04-26-12-05-46.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 17",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter017_2026-04-26-12-05-51.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 18",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter018_2026-04-26-12-05-56.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 19",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter019_2026-04-26-12-06-01.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 20",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter020_2026-04-26-12-06-06.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 21",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter021_2026-04-26-12-06-11.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 22",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter022_2026-04-26-12-06-16.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 23",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter023_2026-04-26-12-06-22.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 24",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter024_2026-04-26-12-06-27.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 25",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter025_2026-04-26-12-06-32.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 26",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter026_2026-04-26-12-06-38.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 27",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter027_2026-04-26-12-06-43.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 28",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter028_2026-04-26-12-06-48.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 29",
+                    "filename": "TraceSectionBenchmark_networkToDatabase_iter029_2026-04-26-12-06-54.perfetto-trace"
+                }
+            ]
+        }
+    ]
+}

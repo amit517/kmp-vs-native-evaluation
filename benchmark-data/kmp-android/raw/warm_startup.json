@@ -1,0 +1,349 @@
+{
+    "context": {
+        "build": {
+            "brand": "google",
+            "device": "shiba",
+            "fingerprint": "google/shiba_16kb/shiba:16/BP4A.260105.004.E1/14587043:user/release-keys",
+            "id": "BP4A.260105.004.E1",
+            "model": "Pixel 8",
+            "type": "user",
+            "version": {
+                "codename": "REL",
+                "sdk": 36
+            }
+        },
+        "cpuCoreCount": 9,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": 2914000000,
+        "memTotalBytes": 8052817920,
+        "sustainedPerformanceModeEnabled": false,
+        "artMainlineVersion": 361501120,
+        "osCodenameAbbreviated": "REL",
+        "compilationMode": "run-from-apk",
+        "payload": {}
+    },
+    "benchmarks": [
+        {
+            "name": "warmStartup",
+            "params": {},
+            "className": "com.amit.newsreader.benchmark.StartupBenchmark",
+            "totalRunTimeNs": 979552722768,
+            "metrics": {
+                "timeToInitialDisplayMs": {
+                    "minimum": 40.023966,
+                    "maximum": 63.745239,
+                    "median": 51.596334,
+                    "coefficientOfVariation": 0.07243617378631892,
+                    "runs": [
+                        59.494019,
+                        47.045084,
+                        49.818074,
+                        49.379191,
+                        55.74056,
+                        52.613973,
+                        53.675822,
+                        52.019776,
+                        50.313599,
+                        53.833252,
+                        49.582805,
+                        51.578573,
+                        53.173502,
+                        53.128255,
+                        46.001587,
+                        52.346273,
+                        50.1226,
+                        63.745239,
+                        51.102783,
+                        54.823527,
+                        53.956421,
+                        52.186809,
+                        46.512696,
+                        46.236897,
+                        51.03711,
+                        57.903361,
+                        54.988241,
+                        50.40621,
+                        40.023966,
+                        51.660686,
+                        51.614095,
+                        55.269287,
+                        47.251139,
+                        53.124064,
+                        51.465536,
+                        49.663533,
+                        52.734293,
+                        48.144816,
+                        48.72408,
+                        52.848918,
+                        53.466675,
+                        47.917806,
+                        52.009725,
+                        48.23698,
+                        50.450196,
+                        55.015787,
+                        49.916097,
+                        50.242594,
+                        52.620035,
+                        49.488851
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 50,
+            "thermalThrottleSleepSeconds": 0,
+            "profilerOutputs": [
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 0",
+                    "filename": "StartupBenchmark_warmStartup_iter000_2026-04-26-09-00-51.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 1",
+                    "filename": "StartupBenchmark_warmStartup_iter001_2026-04-26-09-01-12.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 2",
+                    "filename": "StartupBenchmark_warmStartup_iter002_2026-04-26-09-01-33.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 3",
+                    "filename": "StartupBenchmark_warmStartup_iter003_2026-04-26-09-01-53.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 4",
+                    "filename": "StartupBenchmark_warmStartup_iter004_2026-04-26-09-02-14.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 5",
+                    "filename": "StartupBenchmark_warmStartup_iter005_2026-04-26-09-02-35.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 6",
+                    "filename": "StartupBenchmark_warmStartup_iter006_2026-04-26-09-02-56.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 7",
+                    "filename": "StartupBenchmark_warmStartup_iter007_2026-04-26-09-03-16.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 8",
+                    "filename": "StartupBenchmark_warmStartup_iter008_2026-04-26-09-03-37.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 9",
+                    "filename": "StartupBenchmark_warmStartup_iter009_2026-04-26-09-03-56.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 10",
+                    "filename": "StartupBenchmark_warmStartup_iter010_2026-04-26-09-04-14.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 11",
+                    "filename": "StartupBenchmark_warmStartup_iter011_2026-04-26-09-04-33.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 12",
+                    "filename": "StartupBenchmark_warmStartup_iter012_2026-04-26-09-04-52.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 13",
+                    "filename": "StartupBenchmark_warmStartup_iter013_2026-04-26-09-05-10.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 14",
+                    "filename": "StartupBenchmark_warmStartup_iter014_2026-04-26-09-05-29.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 15",
+                    "filename": "StartupBenchmark_warmStartup_iter015_2026-04-26-09-05-47.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 16",
+                    "filename": "StartupBenchmark_warmStartup_iter016_2026-04-26-09-06-06.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 17",
+                    "filename": "StartupBenchmark_warmStartup_iter017_2026-04-26-09-06-24.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 18",
+                    "filename": "StartupBenchmark_warmStartup_iter018_2026-04-26-09-06-43.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 19",
+                    "filename": "StartupBenchmark_warmStartup_iter019_2026-04-26-09-07-01.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 20",
+                    "filename": "StartupBenchmark_warmStartup_iter020_2026-04-26-09-07-20.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 21",
+                    "filename": "StartupBenchmark_warmStartup_iter021_2026-04-26-09-07-38.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 22",
+                    "filename": "StartupBenchmark_warmStartup_iter022_2026-04-26-09-07-57.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 23",
+                    "filename": "StartupBenchmark_warmStartup_iter023_2026-04-26-09-08-15.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 24",
+                    "filename": "StartupBenchmark_warmStartup_iter024_2026-04-26-09-08-34.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 25",
+                    "filename": "StartupBenchmark_warmStartup_iter025_2026-04-26-09-08-53.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 26",
+                    "filename": "StartupBenchmark_warmStartup_iter026_2026-04-26-09-09-11.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 27",
+                    "filename": "StartupBenchmark_warmStartup_iter027_2026-04-26-09-09-30.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 28",
+                    "filename": "StartupBenchmark_warmStartup_iter028_2026-04-26-09-09-48.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 29",
+                    "filename": "StartupBenchmark_warmStartup_iter029_2026-04-26-09-10-07.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 30",
+                    "filename": "StartupBenchmark_warmStartup_iter030_2026-04-26-09-10-26.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 31",
+                    "filename": "StartupBenchmark_warmStartup_iter031_2026-04-26-09-10-45.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 32",
+                    "filename": "StartupBenchmark_warmStartup_iter032_2026-04-26-09-11-03.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 33",
+                    "filename": "StartupBenchmark_warmStartup_iter033_2026-04-26-09-11-22.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 34",
+                    "filename": "StartupBenchmark_warmStartup_iter034_2026-04-26-09-11-41.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 35",
+                    "filename": "StartupBenchmark_warmStartup_iter035_2026-04-26-09-11-59.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 36",
+                    "filename": "StartupBenchmark_warmStartup_iter036_2026-04-26-09-12-18.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 37",
+                    "filename": "StartupBenchmark_warmStartup_iter037_2026-04-26-09-12-36.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 38",
+                    "filename": "StartupBenchmark_warmStartup_iter038_2026-04-26-09-12-55.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 39",
+                    "filename": "StartupBenchmark_warmStartup_iter039_2026-04-26-09-13-14.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 40",
+                    "filename": "StartupBenchmark_warmStartup_iter040_2026-04-26-09-13-32.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 41",
+                    "filename": "StartupBenchmark_warmStartup_iter041_2026-04-26-09-13-51.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 42",
+                    "filename": "StartupBenchmark_warmStartup_iter042_2026-04-26-09-14-09.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 43",
+                    "filename": "StartupBenchmark_warmStartup_iter043_2026-04-26-09-14-28.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 44",
+                    "filename": "StartupBenchmark_warmStartup_iter044_2026-04-26-09-14-46.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 45",
+                    "filename": "StartupBenchmark_warmStartup_iter045_2026-04-26-09-15-05.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 46",
+                    "filename": "StartupBenchmark_warmStartup_iter046_2026-04-26-09-15-24.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 47",
+                    "filename": "StartupBenchmark_warmStartup_iter047_2026-04-26-09-15-42.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 48",
+                    "filename": "StartupBenchmark_warmStartup_iter048_2026-04-26-09-16-01.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 49",
+                    "filename": "StartupBenchmark_warmStartup_iter049_2026-04-26-09-16-20.perfetto-trace"
+                }
+            ]
+        }
+    ]
+}
