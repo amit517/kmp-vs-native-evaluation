@@ -43,6 +43,7 @@ struct FavoritesView: View {
                     }
                     .padding(16)
                 }
+                .accessibilityIdentifier("favorites_scroll_view")
             }
         }
         .navigationTitle("Favorites")

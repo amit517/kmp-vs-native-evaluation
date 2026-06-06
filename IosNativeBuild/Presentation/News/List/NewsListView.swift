@@ -24,6 +24,7 @@ struct NewsListView: View {
 
                     TextField("Search articles...", text: $viewModel.searchQuery)
                         .textFieldStyle(PlainTextFieldStyle())
+                        .accessibilityIdentifier("search_text_field")
                 }
                 .padding()
                 .background(Color.gray.opacity(0.1))
@@ -57,6 +58,7 @@ struct NewsListView: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
             }
+            .accessibilityIdentifier("category_chips_scroll")
 
             // Content
             ZStack {
@@ -104,6 +106,7 @@ struct NewsListView: View {
                         }
                         .padding(16)
                     }
+                    .accessibilityIdentifier("news_list_scroll_view")
                     .refreshable {
                         await viewModel.refreshArticles()
                     }
@@ -151,12 +154,14 @@ struct NewsListView: View {
                     } label: {
                         Image(systemName: "magnifyingglass")
                     }
+                    .accessibilityIdentifier("search_button")
 
                     Button {
                         onFavoritesClick()
                     } label: {
                         Image(systemName: "heart")
                     }
+                    .accessibilityIdentifier("favorites_button")
                 }
             }
         }

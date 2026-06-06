@@ -22,6 +22,9 @@ class NewsRepositoryImpl: NewsRepository {
         category: ArticleCategory? = nil,
         forceRefresh: Bool = false
     ) async -> AppResult<[Article]> {
+        let spID = PerformanceMonitor.beginInterval("getArticles", log: PerformanceMonitor.networkLog)
+        defer { PerformanceMonitor.endInterval("getArticles", log: PerformanceMonitor.networkLog, id: spID) }
+
         // Try network first
         let networkResult: AppResult<[ArticleDTO]> = await safeCall {
             if let category = category {
@@ -124,6 +127,9 @@ class NewsRepositoryImpl: NewsRepository {
     }
 
     func searchArticles(query: String) async -> AppResult<[Article]> {
+        let spID = PerformanceMonitor.beginInterval("searchArticles", log: PerformanceMonitor.databaseLog)
+        defer { PerformanceMonitor.endInterval("searchArticles", log: PerformanceMonitor.databaseLog, id: spID) }
+
         // Local DB search only (matching KMP behavior)
         do {
             let entities = try await localDataSource.searchArticles(query: query)

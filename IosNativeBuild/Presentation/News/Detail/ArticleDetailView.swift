@@ -101,6 +101,7 @@ private struct ArticleDetailContent: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(AppTheme.onSurface)
+                        .accessibilityIdentifier("article_detail_title")
 
                     // Author and metadata
                     HStack {
@@ -162,6 +163,7 @@ private struct ArticleDetailContent: View {
                 .padding(16)
             }
         }
+        .accessibilityIdentifier("article_detail_scroll")
     }
 
     private func formatDate(_ date: Date) -> String {

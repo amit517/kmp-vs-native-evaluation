@@ -6,7 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		EF2424CF2F9DF125006D6281 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFE325002F1CE05800582C94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFE325072F1CE05800582C94;
+			remoteInfo = IosNativeBuild;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		EF2424C92F9DF125006D6281 /* IosNativeBuildPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosNativeBuildPerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE325082F1CE05800582C94 /* IosNativeBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosNativeBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +32,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		EF2424CA2F9DF125006D6281 /* IosNativeBuildPerformanceTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IosNativeBuildPerformanceTests;
+			sourceTree = "<group>";
+		};
 		EFE3250A2F1CE05800582C94 /* IosNativeBuild */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,6 +48,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EF2424C62F9DF125006D6281 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFE325052F1CE05800582C94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE3250A2F1CE05800582C94 /* IosNativeBuild */,
+				EF2424CA2F9DF125006D6281 /* IosNativeBuildPerformanceTests */,
 				EFE325092F1CE05800582C94 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE325082F1CE05800582C94 /* IosNativeBuild.app */,
+				EF2424C92F9DF125006D6281 /* IosNativeBuildPerformanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EF2424C82F9DF125006D6281 /* IosNativeBuildPerformanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF2424D32F9DF125006D6281 /* Build configuration list for PBXNativeTarget "IosNativeBuildPerformanceTests" */;
+			buildPhases = (
+				EF2424C52F9DF125006D6281 /* Sources */,
+				EF2424C62F9DF125006D6281 /* Frameworks */,
+				EF2424C72F9DF125006D6281 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF2424D02F9DF125006D6281 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF2424CA2F9DF125006D6281 /* IosNativeBuildPerformanceTests */,
+			);
+			name = IosNativeBuildPerformanceTests;
+			packageProductDependencies = (
+			);
+			productName = IosNativeBuildPerformanceTests;
+			productReference = EF2424C92F9DF125006D6281 /* IosNativeBuildPerformanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		EFE325072F1CE05800582C94 /* IosNativeBuild */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFE325132F1CE05A00582C94 /* Build configuration list for PBXNativeTarget "IosNativeBuild" */;
@@ -90,9 +138,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2620;
+				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					EF2424C82F9DF125006D6281 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = EFE325072F1CE05800582C94;
+					};
 					EFE325072F1CE05800582C94 = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -113,11 +165,19 @@
 			projectRoot = "";
 			targets = (
 				EFE325072F1CE05800582C94 /* IosNativeBuild */,
+				EF2424C82F9DF125006D6281 /* IosNativeBuildPerformanceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EF2424C72F9DF125006D6281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFE325062F1CE05800582C94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +188,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EF2424C52F9DF125006D6281 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFE325042F1CE05800582C94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +204,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EF2424D02F9DF125006D6281 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFE325072F1CE05800582C94 /* IosNativeBuild */;
+			targetProxy = EF2424CF2F9DF125006D6281 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		EF2424D12F9DF125006D6281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J832H2D367;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amit.IosNativeBuildPerformanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IosNativeBuild;
+			};
+			name = Debug;
+		};
+		EF2424D22F9DF125006D6281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J832H2D367;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amit.IosNativeBuildPerformanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IosNativeBuild;
+			};
+			name = Release;
+		};
 		EFE325112F1CE05A00582C94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -316,6 +435,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EF2424D32F9DF125006D6281 /* Build configuration list for PBXNativeTarget "IosNativeBuildPerformanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF2424D12F9DF125006D6281 /* Debug */,
+				EF2424D22F9DF125006D6281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EFE325032F1CE05800582C94 /* Build configuration list for PBXProject "IosNativeBuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -18,5 +18,6 @@ struct LoadingView: View {
                 .foregroundColor(.secondary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .accessibilityIdentifier("loading_view")
     }
 }
