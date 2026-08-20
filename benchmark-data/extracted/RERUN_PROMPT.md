@@ -19,6 +19,35 @@ benchmark suite is substantially broken. Read
 `benchmark-data/extracted/initial_data_load_definition.md` first — they contain
 the full diagnosis and the evidence for every claim below. Do not re-derive it.
 
+Those files exist on the branch `thesis-data-extraction` (they are not on
+`main`). Branch off `thesis-data-extraction` for this work.
+
+## Prerequisite 0 — the backend must be up before ANY test runs
+
+Every benchmark waits for the article list to appear, so with no backend the app
+sits on an error state, `article_list` never appears, and **every test fails in a
+way that looks like an app or harness bug**. Do not start a run until this is
+green.
+
+- The backend is a stateless Ktor server in `backend/` — in-memory data, no
+  database. `./gradlew shadowJar` then
+  `java -jar build/libs/news-backend-all.jar` runs it locally on `0.0.0.0:8080`.
+- I am hosting it on AWS. The old endpoint `http://63.177.119.99:8080` is
+  **dead** — the instance's public IP did not survive account reactivation.
+- **Ask me for the current backend URL before you begin**, then set it in both
+  places (they are the only two):
+  - `kmp-app/shared/src/commonMain/kotlin/com/amit/newsreader/config/ApiConfig.kt:20`
+  - `native-ios-app/IosNativeBuild/Data/Remote/NewsAPIService.swift:33`
+- Verify with `curl -s -o /dev/null -w '%{http_code}\n' <BASE_URL>/health`
+  before building anything. Expect `200`.
+- Keep the backend in the **same AWS region** as the original runs. My existing
+  Android data (`NewsRepo.networkFetchSumMs` median 215.33 ms) was measured
+  against eu-central-1; a different region changes the WAN round-trip and
+  invalidates that baseline. I am not re-running Android, so this baseline must
+  stay comparable.
+- Note that roughly 60 ms of that fetch figure is backend JSON serialisation of
+  a 47 KB payload — a constant for all three clients, not a client-side cost.
+
 ## Hardware (both physical, connected devices — no simulator)
 
 - **iPhone 16** (`iPhone17,3`), UDID `00008140-0005309E3687001C`. I will have it
@@ -220,11 +249,12 @@ and state plainly which gaps closed and which remain.
 
 ## Build issues you will hit
 
-- **KMP iOS device build fails on code signing:** `No profiles for
-  'com.example.thesisproject.Thesisproject' were found`. Pass
-  `-allowProvisioningUpdates`, or select a development team in Xcode. (For
-  size-only builds, `CODE_SIGNING_ALLOWED=NO` works, but running tests on device
-  needs real signing.)
+- **KMP iOS device build fails on code signing unless you pass
+  `-allowProvisioningUpdates`.** Both projects already have
+  `DEVELOPMENT_TEAM = J832H2D367` with `CODE_SIGN_STYLE = Automatic`, so signing
+  is configured — automatic signing simply cannot mint a profile from the CLI
+  without that flag. The error looks alarming but is not a real blocker:
+  `No profiles for 'com.example.thesisproject.Thesisproject' were found`.
 - **Kotlin/Native release framework link OOMs** at the repo's default
   `kotlin.daemon.jvmargs=-Xmx3072M`, dying in `DevirtualizationAnalysis` during
   `linkReleaseFrameworkIos*`. Raising `kotlin.daemon.jvmargs` alone is not
