@@ -1,0 +1,362 @@
+{
+ "kmp_ios": [
+  {
+   "bundle": "category_filter",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:45:18.184+0300",
+    "ended": "2026-06-06T13:48:34.531+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 1,
+   "metrics": [
+    {
+     "test": "NetworkDatabaseBenchmark/testCategoryFilterPerformance()",
+     "display": "Clock Monotonic Time",
+     "identifier": "com.apple.dt.XCTMetric_Clock.time.monotonic",
+     "unit": "s",
+     "n": 50
+    }
+   ]
+  },
+  {
+   "bundle": "cold_start",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.4.2",
+    "os_build": "26.4.2 (23E261)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.4.1 (25E253)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-04-26T12:18:19.360+0300",
+    "ended": "2026-04-26T12:32:52.656+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 1,
+   "metrics": [
+    {
+     "test": "StartupBenchmark/testColdStartup()",
+     "display": "Duration (AppLaunch)",
+     "identifier": "com.apple.dt.XCTMetric_OSSignpost-AppLaunch.duration",
+     "unit": "s",
+     "n": 30
+    }
+   ]
+  },
+  {
+   "bundle": "fast_scroll_stress",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.4.2",
+    "os_build": "26.4.2 (23E261)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.4.1 (25E253)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-04-27T05:32:16.282+0300",
+    "ended": "2026-04-27T05:35:10.014+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "hot_start",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.4.2",
+    "os_build": "26.4.2 (23E261)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.4.1 (25E253)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-04-27T00:14:18.201+0300",
+    "ended": "2026-04-27T00:33:45.202+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "image_loading",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:49:14.042+0300",
+    "ended": "2026-06-06T13:52:03.605+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 1,
+   "metrics": [
+    {
+     "test": "NetworkDatabaseBenchmark/testImageLoadingPerformance()",
+     "display": "Clock Monotonic Time",
+     "identifier": "com.apple.dt.XCTMetric_Clock.time.monotonic",
+     "unit": "s",
+     "n": 30
+    }
+   ]
+  },
+  {
+   "bundle": "initial_data_load",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.4.2",
+    "os_build": "26.4.2 (23E261)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.4.1 (25E253)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-04-27T05:35:41.393+0300",
+    "ended": "2026-04-27T05:48:04.232+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 1,
+   "metrics": [
+    {
+     "test": "NetworkDatabaseBenchmark/testInitialDataLoad()",
+     "display": "Clock Monotonic Time",
+     "identifier": "com.apple.dt.XCTMetric_Clock.time.monotonic",
+     "unit": "s",
+     "n": 30
+    }
+   ]
+  },
+  {
+   "bundle": "scroll_performance",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.4.2",
+    "os_build": "26.4.2 (23E261)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.4.1 (25E253)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-04-27T00:34:16.921+0300",
+    "ended": "2026-04-27T05:31:35.859+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "search_performance",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T14:04:58.255+0300",
+    "ended": "2026-06-06T14:05:00.832+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "warm_start",
+   "platform": "kmp_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.4.2",
+    "os_build": "26.4.2 (23E261)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.4.1 (25E253)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-04-26T12:34:13.357+0300",
+    "ended": "2026-04-26T12:51:30.290+0300",
+    "test_plan": "iosApp"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  }
+ ],
+ "native_ios": [
+  {
+   "bundle": "testCategoryFilterPerformance",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:43.402+0300",
+    "ended": "2026-06-06T13:33:46.904+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testColdStartup",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:04.496+0300",
+    "ended": "2026-06-06T13:33:18.335+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testFastScrollStress",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:33.323+0300",
+    "ended": "2026-06-06T13:33:38.095+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testHotStartup",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:24.074+0300",
+    "ended": "2026-06-06T13:33:27.663+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testImageLoadingPerformance",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:52.709+0300",
+    "ended": "2026-06-06T13:33:56.186+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testInitialDataLoad",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:39.138+0300",
+    "ended": "2026-06-06T13:33:42.366+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testScrollPerformance",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:28.721+0300",
+    "ended": "2026-06-06T13:33:32.143+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testSearchPerformance",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:47.932+0300",
+    "ended": "2026-06-06T13:33:51.454+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  },
+  {
+   "bundle": "testWarmStartup",
+   "platform": "native_ios",
+   "dest": {
+    "device": "iPhone 16",
+    "model_code": "iPhone17,3",
+    "os_version": "26.5",
+    "os_build": "26.5 (23F77)",
+    "device_id": "00008140-0005309E3687001C",
+    "mac_os": "26.5.1 (25F80)",
+    "mac_model": "MacBook Pro",
+    "started": "2026-06-06T13:33:19.642+0300",
+    "ended": "2026-06-06T13:33:23.069+0300",
+    "test_plan": "IosNativeBuild"
+   },
+   "n_metrics": 0,
+   "metrics": []
+  }
+ ]
+}
