@@ -1,0 +1,108 @@
+{
+ "performed": [
+  {
+   "label": "Cold startup \u2014 KMP iOS vs KMP Android (CompilationMode.Partial, baseline profile)",
+   "a": "kmp_ios coldStartup (AppLaunch signpost)",
+   "b": "kmp_android coldStartupWithBaselineProfile (timeToInitialDisplayMs)",
+   "unit": "ms",
+   "n_a": 30,
+   "n_b": 30,
+   "median_a": 260.079,
+   "median_b": 272.177,
+   "shapiro_p_a": "4.483e-09",
+   "shapiro_p_b": "0.7685",
+   "normal": false,
+   "test": "Mann-Whitney U",
+   "statistic": 189.0,
+   "p_value": "0.0001175",
+   "effect_name": "rank-biserial r",
+   "effect": -0.58,
+   "significant": true
+  },
+  {
+   "label": "Cold startup \u2014 KMP iOS vs KMP Android (CompilationMode.Full, full AOT)",
+   "a": "kmp_ios coldStartup (AppLaunch signpost)",
+   "b": "kmp_android coldStartupFull (timeToInitialDisplayMs)",
+   "unit": "ms",
+   "n_a": 30,
+   "n_b": 30,
+   "median_a": 260.079,
+   "median_b": 344.824,
+   "shapiro_p_a": "4.483e-09",
+   "shapiro_p_b": "2.485e-05",
+   "normal": false,
+   "test": "Mann-Whitney U",
+   "statistic": 30.0,
+   "p_value": "5.573e-10",
+   "effect_name": "rank-biserial r",
+   "effect": -0.933,
+   "significant": true
+  }
+ ],
+ "not_run": [
+  {
+   "comparison": "Cold startup \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Warm startup \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Hot startup \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Scroll (steady-state) \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Fast-scroll stress \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Initial data load \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Category filter \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Search \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Image loading \u2014 KMP iOS vs Native iOS",
+   "reason": "Native iOS has no samples: all 9 xcresult bundles executed 0 tests (`Executed 0 tests, with 0 failures`)."
+  },
+  {
+   "comparison": "Warm startup \u2014 KMP iOS vs KMP Android",
+   "reason": "KMP iOS recorded 0 measurements (applicationLaunch signpost never fires on app.activate())."
+  },
+  {
+   "comparison": "Hot startup \u2014 KMP iOS vs KMP Android",
+   "reason": "KMP iOS recorded 0 measurements (same root cause as warm startup)."
+  },
+  {
+   "comparison": "Scroll / fast-scroll \u2014 KMP iOS vs KMP Android",
+   "reason": "KMP iOS recorded 0 measurements (scrollDecelerationMetric emits no interval under Compose Multiplatform); Android metric is frame-based with no iOS counterpart."
+  },
+  {
+   "comparison": "Search \u2014 KMP iOS vs KMP Android",
+   "reason": "KMP iOS run was cancelled before any test executed (0 tests)."
+  },
+  {
+   "comparison": "Initial data load \u2014 KMP iOS vs KMP Android",
+   "reason": "Samples exist on both sides but measure different intervals: Android = in-process network-fetch trace (~215 ms); iOS = whole-scenario wall clock dominated by ~22 s of accessibility-lookup timeout. A p-value here would be meaningless."
+  },
+  {
+   "comparison": "Category filter \u2014 KMP iOS vs KMP Android",
+   "reason": "Samples exist on both sides but iOS includes 2 s of hardcoded sleep and measures UI wall clock, vs Android's in-process repository call."
+  },
+  {
+   "comparison": "Image loading \u2014 KMP iOS vs KMP Android",
+   "reason": "Android metric is frameCount (a count); iOS metric is wall-clock seconds including 3 s of hardcoded sleep. Different quantities."
+  }
+ ]
+}
