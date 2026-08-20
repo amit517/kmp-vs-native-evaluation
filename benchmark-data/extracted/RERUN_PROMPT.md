@@ -22,31 +22,55 @@ the full diagnosis and the evidence for every claim below. Do not re-derive it.
 Those files exist on the branch `thesis-data-extraction` (they are not on
 `main`). Branch off `thesis-data-extraction` for this work.
 
-## Prerequisite 0 — the backend must be up before ANY test runs
+## Prerequisite 0 — confirm the backend is reachable before ANY test runs
 
-Every benchmark waits for the article list to appear, so with no backend the app
-sits on an error state, `article_list` never appears, and **every test fails in a
-way that looks like an app or harness bug**. Do not start a run until this is
-green.
+Every benchmark waits for the article list to appear, so if the backend is
+unreachable the app sits on an error state, `article_list` never appears, and
+**every test fails in a way that looks like an app or harness bug**.
 
-- The backend is a stateless Ktor server in `backend/` — in-memory data, no
-  database. `./gradlew shadowJar` then
-  `java -jar build/libs/news-backend-all.jar` runs it locally on `0.0.0.0:8080`.
-- I am hosting it on AWS. The old endpoint `http://63.177.119.99:8080` is
-  **dead** — the instance's public IP did not survive account reactivation.
-- **Ask me for the current backend URL before you begin**, then set it in both
-  places (they are the only two):
-  - `kmp-app/shared/src/commonMain/kotlin/com/amit/newsreader/config/ApiConfig.kt:20`
-  - `native-ios-app/IosNativeBuild/Data/Remote/NewsAPIService.swift:33`
-- Verify with `curl -s -o /dev/null -w '%{http_code}\n' <BASE_URL>/health`
-  before building anything. Expect `200`.
-- Keep the backend in the **same AWS region** as the original runs. My existing
-  Android data (`NewsRepo.networkFetchSumMs` median 215.33 ms) was measured
-  against eu-central-1; a different region changes the WAN round-trip and
-  invalidates that baseline. I am not re-running Android, so this baseline must
-  stay comparable.
-- Note that roughly 60 ms of that fetch figure is backend JSON serialisation of
-  a 47 KB payload — a constant for all three clients, not a client-side cost.
+The backend runs on an AWS EC2 instance that I start manually. **I will have
+started it before triggering you, so you should not need to do anything here
+beyond one check.** The endpoint is already configured in the code — assume it
+is correct and do not ask me for it.
+
+Configured endpoint: `http://63.177.119.99:8080`, set in exactly two places:
+
+- `kmp-app/shared/src/commonMain/kotlin/com/amit/newsreader/config/ApiConfig.kt:20`
+- `native-ios-app/IosNativeBuild/Data/Remote/NewsAPIService.swift:33`
+
+Run this one check before building anything:
+
+```sh
+curl -s -o /dev/null -w '%{http_code}\n' --max-time 10 http://63.177.119.99:8080/health
+```
+
+- `200` → proceed, change nothing.
+- Timeout or `000` → the instance is probably still booting. Wait ~30 s and
+  retry a couple of times before concluding anything.
+- Still failing after that → **stop and tell me.** Say only that the endpoint
+  is unreachable and ask me to start the instance or confirm the address. Do not
+  edit the base URL speculatively, do not substitute a local backend, and do not
+  start a benchmark run against a dead endpoint.
+
+Re-run this check between the two targets' runs as well — an instance that stops
+or drops mid-run would silently corrupt every remaining measurement.
+
+### Context you may need
+
+- If the IP has genuinely changed, updating those two constants is the whole
+  change; there is nothing else to configure. Only do it if I give you a new
+  address.
+- Keep the backend in its original region (eu-central-1). My existing Android
+  data (`NewsRepo.networkFetchSumMs` median 215.33 ms) was measured against it,
+  and I am **not** re-running Android, so that baseline must stay comparable. A
+  different region changes the WAN round-trip and invalidates it.
+- Roughly 60 ms of that fetch figure is backend JSON serialisation of a 47 KB
+  payload — a constant for all three clients, not a client-side cost.
+- There is also a fully working local fallback if I ever ask for it: the backend
+  in `backend/` is a stateless Ktor server with in-memory data and no database.
+  `./gradlew shadowJar && java -jar build/libs/news-backend-all.jar` serves it on
+  `0.0.0.0:8080`. Do not switch to it on your own initiative — it changes the
+  network conditions and would break comparability with my Android baseline.
 
 ## Hardware (both physical, connected devices — no simulator)
 
