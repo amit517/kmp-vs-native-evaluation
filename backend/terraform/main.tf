@@ -134,6 +134,12 @@ resource "aws_instance" "news_backend" {
   # Use the first available subnet
   subnet_id = data.aws_subnets.default.ids[0]
 
+  # Auto-assigned public IP, deliberately not an Elastic IP: this address is
+  # released on stop, so a stopped instance costs nothing. An EIP bills
+  # $0.005/hr even while idle. Run ../../scripts/sync-backend-ip.sh after each
+  # start to re-point the apps.
+  associate_public_ip_address = true
+
   # User data script to install Docker and run the application
   user_data = base64encode(templatefile("${path.module}/user-data.sh", {
     docker_image = var.docker_image
@@ -157,16 +163,4 @@ resource "aws_instance" "news_backend" {
   lifecycle {
     create_before_destroy = true
   }
-}
-
-# Elastic IP for consistent public IP
-resource "aws_eip" "news_backend" {
-  instance = aws_instance.news_backend.id
-  domain   = "vpc"
-
-  tags = {
-    Name = "${var.project_name}-eip"
-  }
-
-  depends_on = [aws_instance.news_backend]
 }

@@ -4,8 +4,8 @@ output "instance_id" {
 }
 
 output "instance_public_ip" {
-  description = "Public IP address of the EC2 instance"
-  value       = aws_eip.news_backend.public_ip
+  description = "Public IP of the EC2 instance. Auto-assigned, so it changes on every stop/start - run scripts/sync-backend-ip.sh instead of copying it by hand."
+  value       = aws_instance.news_backend.public_ip
 }
 
 output "instance_public_dns" {
@@ -15,17 +15,17 @@ output "instance_public_dns" {
 
 output "api_endpoint" {
   description = "Full API endpoint URL"
-  value       = "http://${aws_eip.news_backend.public_ip}:8080"
+  value       = "http://${aws_instance.news_backend.public_ip}:8080"
 }
 
 output "health_check_url" {
   description = "Health check endpoint"
-  value       = "http://${aws_eip.news_backend.public_ip}:8080/health"
+  value       = "http://${aws_instance.news_backend.public_ip}:8080/health"
 }
 
 output "articles_endpoint" {
   description = "Articles API endpoint"
-  value       = "http://${aws_eip.news_backend.public_ip}:8080/api/articles"
+  value       = "http://${aws_instance.news_backend.public_ip}:8080/api/articles"
 }
 
 output "security_group_id" {
@@ -35,5 +35,5 @@ output "security_group_id" {
 
 output "ssh_command" {
   description = "SSH command to connect to the instance"
-  value       = "ssh -i ~/.ssh/your-key.pem ec2-user@${aws_eip.news_backend.public_ip}"
+  value       = "ssh -i ~/.ssh/your-key.pem ec2-user@${aws_instance.news_backend.public_ip}"
 }
