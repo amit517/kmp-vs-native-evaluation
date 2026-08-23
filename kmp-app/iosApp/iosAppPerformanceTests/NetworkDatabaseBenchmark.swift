@@ -2,6 +2,9 @@ import XCTest
 
 final class NetworkDatabaseBenchmark: BasePerformanceTest {
 
+    // Measures launch -> article list visible -> terminate. With the single
+    // direct otherElements lookup this is real load time; the previous 23.3 s
+    // (CV 0.26 %) was the 3-tier lookup's fixed 22 s of timeout.
     func testInitialDataLoad() throws {
         let options = XCTMeasureOptions()
         options.iterationCount = 30
@@ -15,22 +18,31 @@ final class NetworkDatabaseBenchmark: BasePerformanceTest {
         }
     }
 
+    // Identifier lookups, not hardcoded coordinates: testTag maps to
+    // accessibilityIdentifier and surfaces via otherElements. Settle time sits
+    // outside startMeasuring/stopMeasuring so it is not part of the metric.
     func testCategoryFilterPerformance() throws {
         app.launch()
         waitForArticleListLoaded()
 
+        let techChip = button(TestConstants.Identifiers.technologyCategoryChip)
+        let allChip = button(TestConstants.Identifiers.allCategoryChip)
+        XCTAssertTrue(techChip.waitForExistence(timeout: TestConstants.defaultTimeout))
+        XCTAssertTrue(allChip.exists)
+
         let options = XCTMeasureOptions()
         options.iterationCount = 50
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
         measure(metrics: [XCTClockMetric()], options: options) {
-            let techChipCoord = CGPoint(x: 120, y: 110)
-            app.coordinate(withNormalizedOffset: CGVector(dx: techChipCoord.x / app.frame.width,
-                                                          dy: techChipCoord.y / app.frame.height)).tap()
-            sleep(1)
+            startMeasuring()
+            techChip.tap()
+            _ = element(TestConstants.Identifiers.articleList)
+                .waitForExistence(timeout: TestConstants.defaultTimeout)
+            stopMeasuring()
 
-            let allChipCoord = CGPoint(x: 50, y: 110)
-            app.coordinate(withNormalizedOffset: CGVector(dx: allChipCoord.x / app.frame.width,
-                                                          dy: allChipCoord.y / app.frame.height)).tap()
+            // Reset to the unfiltered list for the next iteration, unmeasured.
+            allChip.tap()
             sleep(1)
         }
     }
@@ -39,31 +51,43 @@ final class NetworkDatabaseBenchmark: BasePerformanceTest {
         app.launch()
         waitForArticleListLoaded()
 
-        let searchIconCoord = CGPoint(x: app.frame.width - 50, y: 44)
-        app.coordinate(withNormalizedOffset: CGVector(dx: searchIconCoord.x / app.frame.width,
-                                                      dy: searchIconCoord.y / app.frame.height)).tap()
-        sleep(1)
+        // The field lives inside `if (showSearchBar)`, so open the search bar
+        // first. The toolbar icon has only contentDescription = "Search", no
+        // testTag, so it is addressed by label.
+        let searchIcon = app.buttons["Search"]
+        XCTAssertTrue(searchIcon.waitForExistence(timeout: TestConstants.defaultTimeout))
+        searchIcon.tap()
 
+        let searchField = textView(TestConstants.Identifiers.searchField)
+        XCTAssertTrue(searchField.waitForExistence(timeout: TestConstants.defaultTimeout),
+                      "Compose search field should be addressable by testTag")
+
+        let query = "Technology"
         let options = XCTMeasureOptions()
         options.iterationCount = 50
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
         measure(metrics: [XCTClockMetric()], options: options) {
-            let searchFieldCoord = CGPoint(x: app.frame.width / 2, y: 90)
-            
-            app.coordinate(withNormalizedOffset: CGVector(dx: searchFieldCoord.x / app.frame.width,
-                                                          dy: searchFieldCoord.y / app.frame.height)).tap()
-            usleep(500_000)
-            
-            app.typeText("Technology")
-            sleep(1)
-            
-            app.typeText(XCUIKeyboardKey.selectAll.rawValue)
-            usleep(200_000)
-            app.typeText(XCUIKeyboardKey.delete.rawValue)
-            sleep(1)
+            startMeasuring()
+            searchField.tap()
+            searchField.typeText(query)
+            _ = element(TestConstants.Identifiers.articleList)
+                .waitForExistence(timeout: TestConstants.defaultTimeout)
+            stopMeasuring()
+
+            // Every iteration must search the same query, so assert the field
+            // holds exactly it — a dropped keystroke would otherwise vary the
+            // workload silently from one iteration to the next.
+            XCTAssertEqual(searchField.value as? String, query,
+                           "search field drifted; iterations would not be comparable")
+
+            // Verified clear, outside the measured interval.
+            searchField.clearText()
         }
     }
 
+    // Android's imageLoading metric is a frame count, so pair the clock with
+    // frame-hitch data rather than timing a hardcoded sleep.
     func testImageLoadingPerformance() throws {
         app.launch()
         waitForArticleListLoaded()
@@ -72,12 +96,16 @@ final class NetworkDatabaseBenchmark: BasePerformanceTest {
 
         let options = XCTMeasureOptions()
         options.iterationCount = 30
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
-        measure(metrics: [XCTClockMetric()], options: options) {
+        measure(metrics: scrollMetrics(), options: options) {
+            startMeasuring()
             scrollable.swipeUp(velocity: .slow)
-            sleep(2)
             scrollable.swipeDown(velocity: .slow)
-            sleep(1)
+            stopMeasuring()
+
+            // Let images settle before the next iteration, unmeasured.
+            sleep(2)
         }
     }
 }

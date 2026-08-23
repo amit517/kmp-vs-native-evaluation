@@ -14,19 +14,24 @@ final class StartupBenchmark: BasePerformanceTest {
         }
     }
 
+    // applicationLaunch needs a real process launch; activate() never emits that
+    // signpost. Clock-measure activate() -> content visible instead.
     func testWarmStartup() throws {
         app.launch()
         waitForArticleListLoaded()
 
         let options = XCTMeasureOptions()
         options.iterationCount = 50
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
-        measure(metrics: [XCTOSSignpostMetric.applicationLaunch], options: options) {
+        measure(metrics: [XCTClockMetric()], options: options) {
             XCUIDevice.shared.press(.home)
             sleep(1)
+            startMeasuring()
             app.activate()
             let scrollView = app.scrollViews[TestConstants.Identifiers.newsListScrollView]
             _ = scrollView.waitForExistence(timeout: TestConstants.defaultTimeout)
+            stopMeasuring()
         }
     }
 
@@ -36,13 +41,16 @@ final class StartupBenchmark: BasePerformanceTest {
 
         let options = XCTMeasureOptions()
         options.iterationCount = 50
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
-        measure(metrics: [XCTOSSignpostMetric.applicationLaunch], options: options) {
+        measure(metrics: [XCTClockMetric()], options: options) {
             XCUIDevice.shared.press(.home)
             usleep(500_000)
+            startMeasuring()
             app.activate()
             let scrollView = app.scrollViews[TestConstants.Identifiers.newsListScrollView]
             _ = scrollView.waitForExistence(timeout: TestConstants.defaultTimeout)
+            stopMeasuring()
         }
     }
 }

@@ -13,6 +13,11 @@ enum TestConstants {
         // Category chips use dynamic testTag("category_chip_<name>")
         // Article cards use dynamic testTag("article_card_<id>")
 
+        /// The Compose "All" chip is tagged lowercase ("category_chip_all"),
+        /// unlike the named categories; the native app uses "ALL".
+        static let allCategoryChip = "category_chip_all"
+        static let technologyCategoryChip = "category_chip_TECHNOLOGY"
+
         static func articleCard(_ id: String) -> String { "article_card_\(id)" }
         static func categoryChip(_ rawValue: String) -> String { "category_chip_\(rawValue)" }
     }

@@ -16,6 +16,20 @@ class BasePerformanceTest: XCTestCase {
         super.tearDown()
     }
 
+    /// Metric set for scroll benchmarks. Kept byte-identical to the native harness
+    /// so the two suites stay comparable.
+    ///
+    /// XCTHitchMetric measures frame hitches in the target process, so it reports
+    /// on Compose/Skia and UIKit alike — unlike scrollingAndDecelerationMetric,
+    /// which needs a UIScrollView signpost Compose never emits.
+    func scrollMetrics() -> [XCTMetric] {
+        var metrics: [XCTMetric] = [XCTClockMetric()]
+        if #available(iOS 26.0, *) {
+            metrics.append(XCTHitchMetric(application: app))
+        }
+        return metrics
+    }
+
     /// Waits for the article list to appear in the Compose Multiplatform UI.
     /// Compose testTag("article_list") maps to an accessibility identifier.
     /// Tries multiple XCTest element types since Compose renders via UIKit.
@@ -26,52 +40,39 @@ class BasePerformanceTest: XCTestCase {
         sleep(1)
     }
 
-    /// Finds a Compose element by its testTag accessibility identifier.
-    /// Compose Multiplatform on iOS renders into UIKit views, so the element type
-    /// varies — try scrollViews, otherElements, and generic descendants.
-    func findElement(identifier: String) -> XCUIElement {
-        // Try scrollViews first (LazyColumn renders as scrollable)
-        let scrollView = app.scrollViews[identifier]
-        if scrollView.exists { return scrollView }
-
-        // Try other element types
-        let other = app.otherElements[identifier]
-        if other.exists { return other }
-
-        // Fallback: search all descendants
-        let descendant = app.descendants(matching: .any)[identifier]
-        return descendant
+    /// Single direct lookup, mirroring the native harness.
+    ///
+    /// Compose Multiplatform does map testTag -> accessibilityIdentifier, but a
+    /// tagged LazyColumn surfaces as `otherElements`, never `scrollViews`
+    /// (verified on device: scrollViews[article_list].exists == false, while
+    /// otherElements[article_list].exists == true). The old 3-tier fallback
+    /// queried scrollViews first, so it burned its full 20 s timeout every
+    /// iteration before falling through — that, not data loading, is what the
+    /// 23.3 s initialDataLoad figure measured.
+    /// Verified on device via AccessibilityDump — Compose testTags surface as:
+    ///   LazyColumn      -> otherElements   (never scrollViews)
+    ///   FilterChip/Card -> buttons         (semantics merged with the role)
+    ///   OutlinedTextField -> textViews     (not textFields)
+    func element(_ identifier: String) -> XCUIElement {
+        app.otherElements[identifier]
     }
 
-    /// Waits for a Compose element to appear, trying multiple element types.
+    func button(_ identifier: String) -> XCUIElement {
+        app.buttons[identifier]
+    }
+
+    func textView(_ identifier: String) -> XCUIElement {
+        app.textViews[identifier]
+    }
+
     func waitForElement(identifier: String, timeout: TimeInterval) -> Bool {
-        // Try scrollViews first
-        let scrollView = app.scrollViews[identifier]
-        if scrollView.waitForExistence(timeout: timeout) { return true }
-
-        // Try other elements with remaining time
-        let other = app.otherElements[identifier]
-        if other.waitForExistence(timeout: 2) { return true }
-
-        // Last resort: any descendant
-        let descendant = app.descendants(matching: .any)[identifier]
-        return descendant.waitForExistence(timeout: 2)
+        element(identifier).waitForExistence(timeout: timeout)
     }
 
-    /// Returns a scrollable element for swipe gestures.
-    /// For Compose Multiplatform, the LazyColumn with testTag should be scrollable.
+    /// The tagged list region is itself swipeable; no hierarchy walk needed.
+    /// The old `descendants(matching: .any)` fallback is what made
+    /// scroll_performance take 4 h 57 m for 50 swipes.
     func findScrollableElement() -> XCUIElement {
-        let byId = app.scrollViews[TestConstants.Identifiers.articleList]
-        if byId.exists { return byId }
-
-        // Compose may render the scrollable content as a generic element
-        let other = app.otherElements[TestConstants.Identifiers.articleList]
-        if other.exists { return other }
-
-        // Fallback: first scrollable view in the hierarchy
-        let firstScroll = app.scrollViews.firstMatch
-        if firstScroll.exists { return firstScroll }
-
-        return app.descendants(matching: .any)[TestConstants.Identifiers.articleList]
+        element(TestConstants.Identifiers.articleList)
     }
 }

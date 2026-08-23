@@ -15,24 +15,31 @@ final class NetworkDatabaseBenchmark: BasePerformanceTest {
         }
     }
 
+    // Settle time sits outside startMeasuring/stopMeasuring so it is not part of
+    // the metric. Structure kept identical to the KMP suite.
     func testCategoryFilterPerformance() throws {
         app.launch()
         waitForArticleListLoaded()
 
+        let techChip = app.buttons[TestConstants.Identifiers.categoryChip("TECHNOLOGY")]
+        let allChip = app.buttons[TestConstants.Identifiers.categoryChip("ALL")]
+        XCTAssertTrue(techChip.waitForExistence(timeout: TestConstants.defaultTimeout))
+        XCTAssertTrue(allChip.exists)
+
         let options = XCTMeasureOptions()
         options.iterationCount = 50
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
         measure(metrics: [XCTClockMetric()], options: options) {
-            let techChip = app.buttons[TestConstants.Identifiers.categoryChip("TECHNOLOGY")]
-            if techChip.waitForExistence(timeout: 5) {
-                techChip.tap()
-                sleep(1)
-            }
-            let allChip = app.buttons[TestConstants.Identifiers.categoryChip("ALL")]
-            if allChip.waitForExistence(timeout: 5) {
-                allChip.tap()
-                sleep(1)
-            }
+            startMeasuring()
+            techChip.tap()
+            _ = app.scrollViews[TestConstants.Identifiers.newsListScrollView]
+                .waitForExistence(timeout: TestConstants.defaultTimeout)
+            stopMeasuring()
+
+            // Reset to the unfiltered list for the next iteration, unmeasured.
+            allChip.tap()
+            sleep(1)
         }
     }
 
@@ -41,25 +48,38 @@ final class NetworkDatabaseBenchmark: BasePerformanceTest {
         waitForArticleListLoaded()
 
         let searchButton = app.buttons[TestConstants.Identifiers.searchButton]
-        XCTAssertTrue(searchButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(searchButton.waitForExistence(timeout: TestConstants.defaultTimeout))
         searchButton.tap()
-        sleep(1)
 
         let searchField = app.textFields[TestConstants.Identifiers.searchTextField]
-        XCTAssertTrue(searchField.waitForExistence(timeout: 5))
+        XCTAssertTrue(searchField.waitForExistence(timeout: TestConstants.defaultTimeout))
 
+        let query = "Technology"
         let options = XCTMeasureOptions()
         options.iterationCount = 50
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
         measure(metrics: [XCTClockMetric()], options: options) {
+            startMeasuring()
             searchField.tap()
-            searchField.typeText("Technology")
-            sleep(1)
+            searchField.typeText(query)
+            _ = app.scrollViews[TestConstants.Identifiers.newsListScrollView]
+                .waitForExistence(timeout: TestConstants.defaultTimeout)
+            stopMeasuring()
+
+            // Every iteration must search the same query, so assert the field
+            // holds exactly it — a dropped keystroke would otherwise vary the
+            // workload silently from one iteration to the next.
+            XCTAssertEqual(searchField.value as? String, query,
+                           "search field drifted; iterations would not be comparable")
+
+            // Verified clear, outside the measured interval.
             searchField.clearText()
-            sleep(1)
         }
     }
 
+    // Android's imageLoading metric is a frame count, so pair the clock with
+    // frame-hitch data rather than timing a hardcoded sleep.
     func testImageLoadingPerformance() throws {
         app.launch()
         waitForArticleListLoaded()
@@ -68,12 +88,16 @@ final class NetworkDatabaseBenchmark: BasePerformanceTest {
 
         let options = XCTMeasureOptions()
         options.iterationCount = 30
+        options.invocationOptions = [.manuallyStart, .manuallyStop]
 
-        measure(metrics: [XCTClockMetric()], options: options) {
+        measure(metrics: scrollMetrics(), options: options) {
+            startMeasuring()
             scrollView.swipeUp(velocity: .slow)
-            sleep(2)
             scrollView.swipeDown(velocity: .slow)
-            sleep(1)
+            stopMeasuring()
+
+            // Let images settle before the next iteration, unmeasured.
+            sleep(2)
         }
     }
 }

@@ -3,3 +3,7 @@
 *.iml
 .gradle/
 .vscode/
+
+# xcresulttool regenerates this cache on every read of a bundle; the bundle is
+# fully readable without it (verified: 30/30 measurements recovered).
+benchmark-data/**/*.xcresult/database.sqlite3

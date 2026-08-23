@@ -15,7 +15,9 @@ final class ScrollBenchmark: BasePerformanceTest {
         let options = XCTMeasureOptions()
         options.iterationCount = 50
 
-        measure(metrics: [XCTOSSignpostMetric.scrollDecelerationMetric], options: options) {
+        // scrollDecelerationMetric needs the UIScrollView deceleration signpost,
+        // which Compose/Skia never emits. Clock is the guaranteed sample here.
+        measure(metrics: scrollMetrics(), options: options) {
             scrollable.swipeUp(velocity: .default)
         }
     }
@@ -27,7 +29,7 @@ final class ScrollBenchmark: BasePerformanceTest {
         let options = XCTMeasureOptions()
         options.iterationCount = 30
 
-        measure(metrics: [XCTOSSignpostMetric.scrollDecelerationMetric], options: options) {
+        measure(metrics: scrollMetrics(), options: options) {
             scrollable.swipeUp(velocity: .fast)
             scrollable.swipeUp(velocity: .fast)
             scrollable.swipeUp(velocity: .fast)

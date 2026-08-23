@@ -15,7 +15,9 @@ final class ScrollBenchmark: BasePerformanceTest {
         let options = XCTMeasureOptions()
         options.iterationCount = 50
 
-        measure(metrics: [XCTOSSignpostMetric.scrollDecelerationMetric], options: options) {
+        // Metric set kept identical to the KMP suite so the two are comparable,
+        // even though scrollDecelerationMetric would work on this UIScrollView.
+        measure(metrics: scrollMetrics(), options: options) {
             scrollView.swipeUp(velocity: .default)
         }
     }
@@ -27,7 +29,7 @@ final class ScrollBenchmark: BasePerformanceTest {
         let options = XCTMeasureOptions()
         options.iterationCount = 30
 
-        measure(metrics: [XCTOSSignpostMetric.scrollDecelerationMetric], options: options) {
+        measure(metrics: scrollMetrics(), options: options) {
             scrollView.swipeUp(velocity: .fast)
             scrollView.swipeUp(velocity: .fast)
             scrollView.swipeUp(velocity: .fast)
