@@ -1,6 +1,0 @@
-platform,test,metric,iterations,mean,median,std_dev,cv_pct,min,max,p95,p99,unit,device,os_version,status,reason
-kmp_ios,categoryFilterPerformance,Clock Monotonic Time,50,3.1831,3.1819,0.0111,0.35,3.1509,3.2097,3.2014,3.2073,s,iPhone 16,iOS_26.5,superseded,DO NOT CITE. >=2s of the 3.18s is hardcoded sleep().
-kmp_ios,coldStartup,Duration (AppLaunch),30,0.2704,0.2601,0.0413,15.29,0.243,0.4634,0.3282,0.4246,s,iPhone 16,iOS_26.4.2,superseded,"Superseded. Sound metric, but iOS 26.4.2 and an older harness."
-kmp_ios,imageLoadingPerformance,Clock Monotonic Time,30,4.3684,4.3598,0.0555,1.27,4.2968,4.5734,4.4455,4.5395,s,iPhone 16,iOS_26.5,superseded,DO NOT CITE. >=3s of the 4.36s is hardcoded sleep().
-kmp_ios,initialDataLoad,Clock Monotonic Time,30,23.3349,23.3283,0.0607,0.26,23.2021,23.5882,23.4022,23.5425,s,iPhone 16,iOS_26.4.2,superseded,"DO NOT CITE. ~22s of the 23.33s is XCTest accessibility timeout, not data loading (CV 0.26% is the tell)."
-native_ios,ALL,none,0,,,,,,,,,,iPhone 16,iOS_26.5,no-data,"All 9 bundles executed 0 tests. xcodebuild exited 0 on an empty selection, so this was reported as '9/9 passed'."

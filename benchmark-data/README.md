@@ -1,58 +1,93 @@
-# benchmark-data — start here
+# benchmark-data
 
-Measurement data for the thesis *Evaluating Cross-Platform Development: A
+All measurement data for the thesis *Evaluating Cross-Platform Development: A
 Comparative Study of Kotlin Multiplatform, Jetpack Compose, and SwiftUI*.
 
-**For results, go to [`thesis-dataset/`](thesis-dataset/README.md).** Everything
-else in this directory is a raw run folder or a historical analysis, kept for
-provenance.
+Three documents, one data folder. Nothing is duplicated: every number appears
+once, next to the run that produced it.
 
-## Layout
+```
+benchmark-data/
+├── README.md          ← you are here: the map
+├── RESULTS.md         ← every result, with its caveats        ⭐ start here
+├── METHODOLOGY.md     ← what was broken; which comparisons hold
+├── data/
+│   ├── all_platforms_summary.csv       all 3 platforms, one schema, 66 rows
+│   ├── cross_platform_comparison.csv   per scenario, with comparability verdicts
+│   ├── significance_tests.csv / .json  Mann-Whitney U, 10 tests
+│   └── runs/                           the source data and its provenance
+│       ├── kmp-android/    summary.csv + 22 per-metric sample files
+│       ├── kmp-ios/        summary.csv + raw/ + 9 xcresult bundles + logs
+│       └── native-ios/     summary.csv + raw/ + 9 xcresult bundles + logs
+└── archive/                            superseded; nothing depends on it
+    ├── extraction-2026-08-20/          the diagnosis that drove the re-run
+    └── legacy-reports/                 earlier reports, one of them inaccurate
+```
 
-| Folder | What it is | Cite from it? |
-|---|---|---|
-| **[`thesis-dataset/`](thesis-dataset/README.md)** | Curated view over every run: unified summary, cross-platform comparison, significance tests, methodology | **Yes — this is the citable layer** |
-| `kmp-android/` | Macrobenchmark run, Pixel 8 / Android 16. Complete; deliberately not re-run | Yes, via `thesis-dataset` |
-| `rerun-2026-08/` | iOS runs of record, 2026-08-23, iPhone 16 / iOS 26.6. Both targets, 9/9 scenarios | Yes, via `thesis-dataset` |
-| `kmp-ios/` | Original iOS runs, Apr–Jun 2026. 4 of 9 usable | **No — superseded.** See `SUPERSEDED.md` inside |
-| `native-ios/` | Original native iOS runs, Jun 2026. **0 of 9 executed any test** | **No — contains no data.** See `SUPERSEDED.md` inside |
-| `extracted/` | 2026-08-20 diagnosis of what went wrong, and the code-sharing / app-size analyses | Partly — see below |
-| `FINAL_REPORT.md` | Early report | **No.** Contains claims the artefacts do not support |
-| `BENCHMARK_RESULTS.md`, `PROGRESS.md` | Working notes | No |
+## How to navigate
 
-## Why the failed runs are still here
+| I want… | Go to |
+|---|---|
+| The results, written up | **`RESULTS.md`** |
+| Whether a comparison is valid | **`METHODOLOGY.md`** Part 2 |
+| A number to paste into a table | `data/all_platforms_summary.csv` |
+| Per-iteration samples | `data/runs/<platform>/raw/` (Android: `data/runs/kmp-android/*.csv`) |
+| Proof a run actually happened | `data/runs/<platform>/` — xcresult bundles, `*.log`, `environment.txt`, `sweep-status.tsv` |
+| Why the harness was rebuilt | `METHODOLOGY.md` Part 1 |
 
-`native-ios/` holds nine xcresult bundles that each record
-`Executed 0 tests, with 0 failures`, yet `FINAL_REPORT.md` reports
-"Native iOS: 9/9 tests successful (100%)". `xcodebuild` exits 0 on an empty test
-selection, so the batch loop that produced them reported success having measured
-nothing.
+Each `data/runs/<platform>/` holds both the **summary** and the **evidence** it
+came from, so a figure can be traced to the run that produced it without leaving
+the folder. `environment.txt` records the Xcode and Swift versions at run time —
+these are not recoverable from an xcresult afterwards.
 
-They are retained deliberately. They are the evidence for a genuine
-methodological finding — that a green exit code is not evidence a benchmark ran —
-and an examiner may reasonably ask to see them. The same applies to `kmp-ios/`'s
-23.33 s `initialDataLoad` figure at CV 0.26 %, which is the worked example of a
-metric that measured the test harness rather than the app.
+## Coverage
 
-Do not delete them, and do not cite them as results.
+| Platform | Device / OS | Scenarios with samples | Date |
+|---|---|---|---|
+| KMP Android | Pixel 8, Android 16 (API 36) | 10 tests / 30 metric rows | 2026-04-26 |
+| KMP iOS | iPhone 16, iOS 26.6 | **9 / 9** | 2026-08-23 |
+| Native iOS | iPhone 16 (same unit), iOS 26.6 | **9 / 9** | 2026-08-23 |
 
-## Still valid from `extracted/`
+18 of 18 iOS scenarios produced per-iteration measurements. Before the harness
+was fixed it was 4 of 18, and native iOS had none at all.
 
-The 2026-08-20 analysis pre-dates the re-run, so its iOS *numbers* are
-superseded. These parts are unaffected by it and remain current:
+## Three rules before quoting a number
 
-- `code_sharing.md` — cloc analysis (82.42 % shared; 104 iOS-specific LOC vs 1917 native)
-- `app_size.md` — artefact sizes (KMP iOS `.app` 52.30 MB vs native 1.49 MB)
-- `environment.md` — Android device and toolchain capture
-- `EXTRACTION_LOG.md` — the diagnosis itself, which is what the re-run acted on
+1. **The scroll rows are not a performance result.** `scrollPerformance`,
+   `fastScrollStress` and `imageLoading` show an apparent 4–5× KMP advantage that
+   is XCUITest waiting out SwiftUI's scroll deceleration. Measured, not assumed —
+   `METHODOLOGY.md` Part 2.
+2. **Significance is not importance.** Four comparisons are significant at
+   p < 0.001 on median differences under 2 %. The `interpretation` column in
+   `data/significance_tests.csv` says which is which.
+3. **A sub-1 % CV is a warning, not precision.** It means the number is dominated
+   by a constant — usually harness overhead. Real work varies; Android's network
+   fetch has CV 14.7 %.
 
-`kmp_ios_summary.csv`, `native_ios_summary.csv`, `combined_comparison.*` and
-`stats_tests.*` in that folder describe the **old** data. Superseded equivalents
-live in `thesis-dataset/`.
+## Regenerating
 
-## Immutability
+```sh
+python3 scripts/build-aggregates.py
+```
 
-Per the repo's `CLAUDE.md`: existing run folders are never edited. Each records
-the endpoint, tool versions and environment it actually executed against.
-`thesis-dataset/` is generated *additively* from them by
-`scripts/build-thesis-dataset.py` and can be rebuilt at any time.
+Reads `data/runs/*/summary.csv` and `data/runs/*/raw/`, rewrites the three
+aggregate files in `data/`. The three markdown documents are hand-written — if
+the source runs change, re-check their figures.
+
+## The archive
+
+`archive/` holds material that is superseded but worth keeping. Nothing in
+`data/` or the documents depends on it.
+
+- `extraction-2026-08-20/` — the analysis that diagnosed the broken harness. Its
+  iOS *numbers* are superseded, but `EXTRACTION_LOG.md` is the record of what was
+  wrong, and `code_sharing.md` / `app_size.md` are the full workings behind
+  §5 and §6 of `RESULTS.md`.
+- `legacy-reports/` — earlier write-ups. **`FINAL_REPORT.md` is not reliable:** it
+  claims "Native iOS: 9/9 tests successful (100%)" for nine runs that executed
+  zero tests. Kept as a record of what was previously believed.
+
+The original failed iOS runs (9 bundles with zero executed tests, plus 5 unusable
+KMP scenarios) were removed on request. They remain in git history —
+`git checkout 940121d -- benchmark-data/kmp-ios benchmark-data/native-ios` —
+and `METHODOLOGY.md` Part 1 records what they showed.

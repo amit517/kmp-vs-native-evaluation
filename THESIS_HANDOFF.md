@@ -10,7 +10,7 @@ performance claim.**
 
 Repo: `/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation`
 Branch: `harness-fix-2026-08`
-Data root: `benchmark-data/thesis-dataset/`
+Data root: `benchmark-data/`
 
 ---
 
@@ -19,22 +19,22 @@ Data root: `benchmark-data/thesis-dataset/`
 | Need | File |
 |---|---|
 | **Start here** | `benchmark-data/README.md` — the map |
-| What is citable and what is not | `benchmark-data/thesis-dataset/README.md` |
-| All results, one schema | `thesis-dataset/results/all_platforms_summary.csv` (66 rows) |
-| Cross-platform table + verdicts | `thesis-dataset/results/cross_platform_comparison.csv` |
-| Per-iteration samples | `thesis-dataset/results/raw/{kmp_android,kmp_ios,native_ios}/` (58 files) |
-| Significance tests | `thesis-dataset/analysis/stats_tests_2026-08.md` |
-| **Methodology chapter material** | `thesis-dataset/methodology/harness_defects.md` |
-| **Which comparisons are valid** | `thesis-dataset/methodology/comparability.md` |
-| Code-sharing analysis | `benchmark-data/extracted/code_sharing.md` |
-| App-size analysis | `benchmark-data/extracted/app_size.md` |
-| Run conditions for the iOS data | `benchmark-data/rerun-2026-08/RUN_NOTES.md` |
-| Numbers that must NOT be cited | `thesis-dataset/results/superseded_2026-04-06.csv` |
+| What is citable and what is not | `benchmark-data/README.md` |
+| All results, one schema | `benchmark-data/data/all_platforms_summary.csv` (66 rows) |
+| Cross-platform table + verdicts | `benchmark-data/data/cross_platform_comparison.csv` |
+| Per-iteration samples | `benchmark-data/data/runs/<platform>/raw/` (58 files) |
+| Significance tests | `benchmark-data/data/significance_tests.csv` |
+| **Methodology chapter material** | `benchmark-data/METHODOLOGY.md (Part 1)` |
+| **Which comparisons are valid** | `benchmark-data/METHODOLOGY.md (Part 2)` |
+| Code-sharing analysis | `benchmark-data/RESULTS.md §5 (workings: archive/extraction-2026-08-20/code_sharing.md)` |
+| App-size analysis | `benchmark-data/RESULTS.md §6 (workings: archive/extraction-2026-08-20/app_size.md)` |
+| Run conditions for the iOS data | `benchmark-data/RESULTS.md §2` |
+| Numbers that must NOT be cited | `benchmark-data/archive/extraction-2026-08-20/` |
 
 CSV schema (all summaries):
 `platform,test,metric,iterations,mean,median,std_dev,cv_pct,min,max,p95,p99,unit,device,os_version`
 
-**Do not use `benchmark-data/FINAL_REPORT.md`.** It claims "Native iOS: 9/9 tests
+**Do not use `benchmark-data/archive/legacy-reports/FINAL_REPORT.md`.** It claims "Native iOS: 9/9 tests
 successful (100%)" when all nine of those runs executed zero tests. It is retained
 only as a record of what was previously believed.
 
@@ -71,7 +71,7 @@ signpost over a real process launch — on the same device and OS, n = 30 each.
 | KMP Android, baseline profile (`CompilationMode.Partial`) | 272.18 ms | 3.7 % |
 | KMP Android, full AOT (`CompilationMode.Full`) | 344.82 ms | 4.2 % |
 
-Significance (Mann-Whitney U, two-sided, `stats_tests_2026-08.md`):
+Significance (Mann-Whitney U, two-sided, `benchmark-data/data/significance_tests.csv`):
 
 | Comparison | p | r | Verdict |
 |---|---|---|---|
@@ -107,7 +107,7 @@ XCUITest declares idle almost immediately (~0.5 s).
 
 This was tested, not assumed: swiping a *different* element cost 2.71 s versus
 2.74 s for the target element, and the two elements differ in height by only 9 %.
-Element geometry is not the cause. Evidence in `methodology/comparability.md`.
+Element geometry is not the cause. Evidence in `benchmark-data/METHODOLOGY.md` Part 2.
 
 If the thesis claims KMP scrolls ~5× faster than SwiftUI, that is a factual error
 and the most likely thing an examiner will catch.
@@ -117,7 +117,7 @@ and the most likely thing an examiner will catch.
 Warm startup, hot startup and `initialDataLoad` are all significant at p < 0.001
 on median differences of **0.74–1.34 %**. With n = 50 that is detectable and
 uninteresting. Report them as "no practical difference" and cite the effect size,
-not the p-value. Each row in `stats_tests_2026-08.md` carries an
+not the p-value. Each row in `benchmark-data/data/significance_tests.csv` carries an
 `interpretation` column that says which case it is.
 
 ### 4.3 A sub-1 % CV is a warning, not precision
@@ -159,7 +159,7 @@ best comparison available and still needs that caveat stated once.
 
 ## 5. Non-performance results, unaffected by any of the above
 
-From `benchmark-data/extracted/code_sharing.md` (cloc 2.10):
+From `benchmark-data/RESULTS.md §5 (workings: archive/extraction-2026-08-20/code_sharing.md)` (cloc 2.10):
 
 - **Shared code: 82.42 %** of KMP production code (2147 of 2605 LOC).
   Android-specific 13.59 %, iOS-specific 3.99 %.
@@ -171,7 +171,7 @@ From `benchmark-data/extracted/code_sharing.md` (cloc 2.10):
   repo, so "KMP saved X % versus writing both apps natively" **cannot** be computed
   and must not appear. Feature parity between codebases was also not audited.
 
-From `benchmark-data/extracted/app_size.md`:
+From `benchmark-data/RESULTS.md §6 (workings: archive/extraction-2026-08-20/app_size.md)`:
 
 | Stage | KMP iOS | Native iOS | Ratio |
 |---|---|---|---|
@@ -194,7 +194,7 @@ configuration, not framework cost.
 
 ## 6. Methodology chapter — this is a result in itself
 
-`methodology/harness_defects.md` is the source. The strongest finding:
+`benchmark-data/METHODOLOGY.md` Part 1 is the source. The strongest finding:
 
 **A green exit code is not evidence that a benchmark ran.** `xcodebuild` exits 0
 when a test selection matches nothing, because a suite with zero tests passes
@@ -273,4 +273,4 @@ set), and `XCTOSSignpostMetric.animationOverhead` does not exist at all.
    claim about scrolling, rendering throughput, or isolated data-layer latency.
 
 When quoting a figure, cite the file it came from. If a number is not in
-`thesis-dataset/`, it should not be in the thesis.
+`benchmark-data/data/`, it should not be in the thesis.
