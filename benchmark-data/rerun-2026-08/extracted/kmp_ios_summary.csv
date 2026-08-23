@@ -1,0 +1,19 @@
+platform,test,metric,iterations,mean,median,std_dev,cv_pct,min,max,p95,p99,unit,device,os_version
+kmp_ios,testCategoryFilterPerformance,Clock Monotonic Time,50,1.4646,1.4632,0.0081,0.55,1.4466,1.4849,1.4775,1.4841,s,iPhone 16,iOS_26.6
+kmp_ios,testColdStartup,Duration (AppLaunch),30,0.2429,0.2395,0.0185,7.6,0.2208,0.3075,0.2805,0.306,s,iPhone 16,iOS_26.6
+kmp_ios,testFastScrollStress,Clock Monotonic Time,30,3.572,3.5656,0.0663,1.86,3.4857,3.7168,3.6841,3.7132,s,iPhone 16,iOS_26.6
+kmp_ios,testFastScrollStress,Hitch Time Ratio (Thesisproject),30,0,0.0,0.0,,0,0,0.0,0.0,ms per s,iPhone 16,iOS_26.6
+kmp_ios,testFastScrollStress,Hitches Total Duration (Thesisproject),30,0,0.0,0.0,,0,0,0.0,0.0,s,iPhone 16,iOS_26.6
+kmp_ios,testFastScrollStress,Number of Hitches (Thesisproject),30,0,0.0,0.0,,0,0,0.0,0.0,hitches,iPhone 16,iOS_26.6
+kmp_ios,testHotStartup,Clock Monotonic Time,50,1.1452,1.1441,0.0157,1.37,1.1187,1.1785,1.1714,1.1763,s,iPhone 16,iOS_26.6
+kmp_ios,testImageLoadingPerformance,Clock Monotonic Time,30,1.4084,1.4192,0.0344,2.44,1.3412,1.4564,1.4544,1.4563,s,iPhone 16,iOS_26.6
+kmp_ios,testImageLoadingPerformance,Hitch Time Ratio (Thesisproject),30,0,0.0,0.0,,0,0,0.0,0.0,ms per s,iPhone 16,iOS_26.6
+kmp_ios,testImageLoadingPerformance,Hitches Total Duration (Thesisproject),30,0,0.0,0.0,,0,0,0.0,0.0,s,iPhone 16,iOS_26.6
+kmp_ios,testImageLoadingPerformance,Number of Hitches (Thesisproject),30,0,0.0,0.0,,0,0,0.0,0.0,hitches,iPhone 16,iOS_26.6
+kmp_ios,testInitialDataLoad,Clock Monotonic Time,30,3.5262,3.5247,0.0417,1.18,3.4386,3.6636,3.5854,3.6444,s,iPhone 16,iOS_26.6
+kmp_ios,testScrollPerformance,Clock Monotonic Time,50,0.5321,0.53,0.0167,3.13,0.5042,0.6088,0.5515,0.5869,s,iPhone 16,iOS_26.6
+kmp_ios,testScrollPerformance,Hitch Time Ratio (Thesisproject),50,0,0.0,0.0,,0,0,0.0,0.0,ms per s,iPhone 16,iOS_26.6
+kmp_ios,testScrollPerformance,Hitches Total Duration (Thesisproject),50,0,0.0,0.0,,0,0,0.0,0.0,s,iPhone 16,iOS_26.6
+kmp_ios,testScrollPerformance,Number of Hitches (Thesisproject),50,0,0.0,0.0,,0,0,0.0,0.0,hitches,iPhone 16,iOS_26.6
+kmp_ios,testSearchPerformance,Clock Monotonic Time,50,2.1545,2.1565,0.0122,0.57,2.1303,2.1767,2.1728,2.1765,s,iPhone 16,iOS_26.6
+kmp_ios,testWarmStartup,Clock Monotonic Time,50,1.152,1.1518,0.0138,1.2,1.1206,1.1813,1.1739,1.1794,s,iPhone 16,iOS_26.6
