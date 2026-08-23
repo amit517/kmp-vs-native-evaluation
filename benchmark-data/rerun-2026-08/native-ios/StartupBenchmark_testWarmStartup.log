@@ -1,0 +1,608 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild.xcodeproj -scheme IosNativeBuild -destination platform=iOS,id=00008140-0005309E3687001C -derivedDataPath /private/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native -resultBundlePath benchmark-data/rerun-2026-08/native-ios/StartupBenchmark_testWarmStartup.xcresult "-only-testing:IosNativeBuildPerformanceTests/StartupBenchmark/testWarmStartup" -allowProvisioningUpdates
+
+Writing result bundle at path:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/native-ios/StartupBenchmark_testWarmStartup.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'IosNativeBuildPerformanceTests' in project 'IosNativeBuild'
+        ➜ Explicit dependency on target 'IosNativeBuild' in project 'IosNativeBuild'
+    Target 'IosNativeBuild' in project 'IosNativeBuild' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: c46c884fe766d03df53532e733a5dcfb
+Build description path: /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/XCBuildData/c46c884fe766d03df53532e733a5dcfb.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Info.plist /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Info.plist (in target 'IosNativeBuild' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-infoPlistUtility /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Info.plist -producttype com.apple.product-type.application -genpkginfo /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuild.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Info.plist
+
+CopySwiftLibs /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app (in target 'IosNativeBuild' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-swiftStdLibTool --copy --verbose --sign B64D278CE6C7BC679236D8544BD267E3D946628C --scan-executable /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/IosNativeBuild.debug.dylib --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Frameworks --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/PlugIns --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/SystemExtensions --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuild.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Info.plist /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/empty-IosNativeBuildPerformanceTests.plist (in target 'IosNativeBuildPerformanceTests' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-infoPlistUtility /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/empty-IosNativeBuildPerformanceTests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Info.plist
+
+2026-08-23 12:40:19.858105+0300 IosNativeBuildPerformanceTests-Runner[91728:8248883] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-08-23 12:40:19.897.
+Test Suite 'IosNativeBuildPerformanceTests.xctest' started at 2026-08-23 12:40:19.897.
+Test Suite 'StartupBenchmark' started at 2026-08-23 12:40:19.897.
+Test Case '-[IosNativeBuildPerformanceTests.StartupBenchmark testWarmStartup]' started.
+    t =     0.00s Start Test at 2026-08-23 12:40:19.898
+    t =     0.01s Set Up
+    t =     0.01s Open com.amit.IosNativeBuild
+    t =     0.01s     Launch com.amit.IosNativeBuild
+2026-08-23 12:40:19.993 xcodebuild[22977:419217] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:40:19.993 xcodebuild[22977:419217] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     3.17s         Setting up automation session
+    t =     3.26s         Wait for com.amit.IosNativeBuild to idle
+    t =     4.35s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =     5.37s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =     5.37s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =     5.38s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =     5.47s             Find: Descendants matching type ScrollView
+    t =     5.48s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =     6.49s Pressing Home button
+    t =     7.96s Open com.amit.IosNativeBuild
+    t =     7.96s     Activate com.amit.IosNativeBuild
+    t =     8.03s         Wait for com.amit.IosNativeBuild to idle
+    t =     8.03s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =     9.06s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =     9.06s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =     9.07s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =     9.14s             Find: Descendants matching type ScrollView
+    t =     9.14s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =     9.15s Pressing Home button
+    t =    10.62s Open com.amit.IosNativeBuild
+    t =    10.62s     Activate com.amit.IosNativeBuild
+    t =    10.69s         Wait for com.amit.IosNativeBuild to idle
+    t =    10.70s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    11.70s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    11.70s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    11.71s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    11.78s             Find: Descendants matching type ScrollView
+    t =    11.78s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    11.78s Pressing Home button
+    t =    13.25s Open com.amit.IosNativeBuild
+    t =    13.25s     Activate com.amit.IosNativeBuild
+    t =    13.32s         Wait for com.amit.IosNativeBuild to idle
+    t =    13.32s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    14.36s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    14.36s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    14.37s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    14.43s             Find: Descendants matching type ScrollView
+    t =    14.44s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    14.44s Pressing Home button
+    t =    15.91s Open com.amit.IosNativeBuild
+    t =    15.91s     Activate com.amit.IosNativeBuild
+    t =    15.98s         Wait for com.amit.IosNativeBuild to idle
+    t =    15.98s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    16.99s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    16.99s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    17.00s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    17.07s             Find: Descendants matching type ScrollView
+    t =    17.07s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    17.07s Pressing Home button
+    t =    18.54s Open com.amit.IosNativeBuild
+    t =    18.54s     Activate com.amit.IosNativeBuild
+    t =    18.61s         Wait for com.amit.IosNativeBuild to idle
+    t =    18.61s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    19.64s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    19.64s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    19.65s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    19.71s             Find: Descendants matching type ScrollView
+    t =    19.71s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    19.72s Pressing Home button
+    t =    21.19s Open com.amit.IosNativeBuild
+    t =    21.19s     Activate com.amit.IosNativeBuild
+    t =    21.26s         Wait for com.amit.IosNativeBuild to idle
+    t =    21.26s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    22.26s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    22.26s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    22.27s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    22.34s             Find: Descendants matching type ScrollView
+    t =    22.34s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    22.35s Pressing Home button
+    t =    23.81s Open com.amit.IosNativeBuild
+    t =    23.82s     Activate com.amit.IosNativeBuild
+    t =    23.88s         Wait for com.amit.IosNativeBuild to idle
+    t =    23.89s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    24.93s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    24.93s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    24.94s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    25.01s             Find: Descendants matching type ScrollView
+    t =    25.01s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    25.01s Pressing Home button
+    t =    26.48s Open com.amit.IosNativeBuild
+    t =    26.48s     Activate com.amit.IosNativeBuild
+    t =    26.55s         Wait for com.amit.IosNativeBuild to idle
+    t =    26.55s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    27.58s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    27.58s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    27.59s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    27.65s             Find: Descendants matching type ScrollView
+    t =    27.66s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    27.66s Pressing Home button
+    t =    29.13s Open com.amit.IosNativeBuild
+    t =    29.14s     Activate com.amit.IosNativeBuild
+    t =    29.20s         Wait for com.amit.IosNativeBuild to idle
+    t =    29.20s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    30.26s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    30.26s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    30.27s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    30.33s             Find: Descendants matching type ScrollView
+    t =    30.33s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    30.34s Pressing Home button
+    t =    31.80s Open com.amit.IosNativeBuild
+    t =    31.80s     Activate com.amit.IosNativeBuild
+    t =    31.87s         Wait for com.amit.IosNativeBuild to idle
+    t =    31.88s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    32.94s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    32.94s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    32.94s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    33.00s             Find: Descendants matching type ScrollView
+    t =    33.00s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    33.01s Pressing Home button
+    t =    34.47s Open com.amit.IosNativeBuild
+    t =    34.48s     Activate com.amit.IosNativeBuild
+    t =    34.55s         Wait for com.amit.IosNativeBuild to idle
+    t =    34.56s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    35.60s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    35.60s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    35.61s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    35.68s             Find: Descendants matching type ScrollView
+    t =    35.68s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    35.68s Pressing Home button
+    t =    37.16s Open com.amit.IosNativeBuild
+    t =    37.16s     Activate com.amit.IosNativeBuild
+    t =    37.23s         Wait for com.amit.IosNativeBuild to idle
+    t =    37.24s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    38.26s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    38.26s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    38.27s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    38.34s             Find: Descendants matching type ScrollView
+    t =    38.34s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    38.34s Pressing Home button
+    t =    39.81s Open com.amit.IosNativeBuild
+    t =    39.81s     Activate com.amit.IosNativeBuild
+    t =    39.88s         Wait for com.amit.IosNativeBuild to idle
+    t =    39.88s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    40.93s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    40.93s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    40.94s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    41.00s             Find: Descendants matching type ScrollView
+    t =    41.00s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    41.00s Pressing Home button
+    t =    42.47s Open com.amit.IosNativeBuild
+    t =    42.47s     Activate com.amit.IosNativeBuild
+    t =    42.54s         Wait for com.amit.IosNativeBuild to idle
+    t =    42.54s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    43.58s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    43.58s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    43.59s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    43.66s             Find: Descendants matching type ScrollView
+    t =    43.66s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    43.67s Pressing Home button
+    t =    45.14s Open com.amit.IosNativeBuild
+    t =    45.14s     Activate com.amit.IosNativeBuild
+    t =    45.22s         Wait for com.amit.IosNativeBuild to idle
+    t =    45.22s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    46.23s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    46.23s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    46.24s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    46.30s             Find: Descendants matching type ScrollView
+    t =    46.31s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    46.31s Pressing Home button
+    t =    47.79s Open com.amit.IosNativeBuild
+    t =    47.79s     Activate com.amit.IosNativeBuild
+    t =    47.85s         Wait for com.amit.IosNativeBuild to idle
+    t =    47.85s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    48.86s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    48.86s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    48.87s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    48.93s             Find: Descendants matching type ScrollView
+    t =    48.93s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    48.94s Pressing Home button
+    t =    50.42s Open com.amit.IosNativeBuild
+    t =    50.42s     Activate com.amit.IosNativeBuild
+    t =    50.48s         Wait for com.amit.IosNativeBuild to idle
+    t =    50.49s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    51.57s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    51.57s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    51.58s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    51.64s             Find: Descendants matching type ScrollView
+    t =    51.64s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    51.65s Pressing Home button
+    t =    53.11s Open com.amit.IosNativeBuild
+    t =    53.12s     Activate com.amit.IosNativeBuild
+    t =    53.18s         Wait for com.amit.IosNativeBuild to idle
+    t =    53.18s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    54.22s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    54.22s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    54.23s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    54.29s             Find: Descendants matching type ScrollView
+    t =    54.29s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    54.29s Pressing Home button
+    t =    55.77s Open com.amit.IosNativeBuild
+    t =    55.77s     Activate com.amit.IosNativeBuild
+    t =    55.83s         Wait for com.amit.IosNativeBuild to idle
+    t =    55.84s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    56.88s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    56.88s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    56.89s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    56.95s             Find: Descendants matching type ScrollView
+    t =    56.96s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    56.96s Pressing Home button
+    t =    58.43s Open com.amit.IosNativeBuild
+    t =    58.43s     Activate com.amit.IosNativeBuild
+    t =    58.50s         Wait for com.amit.IosNativeBuild to idle
+    t =    58.50s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    59.53s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    59.54s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    59.54s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    59.61s             Find: Descendants matching type ScrollView
+    t =    59.61s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    59.62s Pressing Home button
+    t =    61.09s Open com.amit.IosNativeBuild
+    t =    61.09s     Activate com.amit.IosNativeBuild
+    t =    61.15s         Wait for com.amit.IosNativeBuild to idle
+    t =    61.16s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    62.20s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    62.20s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    62.21s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    62.28s             Find: Descendants matching type ScrollView
+    t =    62.28s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    62.28s Pressing Home button
+    t =    63.75s Open com.amit.IosNativeBuild
+    t =    63.75s     Activate com.amit.IosNativeBuild
+    t =    63.82s         Wait for com.amit.IosNativeBuild to idle
+    t =    63.82s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    64.86s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    64.86s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    64.87s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    64.93s             Find: Descendants matching type ScrollView
+    t =    64.93s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    64.94s Pressing Home button
+    t =    66.41s Open com.amit.IosNativeBuild
+    t =    66.41s     Activate com.amit.IosNativeBuild
+    t =    66.48s         Wait for com.amit.IosNativeBuild to idle
+    t =    66.48s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    67.49s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    67.50s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    67.50s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    67.57s             Find: Descendants matching type ScrollView
+    t =    67.57s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    67.57s Pressing Home button
+    t =    69.04s Open com.amit.IosNativeBuild
+    t =    69.04s     Activate com.amit.IosNativeBuild
+    t =    69.11s         Wait for com.amit.IosNativeBuild to idle
+    t =    69.11s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    70.12s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    70.12s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    70.13s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    70.20s             Find: Descendants matching type ScrollView
+    t =    70.20s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    70.21s Pressing Home button
+    t =    71.68s Open com.amit.IosNativeBuild
+    t =    71.68s     Activate com.amit.IosNativeBuild
+    t =    71.76s         Wait for com.amit.IosNativeBuild to idle
+    t =    71.76s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    72.80s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    72.80s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    72.81s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    72.88s             Find: Descendants matching type ScrollView
+    t =    72.88s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    72.88s Pressing Home button
+    t =    74.35s Open com.amit.IosNativeBuild
+    t =    74.35s     Activate com.amit.IosNativeBuild
+    t =    74.42s         Wait for com.amit.IosNativeBuild to idle
+    t =    74.42s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    75.46s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    75.46s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    75.47s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    75.53s             Find: Descendants matching type ScrollView
+    t =    75.53s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    75.54s Pressing Home button
+    t =    77.01s Open com.amit.IosNativeBuild
+    t =    77.01s     Activate com.amit.IosNativeBuild
+    t =    77.08s         Wait for com.amit.IosNativeBuild to idle
+    t =    77.08s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    78.10s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    78.11s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    78.11s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    78.18s             Find: Descendants matching type ScrollView
+    t =    78.18s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    78.19s Pressing Home button
+    t =    79.66s Open com.amit.IosNativeBuild
+    t =    79.66s     Activate com.amit.IosNativeBuild
+    t =    79.73s         Wait for com.amit.IosNativeBuild to idle
+    t =    79.73s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    80.76s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    80.76s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    80.77s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    80.83s             Find: Descendants matching type ScrollView
+    t =    80.83s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    80.84s Pressing Home button
+    t =    82.31s Open com.amit.IosNativeBuild
+    t =    82.31s     Activate com.amit.IosNativeBuild
+    t =    82.38s         Wait for com.amit.IosNativeBuild to idle
+    t =    82.38s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    83.40s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    83.40s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    83.41s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    83.48s             Find: Descendants matching type ScrollView
+    t =    83.48s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    83.49s Pressing Home button
+    t =    84.95s Open com.amit.IosNativeBuild
+    t =    84.95s     Activate com.amit.IosNativeBuild
+    t =    85.01s         Wait for com.amit.IosNativeBuild to idle
+    t =    85.02s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    86.06s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    86.06s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    86.07s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    86.13s             Find: Descendants matching type ScrollView
+    t =    86.13s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    86.15s Pressing Home button
+    t =    87.61s Open com.amit.IosNativeBuild
+    t =    87.61s     Activate com.amit.IosNativeBuild
+    t =    87.68s         Wait for com.amit.IosNativeBuild to idle
+    t =    87.68s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    88.71s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    88.71s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    88.72s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    88.78s             Find: Descendants matching type ScrollView
+    t =    88.78s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    88.79s Pressing Home button
+    t =    90.26s Open com.amit.IosNativeBuild
+    t =    90.26s     Activate com.amit.IosNativeBuild
+    t =    90.33s         Wait for com.amit.IosNativeBuild to idle
+    t =    90.33s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    91.37s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    91.37s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    91.38s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    91.45s             Find: Descendants matching type ScrollView
+    t =    91.45s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    91.45s Pressing Home button
+    t =    92.92s Open com.amit.IosNativeBuild
+    t =    92.92s     Activate com.amit.IosNativeBuild
+    t =    92.99s         Wait for com.amit.IosNativeBuild to idle
+    t =    92.99s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    94.03s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    94.03s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    94.04s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    94.10s             Find: Descendants matching type ScrollView
+    t =    94.10s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    94.11s Pressing Home button
+    t =    95.57s Open com.amit.IosNativeBuild
+    t =    95.58s     Activate com.amit.IosNativeBuild
+    t =    95.64s         Wait for com.amit.IosNativeBuild to idle
+    t =    95.64s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    96.67s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    96.67s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    96.68s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    96.75s             Find: Descendants matching type ScrollView
+    t =    96.75s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    96.75s Pressing Home button
+    t =    98.22s Open com.amit.IosNativeBuild
+    t =    98.22s     Activate com.amit.IosNativeBuild
+    t =    98.29s         Wait for com.amit.IosNativeBuild to idle
+    t =    98.29s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =    99.32s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    99.32s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    99.33s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =    99.39s             Find: Descendants matching type ScrollView
+    t =    99.39s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    99.40s Pressing Home button
+    t =   100.86s Open com.amit.IosNativeBuild
+    t =   100.87s     Activate com.amit.IosNativeBuild
+    t =   100.93s         Wait for com.amit.IosNativeBuild to idle
+    t =   100.94s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   101.97s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   101.97s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   101.98s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   102.05s             Find: Descendants matching type ScrollView
+    t =   102.05s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   102.06s Pressing Home button
+    t =   103.52s Open com.amit.IosNativeBuild
+    t =   103.52s     Activate com.amit.IosNativeBuild
+    t =   103.59s         Wait for com.amit.IosNativeBuild to idle
+    t =   103.59s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   104.62s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   104.62s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   104.63s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   104.69s             Find: Descendants matching type ScrollView
+    t =   104.70s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   104.70s Pressing Home button
+    t =   106.17s Open com.amit.IosNativeBuild
+    t =   106.18s     Activate com.amit.IosNativeBuild
+    t =   106.24s         Wait for com.amit.IosNativeBuild to idle
+    t =   106.24s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   107.28s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   107.28s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   107.29s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   107.36s             Find: Descendants matching type ScrollView
+    t =   107.36s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   107.37s Pressing Home button
+    t =   108.83s Open com.amit.IosNativeBuild
+    t =   108.83s     Activate com.amit.IosNativeBuild
+    t =   108.90s         Wait for com.amit.IosNativeBuild to idle
+    t =   108.90s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   109.94s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   109.94s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   109.95s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   110.02s             Find: Descendants matching type ScrollView
+    t =   110.02s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   110.02s Pressing Home button
+    t =   111.49s Open com.amit.IosNativeBuild
+    t =   111.49s     Activate com.amit.IosNativeBuild
+    t =   111.56s         Wait for com.amit.IosNativeBuild to idle
+    t =   111.56s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   112.61s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   112.61s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   112.62s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   112.68s             Find: Descendants matching type ScrollView
+    t =   112.68s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   112.69s Pressing Home button
+    t =   114.16s Open com.amit.IosNativeBuild
+    t =   114.16s     Activate com.amit.IosNativeBuild
+    t =   114.23s         Wait for com.amit.IosNativeBuild to idle
+    t =   114.23s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   115.26s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   115.26s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   115.27s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   115.33s             Find: Descendants matching type ScrollView
+    t =   115.33s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   115.34s Pressing Home button
+    t =   116.80s Open com.amit.IosNativeBuild
+    t =   116.80s     Activate com.amit.IosNativeBuild
+    t =   116.87s         Wait for com.amit.IosNativeBuild to idle
+    t =   116.88s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   117.90s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   117.90s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   117.91s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   117.98s             Find: Descendants matching type ScrollView
+    t =   117.98s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   117.98s Pressing Home button
+    t =   119.45s Open com.amit.IosNativeBuild
+    t =   119.45s     Activate com.amit.IosNativeBuild
+    t =   119.52s         Wait for com.amit.IosNativeBuild to idle
+    t =   119.52s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   120.56s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   120.56s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   120.56s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   120.63s             Find: Descendants matching type ScrollView
+    t =   120.63s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   120.63s Pressing Home button
+    t =   122.10s Open com.amit.IosNativeBuild
+    t =   122.10s     Activate com.amit.IosNativeBuild
+    t =   122.17s         Wait for com.amit.IosNativeBuild to idle
+    t =   122.17s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   123.18s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   123.18s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   123.18s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   123.25s             Find: Descendants matching type ScrollView
+    t =   123.25s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   123.26s Pressing Home button
+    t =   124.73s Open com.amit.IosNativeBuild
+    t =   124.73s     Activate com.amit.IosNativeBuild
+    t =   124.79s         Wait for com.amit.IosNativeBuild to idle
+    t =   124.80s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   125.83s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   125.83s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   125.84s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   125.91s             Find: Descendants matching type ScrollView
+    t =   125.91s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   125.91s Pressing Home button
+    t =   127.38s Open com.amit.IosNativeBuild
+    t =   127.38s     Activate com.amit.IosNativeBuild
+    t =   127.45s         Wait for com.amit.IosNativeBuild to idle
+    t =   127.45s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   128.49s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   128.49s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   128.49s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   128.56s             Find: Descendants matching type ScrollView
+    t =   128.56s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   128.56s Pressing Home button
+    t =   130.03s Open com.amit.IosNativeBuild
+    t =   130.04s     Activate com.amit.IosNativeBuild
+    t =   130.10s         Wait for com.amit.IosNativeBuild to idle
+    t =   130.10s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   131.15s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   131.15s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   131.16s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   131.22s             Find: Descendants matching type ScrollView
+    t =   131.22s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   131.23s Pressing Home button
+    t =   132.69s Open com.amit.IosNativeBuild
+    t =   132.70s     Activate com.amit.IosNativeBuild
+    t =   132.77s         Wait for com.amit.IosNativeBuild to idle
+    t =   132.77s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   133.78s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   133.78s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   133.79s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   133.85s             Find: Descendants matching type ScrollView
+    t =   133.85s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   133.86s Pressing Home button
+    t =   135.33s Open com.amit.IosNativeBuild
+    t =   135.33s     Activate com.amit.IosNativeBuild
+    t =   135.40s         Wait for com.amit.IosNativeBuild to idle
+    t =   135.40s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   136.42s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   136.42s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   136.43s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   136.49s             Find: Descendants matching type ScrollView
+    t =   136.50s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   136.50s Pressing Home button
+    t =   137.97s Open com.amit.IosNativeBuild
+    t =   137.97s     Activate com.amit.IosNativeBuild
+    t =   138.04s         Wait for com.amit.IosNativeBuild to idle
+    t =   138.04s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   139.05s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   139.06s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   139.06s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   139.13s             Find: Descendants matching type ScrollView
+    t =   139.13s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   139.13s Pressing Home button
+    t =   140.60s Open com.amit.IosNativeBuild
+    t =   140.60s     Activate com.amit.IosNativeBuild
+    t =   140.67s         Wait for com.amit.IosNativeBuild to idle
+    t =   140.67s Waiting 15.0s for "news_list_scroll_view" ScrollView to exist
+    t =   141.69s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   141.69s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   141.70s             Requesting snapshot of accessibility hierarchy for app with pid 91729
+    t =   141.76s             Find: Descendants matching type ScrollView
+    t =   141.77s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuildPerformanceTests/StartupBenchmark.swift:27: Test Case '-[IosNativeBuildPerformanceTests.StartupBenchmark testWarmStartup]' measured [Clock Monotonic Time, s] average: 1.166, relative standard deviation: 1.262%, values: [1.141900, 1.175529, 1.144985, 1.160432, 1.142039, 1.180132, 1.163868, 1.182010, 1.193433, 1.190358, 1.170419, 1.172291, 1.179176, 1.151670, 1.138218, 1.210379, 1.162201, 1.176063, 1.168164, 1.178208, 1.171149, 1.146149, 1.149326, 1.185039, 1.170886, 1.156232, 1.163080, 1.156537, 1.180374, 1.159032, 1.179997, 1.170360, 1.158506, 1.156441, 1.173321, 1.164493, 1.172044, 1.174881, 1.180311, 1.165094, 1.163226, 1.166155, 1.145795, 1.168352, 1.164843, 1.176440, 1.148341, 1.156456, 1.146554, 1.149851], performanceMetricID:com.apple.dt.XCTMetric_Clock.time.monotonic, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+    t =   141.82s Tear Down
+Test Case '-[IosNativeBuildPerformanceTests.StartupBenchmark testWarmStartup]' passed (143.504 seconds).
+Test Suite 'StartupBenchmark' passed at 2026-08-23 12:42:43.403.
+	 Executed 1 test, with 0 failures (0 unexpected) in 143.504 (143.506) seconds
+Test Suite 'IosNativeBuildPerformanceTests.xctest' passed at 2026-08-23 12:42:43.406.
+	 Executed 1 test, with 0 failures (0 unexpected) in 143.504 (143.508) seconds
+Test Suite 'Selected tests' passed at 2026-08-23 12:42:43.407.
+	 Executed 1 test, with 0 failures (0 unexpected) in 143.504 (143.510) seconds
+2026-08-23 12:42:43.814 xcodebuild[22977:419217] [MT] IDETestOperationsObserverDebug: 146.082 elapsed -- Testing started completed.
+2026-08-23 12:42:43.814 xcodebuild[22977:419217] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-08-23 12:42:43.814 xcodebuild[22977:419217] [MT] IDETestOperationsObserverDebug: 146.082 sec, +146.082 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/native-ios/StartupBenchmark_testWarmStartup.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
+Test suite 'Selected tests' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91728)'
+Test suite 'IosNativeBuildPerformanceTests.xctest' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91728)'
+Test suite 'StartupBenchmark' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91728)'
+Test case 'StartupBenchmark.testWarmStartup()' passed on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91728)' (143.504 seconds)

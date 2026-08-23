@@ -1,0 +1,1346 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp.xcodeproj -scheme iosApp -destination platform=iOS,id=00008140-0005309E3687001C -derivedDataPath /private/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp -resultBundlePath benchmark-data/rerun-2026-08/kmp-ios/ScrollBenchmark_testScrollPerformance.xcresult "-only-testing:iosAppPerformanceTests/ScrollBenchmark/testScrollPerformance" -allowProvisioningUpdates
+
+Writing result bundle at path:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/kmp-ios/ScrollBenchmark_testScrollPerformance.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'iosAppPerformanceTests' in project 'iosApp'
+        ➜ Explicit dependency on target 'iosApp' in project 'iosApp'
+    Target 'iosApp' in project 'iosApp' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp/Preview Content/Preview Assets.xcassets /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 6a5843c949aee9f6dc38ad97b58ec0cb
+Build description path: /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/XCBuildData/6a5843c949aee9f6dc38ad97b58ec0cb.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+
+note: Run script build phase 'Compile Kotlin Framework' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'iosApp' from project 'iosApp')
+PhaseScriptExecution Compile\ Kotlin\ Framework /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Script-B9DA97F42DC1497100A4DA20.sh (in target 'iosApp' from project 'iosApp')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    export ACTION\=build
+    export AD_HOC_CODE_SIGNING_ALLOWED\=NO
+    export AGGREGATE_TRACKED_DOMAINS\=YES
+    export ALLOW_BUILD_REQUEST_OVERRIDES\=NO
+    export ALLOW_TARGET_PLATFORM_SPECIALIZATION\=NO
+    export ALTERNATE_GROUP\=staff
+    export ALTERNATE_MODE\=u+w,go-w,a+rX
+    export ALTERNATE_OWNER\=amitkundu
+    export ALTERNATIVE_DISTRIBUTION_WEB\=NO
+    export ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES\=NO
+    export ALWAYS_SEARCH_USER_PATHS\=NO
+    export ALWAYS_USE_SEPARATE_HEADERMAPS\=NO
+    export APPLICATION_EXTENSION_API_ONLY\=NO
+    export APPLY_RULES_IN_COPY_FILES\=NO
+    export APPLY_RULES_IN_COPY_HEADERS\=NO
+    export APP_SHORTCUTS_ENABLE_FLEXIBLE_MATCHING\=YES
+    export ARCHS\=arm64
+    export ARCHS_BASE\=arm64
+    export ARCHS_STANDARD\=arm64
+    export ARCHS_STANDARD_32_64_BIT\=armv7\ arm64
+    export ARCHS_STANDARD_32_BIT\=armv7
+    export ARCHS_STANDARD_64_BIT\=arm64
+    export ARCHS_STANDARD_INCLUDING_64_BIT\=arm64
+    export ARCHS_UNIVERSAL_IPHONE_OS\=armv7\ arm64
+    export ASSETCATALOG_COMPILER_APPICON_NAME\=AppIcon
+    export ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS\=YES
+    export ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME\=AccentColor
+    export ASSETCATALOG_FILTER_FOR_DEVICE_MODEL\=iPhone17,3
+    export ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION\=26.6
+    export ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION\=iPhone17,3
+    export AUTOMATICALLY_MERGE_DEPENDENCIES\=NO
+    export AUTOMATION_APPLE_EVENTS\=NO
+    export AVAILABLE_PLATFORMS\=android\ appletvos\ appletvsimulator\ driverkit\ freebsd\ iphoneos\ iphonesimulator\ linux\ macosx\ none\ openbsd\ qnx\ watchos\ watchsimulator\ webassembly\ xros\ xrsimulator
+    export AppIdentifierPrefix\=J832H2D367.
+    export BUILD_ACTIVE_RESOURCES_ONLY\=YES
+    export BUILD_COMPONENTS\=headers\ build
+    export BUILD_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products
+    export BUILD_LIBRARY_FOR_DISTRIBUTION\=NO
+    export BUILD_ONLY_KNOWN_LOCALIZATIONS\=NO
+    export BUILD_ROOT\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products
+    export BUILD_STYLE\=
+    export BUILD_VARIANTS\=normal
+    export BUILT_PRODUCTS_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos
+    export BUNDLE_CONTENTS_FOLDER_PATH_deep\=Contents/
+    export BUNDLE_EXECUTABLE_FOLDER_NAME_deep\=MacOS
+    export BUNDLE_EXTENSIONS_FOLDER_PATH\=Extensions
+    export BUNDLE_FORMAT\=shallow
+    export BUNDLE_FRAMEWORKS_FOLDER_PATH\=Frameworks
+    export BUNDLE_PLUGINS_FOLDER_PATH\=PlugIns
+    export BUNDLE_PRIVATE_HEADERS_FOLDER_PATH\=PrivateHeaders
+    export BUNDLE_PUBLIC_HEADERS_FOLDER_PATH\=Headers
+    export CACHE_ROOT\=/var/folders/k0/4pgshwcj0k7fsymplyzw4zym0000gq/C/com.apple.DeveloperTools/26.6-17F113/Xcode
+    export CCHROOT\=/var/folders/k0/4pgshwcj0k7fsymplyzw4zym0000gq/C/com.apple.DeveloperTools/26.6-17F113/Xcode
+    export CHMOD\=/bin/chmod
+    export CHOWN\=chown
+    export CLANG_ANALYZER_NONNULL\=YES
+    export CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION\=YES_AGGRESSIVE
+    export CLANG_CACHE_FINE_GRAINED_OUTPUTS\=YES
+    export CLANG_COVERAGE_MAPPING\=YES
+    export CLANG_CXX_LANGUAGE_STANDARD\=gnu++20
+    export CLANG_ENABLE_EXPLICIT_MODULES\=YES
+    export CLANG_ENABLE_MODULES\=YES
+    export CLANG_ENABLE_OBJC_ARC\=YES
+    export CLANG_ENABLE_OBJC_WEAK\=YES
+    export CLANG_MODULES_BUILD_SESSION_FILE\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/ModuleCache.noindex/Session.modulevalidation
+    export CLANG_PROFILE_DATA_DIRECTORY\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/ProfileData
+    export CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING\=YES
+    export CLANG_WARN_BOOL_CONVERSION\=YES
+    export CLANG_WARN_COMMA\=YES
+    export CLANG_WARN_CONSTANT_CONVERSION\=YES
+    export CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS\=YES
+    export CLANG_WARN_DIRECT_OBJC_ISA_USAGE\=YES_ERROR
+    export CLANG_WARN_DOCUMENTATION_COMMENTS\=YES
+    export CLANG_WARN_EMPTY_BODY\=YES
+    export CLANG_WARN_ENUM_CONVERSION\=YES
+    export CLANG_WARN_INFINITE_RECURSION\=YES
+    export CLANG_WARN_INT_CONVERSION\=YES
+    export CLANG_WARN_NON_LITERAL_NULL_CONVERSION\=YES
+    export CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF\=YES
+    export CLANG_WARN_OBJC_LITERAL_CONVERSION\=YES
+    export CLANG_WARN_OBJC_ROOT_CLASS\=YES_ERROR
+    export CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER\=YES
+    export CLANG_WARN_RANGE_LOOP_ANALYSIS\=YES
+    export CLANG_WARN_STRICT_PROTOTYPES\=YES
+    export CLANG_WARN_SUSPICIOUS_MOVE\=YES
+    export CLANG_WARN_UNGUARDED_AVAILABILITY\=YES_AGGRESSIVE
+    export CLANG_WARN_UNREACHABLE_CODE\=YES
+    export CLANG_WARN__DUPLICATE_METHOD_MATCH\=YES
+    export CLASS_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/JavaClasses
+    export CLEAN_PRECOMPS\=YES
+    export CLONE_HEADERS\=NO
+    export CODESIGNING_FOLDER_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app
+    export CODE_SIGNING_ALLOWED\=YES
+    export CODE_SIGNING_REQUIRED\=YES
+    export CODE_SIGN_CONTEXT_CLASS\=XCiPhoneOSCodeSignContext
+    export CODE_SIGN_IDENTITY\=Apple\ Development
+    export CODE_SIGN_INJECT_BASE_ENTITLEMENTS\=YES
+    export CODE_SIGN_STYLE\=Automatic
+    export COLOR_DIAGNOSTICS\=NO
+    export COMBINE_HIDPI_IMAGES\=NO
+    export COMPILATION_CACHE_CAS_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/CompilationCache.noindex
+    export COMPILATION_CACHE_KEEP_CAS_DIRECTORY\=YES
+    export COMPILER_INDEX_STORE_ENABLE\=Default
+    export COMPOSITE_SDK_DIRS\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/CompositeSDKs
+    export COMPRESS_PNG_FILES\=YES
+    export CONFIGURATION\=Debug
+    export CONFIGURATION_BUILD_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos
+    export CONFIGURATION_TEMP_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos
+    export CONTENTS_FOLDER_PATH\=Thesisproject.app
+    export CONTENTS_FOLDER_PATH_SHALLOW_BUNDLE_NO\=Thesisproject.app/Contents
+    export CONTENTS_FOLDER_PATH_SHALLOW_BUNDLE_YES\=Thesisproject.app
+    export COPYING_PRESERVES_HFS_DATA\=NO
+    export COPY_HEADERS_RUN_UNIFDEF\=NO
+    export COPY_PHASE_STRIP\=NO
+    export CORRESPONDING_SIMULATOR_PLATFORM_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform
+    export CORRESPONDING_SIMULATOR_PLATFORM_NAME\=iphonesimulator
+    export CORRESPONDING_SIMULATOR_SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk
+    export CORRESPONDING_SIMULATOR_SDK_NAME\=iphonesimulator26.5
+    export CP\=/bin/cp
+    export CREATE_INFOPLIST_SECTION_IN_BINARY\=NO
+    export CURRENT_ARCH\=undefined_arch
+    export CURRENT_PROJECT_VERSION\=1
+    export CURRENT_VARIANT\=normal
+    export DEAD_CODE_STRIPPING\=YES
+    export DEBUGGING_SYMBOLS\=YES
+    export DEBUG_INFORMATION_FORMAT\=dwarf
+    export DEBUG_INFORMATION_VERSION\=compiler-default
+    export DEFAULT_COMPILER\=com.apple.compilers.llvm.clang.1_0
+    export DEFAULT_DEXT_INSTALL_PATH\=/System/Library/DriverExtensions
+    export DEFAULT_KEXT_INSTALL_PATH\=/System/Library/Extensions
+    export DEFINES_MODULE\=NO
+    export DEPLOYMENT_LOCATION\=NO
+    export DEPLOYMENT_POSTPROCESSING\=NO
+    export DEPLOYMENT_TARGET_SETTING_NAME\=IPHONEOS_DEPLOYMENT_TARGET
+    export DEPLOYMENT_TARGET_SUGGESTED_VALUES\=12.0\ 12.1\ 12.2\ 12.3\ 12.4\ 13.0\ 13.1\ 13.2\ 13.3\ 13.4\ 13.5\ 13.6\ 14.0\ 14.1\ 14.2\ 14.3\ 14.4\ 14.5\ 14.6\ 14.7\ 15.0\ 15.1\ 15.2\ 15.3\ 15.4\ 15.5\ 15.6\ 16.0\ 16.1\ 16.2\ 16.3\ 16.4\ 16.5\ 16.6\ 17.0\ 17.1\ 17.2\ 17.3\ 17.4\ 17.5\ 17.6\ 18.0\ 18.1\ 18.2\ 18.3\ 18.4\ 18.5\ 18.6\ 26.0\ 26.2\ 26.3\ 26.4\ 26.5
+    export DERIVED_FILES_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/DerivedSources
+    export DERIVED_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/DerivedSources
+    export DERIVED_SOURCES_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/DerivedSources
+    export DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER\=NO
+    export DEVELOPER_APPLICATIONS_DIR\=/Applications/Xcode.app/Contents/Developer/Applications
+    export DEVELOPER_BIN_DIR\=/Applications/Xcode.app/Contents/Developer/usr/bin
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export DEVELOPER_FRAMEWORKS_DIR\=/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+    export DEVELOPER_FRAMEWORKS_DIR_QUOTED\=/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+    export DEVELOPER_LIBRARY_DIR\=/Applications/Xcode.app/Contents/Developer/Library
+    export DEVELOPER_SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+    export DEVELOPER_TOOLS_DIR\=/Applications/Xcode.app/Contents/Developer/Tools
+    export DEVELOPER_USR_DIR\=/Applications/Xcode.app/Contents/Developer/usr
+    export DEVELOPMENT_ASSET_PATHS\=\"iosApp/Preview\ Content\"
+    export DEVELOPMENT_LANGUAGE\=en
+    export DEVELOPMENT_TEAM\=J832H2D367
+    export DIAGNOSE_MISSING_TARGET_DEPENDENCIES\=YES
+    export DIFF\=/usr/bin/diff
+    export DOCUMENTATION_FOLDER_PATH\=Thesisproject.app/en.lproj/Documentation
+    export DONT_GENERATE_INFOPLIST_FILE\=NO
+    export DSTROOT\=/tmp/iosApp.dst
+    export DT_TOOLCHAIN_DIR\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    export DUMP_DEPENDENCIES\=NO
+    export DUMP_DEPENDENCIES_OUTPUT_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/iosApp-BuildDependencyInfo.json
+    export DWARF_DSYM_FILE_NAME\=Thesisproject.app.dSYM
+    export DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT\=NO
+    export DWARF_DSYM_FOLDER_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos
+    export DYNAMIC_LIBRARY_EXTENSION\=dylib
+    export EAGER_COMPILATION_ALLOW_SCRIPTS\=NO
+    export EAGER_LINKING\=NO
+    export EFFECTIVE_PLATFORM_NAME\=-iphoneos
+    export EFFECTIVE_SWIFT_VERSION\=5
+    export EMBEDDED_CONTENT_CONTAINS_SWIFT\=NO
+    export EMBEDDED_PROFILE_NAME\=embedded.mobileprovision
+    export EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE\=NO
+    export ENABLE_APP_SANDBOX\=NO
+    export ENABLE_CODE_COVERAGE\=YES
+    export ENABLE_COHORT_ARCHS\=NO
+    export ENABLE_CPLUSPLUS_BOUNDS_SAFE_BUFFERS\=NO
+    export ENABLE_C_BOUNDS_SAFETY\=NO
+    export ENABLE_DEBUG_DYLIB\=YES
+    export ENABLE_DEFAULT_HEADER_SEARCH_PATHS\=YES
+    export ENABLE_DEFAULT_SEARCH_PATHS\=YES
+    export ENABLE_ENHANCED_SECURITY\=NO
+    export ENABLE_HARDENED_RUNTIME\=NO
+    export ENABLE_HEADER_DEPENDENCIES\=YES
+    export ENABLE_INCOMING_NETWORK_CONNECTIONS\=NO
+    export ENABLE_ON_DEMAND_RESOURCES\=YES
+    export ENABLE_OUTGOING_NETWORK_CONNECTIONS\=NO
+    export ENABLE_POINTER_AUTHENTICATION\=NO
+    export ENABLE_PREVIEWS\=NO
+    export ENABLE_RESOURCE_ACCESS_AUDIO_INPUT\=NO
+    export ENABLE_RESOURCE_ACCESS_BLUETOOTH\=NO
+    export ENABLE_RESOURCE_ACCESS_CALENDARS\=NO
+    export ENABLE_RESOURCE_ACCESS_CAMERA\=NO
+    export ENABLE_RESOURCE_ACCESS_CONTACTS\=NO
+    export ENABLE_RESOURCE_ACCESS_LOCATION\=NO
+    export ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY\=NO
+    export ENABLE_RESOURCE_ACCESS_PRINTING\=NO
+    export ENABLE_RESOURCE_ACCESS_USB\=NO
+    export ENABLE_SDK_IMPORTS\=NO
+    export ENABLE_SECURITY_COMPILER_WARNINGS\=NO
+    export ENABLE_STRICT_OBJC_MSGSEND\=YES
+    export ENABLE_TESTABILITY\=YES
+    export ENABLE_TESTING_SEARCH_PATHS\=NO
+    export ENABLE_USER_SCRIPT_SANDBOXING\=NO
+    export ENABLE_XOJIT_PREVIEWS\=YES
+    export ENFORCE_VALID_ARCHS\=YES
+    export ENTITLEMENTS_ALLOWED\=YES
+    export ENTITLEMENTS_DESTINATION\=Signature
+    export ENTITLEMENTS_REQUIRED\=NO
+    export EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS\=.DS_Store\ .svn\ .git\ .hg\ CVS
+    export EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES\=\*.nib\ \*.lproj\ \*.framework\ \*.gch\ \*.xcode\*\ \*.xcassets\ \*.icon\ \(\*\)\ .DS_Store\ CVS\ .svn\ .git\ .hg\ \*.pbproj\ \*.pbxproj
+    export EXECUTABLES_FOLDER_PATH\=Thesisproject.app/Executables
+    export EXECUTABLE_BLANK_INJECTION_DYLIB_PATH\=Thesisproject.app/__preview.dylib
+    export EXECUTABLE_DEBUG_DYLIB_INSTALL_NAME\=@rpath/Thesisproject.debug.dylib
+    export EXECUTABLE_DEBUG_DYLIB_PATH\=Thesisproject.app/Thesisproject.debug.dylib
+    export EXECUTABLE_FOLDER_PATH\=Thesisproject.app
+    export EXECUTABLE_FOLDER_PATH_SHALLOW_BUNDLE_NO\=Thesisproject.app/MacOS
+    export EXECUTABLE_FOLDER_PATH_SHALLOW_BUNDLE_YES\=Thesisproject.app
+    export EXECUTABLE_NAME\=Thesisproject
+    export EXECUTABLE_PATH\=Thesisproject.app/Thesisproject
+    export EXPANDED_CODE_SIGN_IDENTITY\=B64D278CE6C7BC679236D8544BD267E3D946628C
+    export EXPANDED_CODE_SIGN_IDENTITY_NAME\=Apple\ Development:\ amit.kundu@f-secure.com\ \(PV6JVM8YU9\)
+    export EXPANDED_PROVISIONING_PROFILE\=1c26fc66-f122-4afe-aa72-b4393ffea571
+    export EXTENSIONS_FOLDER_PATH\=Thesisproject.app/Extensions
+    export FILE_LIST\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects/LinkFileList
+    export FIXED_FILES_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/FixedFiles
+    export FRAMEWORKS_FOLDER_PATH\=Thesisproject.app/Frameworks
+    export FRAMEWORK_FLAG_PREFIX\=-framework
+    export FRAMEWORK_SEARCH_PATHS\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos\ \ /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/../composeApp/build/xcode-frameworks/Debug/iphoneos26.5
+    export FRAMEWORK_VERSION\=A
+    export FULL_PRODUCT_NAME\=Thesisproject.app
+    export FUSE_BUILD_PHASES\=YES
+    export FUSE_BUILD_SCRIPT_PHASES\=NO
+    export GCC3_VERSION\=3.3
+    export GCC_C_LANGUAGE_STANDARD\=gnu17
+    export GCC_DYNAMIC_NO_PIC\=NO
+    export GCC_INLINES_ARE_PRIVATE_EXTERN\=YES
+    export GCC_NO_COMMON_BLOCKS\=YES
+    export GCC_OPTIMIZATION_LEVEL\=0
+    export GCC_PFE_FILE_C_DIALECTS\=c\ objective-c\ c++\ objective-c++
+    export GCC_PREPROCESSOR_DEFINITIONS\=DEBUG\=1\ 
+    export GCC_SYMBOLS_PRIVATE_EXTERN\=NO
+    export GCC_THUMB_SUPPORT\=YES
+    export GCC_TREAT_WARNINGS_AS_ERRORS\=NO
+    export GCC_VERSION\=com.apple.compilers.llvm.clang.1_0
+    export GCC_VERSION_IDENTIFIER\=com_apple_compilers_llvm_clang_1_0
+    export GCC_WARN_64_TO_32_BIT_CONVERSION\=YES
+    export GCC_WARN_ABOUT_RETURN_TYPE\=YES_ERROR
+    export GCC_WARN_UNDECLARED_SELECTOR\=YES
+    export GCC_WARN_UNINITIALIZED_AUTOS\=YES_AGGRESSIVE
+    export GCC_WARN_UNUSED_FUNCTION\=YES
+    export GCC_WARN_UNUSED_VARIABLE\=YES
+    export GENERATED_MODULEMAP_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/GeneratedModuleMaps-iphoneos
+    export GENERATE_INFOPLIST_FILE\=YES
+    export GENERATE_INTERMEDIATE_TEXT_BASED_STUBS\=YES
+    export GENERATE_PKGINFO_FILE\=YES
+    export GENERATE_PRELINK_OBJECT_FILE\=NO
+    export GENERATE_PROFILING_CODE\=NO
+    export GENERATE_TEXT_BASED_STUBS\=NO
+    export GID\=20
+    export GROUP\=staff
+    export HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT\=YES
+    export HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES\=YES
+    export HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_TARGETS_NOT_BEING_BUILT\=YES
+    export HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS\=YES
+    export HEADERMAP_INCLUDES_PROJECT_HEADERS\=YES
+    export HEADERMAP_USES_FRAMEWORK_PREFIX_ENTRIES\=YES
+    export HEADERMAP_USES_VFS\=NO
+    export HEADER_SEARCH_PATHS\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/include\ 
+    export HOME\=/Users/amitkundu
+    export HOST_ARCH\=arm64
+    export HOST_PLATFORM\=macosx
+    export ICONV\=/usr/bin/iconv
+    export IMPLICIT_DEPENDENCY_DOMAIN\=default
+    export INDEX_STORE_COMPRESS\=NO
+    export INDEX_STORE_ONLY_PROJECT_FILES\=NO
+    export INFOPLIST_ENABLE_CFBUNDLEICONS_MERGE\=YES
+    export INFOPLIST_EXPAND_BUILD_SETTINGS\=YES
+    export INFOPLIST_FILE\=iosApp/Info.plist
+    export INFOPLIST_KEY_UIApplicationSceneManifest_Generation\=YES
+    export INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents\=YES
+    export INFOPLIST_KEY_UILaunchScreen_Generation\=YES
+    export INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad\=UIInterfaceOrientationPortrait\ UIInterfaceOrientationPortraitUpsideDown\ UIInterfaceOrientationLandscapeLeft\ UIInterfaceOrientationLandscapeRight
+    export INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone\=UIInterfaceOrientationPortrait\ UIInterfaceOrientationLandscapeLeft\ UIInterfaceOrientationLandscapeRight
+    export INFOPLIST_OUTPUT_FORMAT\=binary
+    export INFOPLIST_PATH\=Thesisproject.app/Info.plist
+    export INFOPLIST_PREPROCESS\=NO
+    export INFOSTRINGS_PATH\=Thesisproject.app/en.lproj/InfoPlist.strings
+    export INLINE_PRIVATE_FRAMEWORKS\=NO
+    export INSTALLAPI_IGNORE_SKIP_INSTALL\=YES
+    export INSTALLHDRS_COPY_PHASE\=NO
+    export INSTALLHDRS_SCRIPT_PHASE\=NO
+    export INSTALL_DIR\=/tmp/iosApp.dst/Applications
+    export INSTALL_GROUP\=staff
+    export INSTALL_MODE_FLAG\=u+w,go-w,a+rX
+    export INSTALL_OWNER\=amitkundu
+    export INSTALL_PATH\=/Applications
+    export INSTALL_ROOT\=/tmp/iosApp.dst
+    export IPHONEOS_DEPLOYMENT_TARGET\=18.2
+    export IS_UNOPTIMIZED_BUILD\=YES
+    export JAVAC_DEFAULT_FLAGS\=-J-Xms64m\ -J-XX:NewSize\=4M\ -J-Dfile.encoding\=UTF8
+    export JAVA_APP_STUB\=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
+    export JAVA_ARCHIVE_CLASSES\=YES
+    export JAVA_ARCHIVE_TYPE\=JAR
+    export JAVA_COMPILER\=/usr/bin/javac
+    export JAVA_FOLDER_PATH\=Thesisproject.app/Java
+    export JAVA_FRAMEWORK_RESOURCES_DIRS\=Resources
+    export JAVA_JAR_FLAGS\=cv
+    export JAVA_SOURCE_SUBDIR\=.
+    export JAVA_USE_DEPENDENCIES\=YES
+    export JAVA_ZIP_FLAGS\=-urg
+    export JIKES_DEFAULT_FLAGS\=+E\ +OLDCSO
+    export KASAN_CFLAGS_CLASSIC\=-DKASAN\=1\ -DKASAN_CLASSIC\=1\ -fsanitize\=address\ -mllvm\ -asan-globals-live-support\ -mllvm\ -asan-force-dynamic-shadow
+    export KASAN_CFLAGS_TBI\=-DKASAN\=1\ -DKASAN_TBI\=1\ -fsanitize\=kernel-hwaddress\ -mllvm\ -hwasan-recover\=0\ -mllvm\ -hwasan-instrument-atomics\=0\ -mllvm\ -hwasan-instrument-stack\=1\ -mllvm\ -hwasan-generate-tags-with-calls\=1\ -mllvm\ -hwasan-instrument-with-calls\=1\ -mllvm\ -hwasan-use-short-granules\=0\ -mllvm\ -hwasan-memory-access-callback-prefix\=__asan_
+    export KASAN_DEFAULT_CFLAGS\=-DKASAN\=1\ -DKASAN_CLASSIC\=1\ -fsanitize\=address\ -mllvm\ -asan-globals-live-support\ -mllvm\ -asan-force-dynamic-shadow
+    export KEEP_PRIVATE_EXTERNS\=NO
+    export LD_DEPENDENCY_INFO_FILE\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/undefined_arch/Thesisproject_dependency_info.dat
+    export LD_EXPORT_SYMBOLS\=YES
+    export LD_GENERATE_MAP_FILE\=NO
+    export LD_MAP_FILE_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Thesisproject-LinkMap-normal-undefined_arch.txt
+    export LD_NO_PIE\=NO
+    export LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER\=YES
+    export LD_RUNPATH_SEARCH_PATHS\=\ @executable_path/Frameworks
+    export LD_RUNPATH_SEARCH_PATHS_YES\=@loader_path/../Frameworks
+    export LD_SHARED_CACHE_ELIGIBLE\=Automatic
+    export LD_WARN_DUPLICATE_LIBRARIES\=NO
+    export LD_WARN_UNUSED_DYLIBS\=NO
+    export LEGACY_DEVELOPER_DIR\=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer
+    export LEX\=lex
+    export LIBRARY_DEXT_INSTALL_PATH\=/Library/DriverExtensions
+    export LIBRARY_FLAG_NOSPACE\=YES
+    export LIBRARY_FLAG_PREFIX\=-l
+    export LIBRARY_KEXT_INSTALL_PATH\=/Library/Extensions
+    export LIBRARY_SEARCH_PATHS\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos\ 
+    export LINKER_DISPLAYS_MANGLED_NAMES\=NO
+    export LINK_FILE_LIST_normal_arm64\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/Thesisproject.LinkFileList
+    export LINK_OBJC_RUNTIME\=YES
+    export LINK_WITH_STANDARD_LIBRARIES\=YES
+    export LLVM_TARGET_TRIPLE_OS_VERSION\=ios18.2
+    export LLVM_TARGET_TRIPLE_VENDOR\=apple
+    export LM_AUX_CONST_METADATA_LIST_PATH_normal_arm64\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/Thesisproject.SwiftConstValuesFileList
+    export LOCALIZATION_EXPORT_SUPPORTED\=YES
+    export LOCALIZATION_PREFERS_STRING_CATALOGS\=YES
+    export LOCALIZED_RESOURCES_FOLDER_PATH\=Thesisproject.app/en.lproj
+    export LOCALIZED_STRING_CODE_COMMENTS\=NO
+    export LOCALIZED_STRING_MACRO_NAMES\=NSLocalizedString\ CFCopyLocalizedString
+    export LOCALIZED_STRING_SWIFTUI_SUPPORT\=YES
+    export LOCAL_ADMIN_APPS_DIR\=/Applications/Utilities
+    export LOCAL_APPS_DIR\=/Applications
+    export LOCAL_DEVELOPER_DIR\=/Library/Developer
+    export LOCAL_LIBRARY_DIR\=/Library
+    export LOCROOT\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    export LOCSYMROOT\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    export MACH_O_TYPE\=mh_execute
+    export MAC_OS_X_PRODUCT_BUILD_VERSION\=25G83
+    export MAC_OS_X_VERSION_ACTUAL\=260602
+    export MAC_OS_X_VERSION_MAJOR\=260000
+    export MAC_OS_X_VERSION_MINOR\=260600
+    export MAKE_MERGEABLE\=NO
+    export MARKETING_VERSION\=1.0
+    export MERGEABLE_LIBRARY\=NO
+    export MERGED_BINARY_TYPE\=none
+    export MERGE_LINKED_LIBRARIES\=NO
+    export METAL_LIBRARY_FILE_BASE\=default
+    export METAL_LIBRARY_OUTPUT_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app
+    export MODULES_FOLDER_PATH\=Thesisproject.app/Modules
+    export MODULE_CACHE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/ModuleCache.noindex
+    export MTL_ENABLE_DEBUG_INFO\=INCLUDE_SOURCE
+    export MTL_FAST_MATH\=YES
+    export NATIVE_ARCH\=arm64
+    export NATIVE_ARCH_32_BIT\=arm
+    export NATIVE_ARCH_64_BIT\=arm64
+    export NATIVE_ARCH_ACTUAL\=arm64
+    export NO_COMMON\=YES
+    export OBJECT_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects
+    export OBJECT_FILE_DIR_normal\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal
+    export OBJROOT\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex
+    export ONLY_ACTIVE_ARCH\=YES
+    export OS\=MACOS
+    export OSAC\=/usr/bin/osacompile
+    export OTHER_LDFLAGS\=\ -lsqlite3
+    export PACKAGE_TYPE\=com.apple.package-type.wrapper.application
+    export PASCAL_STRINGS\=YES
+    export PATH\=/Applications/Xcode.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/PlugIns/SWBUniversalPlatformPlugin.bundle/Contents/Frameworks/SWBUniversalPlatform.framework/Resources:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/openssl@3/bin:/path/to/openssl:/Users/amitkundu/Library/Application\ Support/waveterm/bin:/Library/Frameworks/Python.framework/Versions/3.13/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/usr/local/MacGPG2/bin:/Applications/Privileges.app/Contents/MacOS:/Users/amitkundu/Library/Application\ Support/JetBrains/Toolbox/scripts:/Users/amitkundu/.local/bin:/Users/amitkundu/Library/Android/sdk/platform-tools/:/Users/amitkundu/.nvm/versions/node/current/bin:/usr/local/bin/npm:/Users/amitkundu/Library/Python/3.13/bin:/Users/amitkundu/tizen-studio/tools:/Users/amitkundu/tizen-studio/tools/ide/bin:/Users/amitkundu/.maestro/bin:/Users/amitkundu/.claude/plugins/cache/claude-plugins-official/code-review/unknown/bin:/Users/amitkundu/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0/bin:/Users/amitkundu/.claude/plugins/cache/claude-plugins-official/swift-lsp/1.0.0/bin:/Users/amitkundu/.claude/plugins/cache/fsecure-marketplace/fsecure-core/1.1.0/bin
+    export PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES\=/usr/include\ /usr/local/include\ /System/Library/Frameworks\ /System/Library/PrivateFrameworks\ /Applications/Xcode.app/Contents/Developer/Headers\ /Applications/Xcode.app/Contents/Developer/SDKs\ /Applications/Xcode.app/Contents/Developer/Platforms
+    export PBDEVELOPMENTPLIST_PATH\=Thesisproject.app/pbdevelopment.plist
+    export PER_ARCH_MODULE_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/undefined_arch
+    export PER_ARCH_OBJECT_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/undefined_arch
+    export PER_VARIANT_OBJECT_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal
+    export PKGINFO_FILE_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/PkgInfo
+    export PKGINFO_PATH\=Thesisproject.app/PkgInfo
+    export PLATFORM_DEVELOPER_APPLICATIONS_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications
+    export PLATFORM_DEVELOPER_BIN_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+    export PLATFORM_DEVELOPER_LIBRARY_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library
+    export PLATFORM_DEVELOPER_SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+    export PLATFORM_DEVELOPER_TOOLS_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools
+    export PLATFORM_DEVELOPER_USR_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr
+    export PLATFORM_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform
+    export PLATFORM_DISPLAY_NAME\=iOS
+    export PLATFORM_FAMILY_NAME\=iOS
+    export PLATFORM_NAME\=iphoneos
+    export PLATFORM_PREFERRED_ARCH\=arm64
+    export PLATFORM_PRODUCT_BUILD_VERSION\=23F81a
+    export PLATFORM_REQUIRES_SWIFT_AUTOLINK_EXTRACT\=NO
+    export PLATFORM_REQUIRES_SWIFT_MODULEWRAP\=NO
+    export PLATFORM_USES_DSYMS\=YES
+    export PLIST_FILE_OUTPUT_FORMAT\=binary
+    export PLUGINS_FOLDER_PATH\=Thesisproject.app/PlugIns
+    export PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR\=YES
+    export PRECOMP_DESTINATION_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/PrefixHeaders
+    export PRIVATE_HEADERS_FOLDER_PATH\=Thesisproject.app/PrivateHeaders
+    export PROCESSED_INFOPLIST_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/undefined_arch/Processed-Info.plist
+    export PRODUCT_BUNDLE_IDENTIFIER\=com.example.thesisproject.Thesisproject
+    export PRODUCT_BUNDLE_PACKAGE_TYPE\=APPL
+    export PRODUCT_MODULE_NAME\=Thesisproject
+    export PRODUCT_NAME\=Thesisproject
+    export PRODUCT_SETTINGS_PATH\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp/Info.plist
+    export PRODUCT_TYPE\=com.apple.product-type.application
+    export PROFILING_CODE\=NO
+    export PROJECT\=iosApp
+    export PROJECT_DERIVED_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/DerivedSources
+    export PROJECT_DIR\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    export PROJECT_FILE_PATH\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp.xcodeproj
+    export PROJECT_GUID\=7b79493a8b7fc1f2fff3c51cd12ba024
+    export PROJECT_NAME\=iosApp
+    export PROJECT_TEMP_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build
+    export PROJECT_TEMP_ROOT\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex
+    export PROVISIONING_PROFILE_REQUIRED\=YES
+    export PROVISIONING_PROFILE_REQUIRED_YES_YES\=YES
+    export PROVISIONING_PROFILE_SUPPORTED\=YES
+    export PUBLIC_HEADERS_FOLDER_PATH\=Thesisproject.app/Headers
+    export RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET\=15.0
+    export RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS\=YES
+    export REMOVE_CVS_FROM_RESOURCES\=YES
+    export REMOVE_GIT_FROM_RESOURCES\=YES
+    export REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES\=YES
+    export REMOVE_HG_FROM_RESOURCES\=YES
+    export REMOVE_STATIC_EXECUTABLES_FROM_EMBEDDED_BUNDLES\=YES
+    export REMOVE_SVN_FROM_RESOURCES\=YES
+    export RESCHEDULE_INDEPENDENT_HEADERS_PHASES\=YES
+    export REZ_COLLECTOR_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/ResourceManagerResources
+    export REZ_OBJECTS_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/ResourceManagerResources/Objects
+    export REZ_SEARCH_PATHS\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos\ 
+    export RPATH_ORIGIN\=@loader_path
+    export RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES\=NO
+    export RUNTIME_EXCEPTION_ALLOW_JIT\=NO
+    export RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY\=NO
+    export RUNTIME_EXCEPTION_DEBUGGING_TOOL\=NO
+    export RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION\=NO
+    export RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION\=NO
+    export SCANNING_PCM_KEEP_CACHE_DIRECTORY\=YES
+    export SCAN_ALL_SOURCE_FILES_FOR_INCLUDES\=NO
+    export SCRIPTS_FOLDER_PATH\=Thesisproject.app/Scripts
+    export SCRIPT_INPUT_FILE_COUNT\=0
+    export SCRIPT_INPUT_FILE_LIST_COUNT\=0
+    export SCRIPT_OUTPUT_FILE_COUNT\=0
+    export SCRIPT_OUTPUT_FILE_LIST_COUNT\=0
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk
+    export SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk
+    export SDK_DIR_iphoneos\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk
+    export SDK_DIR_iphoneos26_5\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk
+    export SDK_NAME\=iphoneos26.5
+    export SDK_NAMES\=iphoneos26.5
+    export SDK_PRODUCT_BUILD_VERSION\=23F81a
+    export SDK_STAT_CACHE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp
+    export SDK_STAT_CACHE_ENABLE\=YES
+    export SDK_STAT_CACHE_PATH\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+    export SDK_VERSION\=26.5
+    export SDK_VERSION_ACTUAL\=260500
+    export SDK_VERSION_MAJOR\=260000
+    export SDK_VERSION_MINOR\=260500
+    export SED\=/usr/bin/sed
+    export SEPARATE_STRIP\=NO
+    export SEPARATE_SYMBOL_EDIT\=NO
+    export SET_DIR_MODE_OWNER_GROUP\=YES
+    export SET_FILE_MODE_OWNER_GROUP\=NO
+    export SHALLOW_BUNDLE\=YES
+    export SHALLOW_BUNDLE_TRIPLE\=ios
+    export SHALLOW_BUNDLE_ios_macabi\=NO
+    export SHALLOW_BUNDLE_macos\=NO
+    export SHARED_DERIVED_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/DerivedSources
+    export SHARED_FRAMEWORKS_FOLDER_PATH\=Thesisproject.app/SharedFrameworks
+    export SHARED_PRECOMPS_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/PrecompiledHeaders
+    export SHARED_SUPPORT_FOLDER_PATH\=Thesisproject.app/SharedSupport
+    export SKIP_INSTALL\=NO
+    export SKIP_MERGEABLE_LIBRARY_BUNDLE_HOOK\=NO
+    export SOURCE_ROOT\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    export SRCROOT\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    export STRINGSDATA_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/undefined_arch
+    export STRINGSDATA_ROOT\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build
+    export STRINGS_FILE_INFOPLIST_RENAME\=YES
+    export STRINGS_FILE_OUTPUT_ENCODING\=binary
+    export STRING_CATALOG_GENERATE_SYMBOLS\=NO
+    export STRIP_BITCODE_FROM_COPIED_FILES\=YES
+    export STRIP_INSTALLED_PRODUCT\=NO
+    export STRIP_STYLE\=all
+    export STRIP_SWIFT_SYMBOLS\=YES
+    export SUPPORTED_DEVICE_FAMILIES\=1,2
+    export SUPPORTED_PLATFORMS\=iphoneos\ iphonesimulator
+    export SUPPORTS_MACCATALYST\=NO
+    export SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD\=YES
+    export SUPPORTS_ON_DEMAND_RESOURCES\=YES
+    export SUPPORTS_TEXT_BASED_API\=NO
+    export SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD\=YES
+    export SUPPRESS_WARNINGS\=NO
+    export SWIFT_ACTIVE_COMPILATION_CONDITIONS\=DEBUG\ 
+    export SWIFT_EMIT_CONST_VALUE_PROTOCOLS\=AnyResolverProviding\ AppEntity\ AppEnum\ AppExtension\ AppIntent\ AppIntentsPackage\ AppShortcutProviding\ AppShortcutsProvider\ AppUnionValue\ AppUnionValueCasesProviding\ DynamicOptionsProvider\ EntityQuery\ ExtensionPointDefining\ IntentValueQuery\ Resolver\ TransientEntity\ _AssistantIntentsProvider\ _GenerativeFunctionExtractable\ _IntentValueRepresentable
+    export SWIFT_EMIT_LOC_STRINGS\=YES
+    export SWIFT_ENABLE_EXPLICIT_MODULES\=YES
+    export SWIFT_OPTIMIZATION_LEVEL\=-Onone
+    export SWIFT_PLATFORM_TARGET_PREFIX\=ios
+    export SWIFT_RESPONSE_FILE_PATH_normal_arm64\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/Thesisproject.SwiftFileList
+    export SWIFT_VERSION\=5.0
+    export SYMROOT\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products
+    export SYSTEM_ADMIN_APPS_DIR\=/Applications/Utilities
+    export SYSTEM_APPS_DIR\=/Applications
+    export SYSTEM_CORE_SERVICES_DIR\=/System/Library/CoreServices
+    export SYSTEM_DEMOS_DIR\=/Applications/Extras
+    export SYSTEM_DEVELOPER_APPS_DIR\=/Applications/Xcode.app/Contents/Developer/Applications
+    export SYSTEM_DEVELOPER_BIN_DIR\=/Applications/Xcode.app/Contents/Developer/usr/bin
+    export SYSTEM_DEVELOPER_DEMOS_DIR\=/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built\ Examples
+    export SYSTEM_DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SYSTEM_DEVELOPER_DOC_DIR\=/Applications/Xcode.app/Contents/Developer/ADC\ Reference\ Library
+    export SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR\=/Applications/Xcode.app/Contents/Developer/Applications/Graphics\ Tools
+    export SYSTEM_DEVELOPER_JAVA_TOOLS_DIR\=/Applications/Xcode.app/Contents/Developer/Applications/Java\ Tools
+    export SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR\=/Applications/Xcode.app/Contents/Developer/Applications/Performance\ Tools
+    export SYSTEM_DEVELOPER_RELEASENOTES_DIR\=/Applications/Xcode.app/Contents/Developer/ADC\ Reference\ Library/releasenotes
+    export SYSTEM_DEVELOPER_TOOLS\=/Applications/Xcode.app/Contents/Developer/Tools
+    export SYSTEM_DEVELOPER_TOOLS_DOC_DIR\=/Applications/Xcode.app/Contents/Developer/ADC\ Reference\ Library/documentation/DeveloperTools
+    export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR\=/Applications/Xcode.app/Contents/Developer/ADC\ Reference\ Library/releasenotes/DeveloperTools
+    export SYSTEM_DEVELOPER_USR_DIR\=/Applications/Xcode.app/Contents/Developer/usr
+    export SYSTEM_DEVELOPER_UTILITIES_DIR\=/Applications/Xcode.app/Contents/Developer/Applications/Utilities
+    export SYSTEM_DEXT_INSTALL_PATH\=/System/Library/DriverExtensions
+    export SYSTEM_DOCUMENTATION_DIR\=/Library/Documentation
+    export SYSTEM_EXTENSIONS_FOLDER_PATH\=Thesisproject.app/SystemExtensions
+    export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_NO\=Thesisproject.app/Library/SystemExtensions
+    export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_YES\=Thesisproject.app/SystemExtensions
+    export SYSTEM_KEXT_INSTALL_PATH\=/System/Library/Extensions
+    export SYSTEM_LIBRARY_DIR\=/System/Library
+    export TAPI_DEMANGLE\=YES
+    export TAPI_ENABLE_PROJECT_HEADERS\=NO
+    export TAPI_LANGUAGE\=objective-c
+    export TAPI_LANGUAGE_STANDARD\=compiler-default
+    export TAPI_USE_SRCROOT\=YES
+    export TAPI_VERIFY_MODE\=Pedantic
+    export TARGETED_DEVICE_FAMILY\=1,2
+    export TARGETNAME\=iosApp
+    export TARGET_BUILD_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos
+    export TARGET_DEVICE_IDENTIFIER\=00008140-0005309E3687001C
+    export TARGET_DEVICE_MODEL\=iPhone17,3
+    export TARGET_DEVICE_OS_VERSION\=26.6
+    export TARGET_DEVICE_PLATFORM_NAME\=iphoneos
+    export TARGET_NAME\=iosApp
+    export TARGET_TEMP_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build
+    export TEAM_ID\=J832H2D367
+    export TEMP_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build
+    export TEMP_FILES_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build
+    export TEMP_FILE_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build
+    export TEMP_ROOT\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex
+    export TEMP_SANDBOX_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/TemporaryTaskSandboxes
+    export TEST_FRAMEWORK_SEARCH_PATHS\=\ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks\ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/Developer/Library/Frameworks
+    export TEST_LIBRARY_SEARCH_PATHS\=\ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib
+    export TOOLCHAINS\=com.apple.dt.toolchain.XcodeDefault
+    export TOOLCHAIN_DIR\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    export TREAT_MISSING_BASELINES_AS_TEST_FAILURES\=NO
+    export TREAT_MISSING_SCRIPT_PHASE_OUTPUTS_AS_ERRORS\=NO
+    export TeamIdentifierPrefix\=J832H2D367.
+    export UID\=503
+    export UNINSTALLED_PRODUCTS_DIR\=/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/UninstalledProducts
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH\=Thesisproject.app
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_NO\=Thesisproject.app/Resources
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_YES\=Thesisproject.app
+    export UNSTRIPPED_PRODUCT\=NO
+    export USER\=amitkundu
+    export USER_APPS_DIR\=/Users/amitkundu/Applications
+    export USER_LIBRARY_DIR\=/Users/amitkundu/Library
+    export USE_DYNAMIC_NO_PIC\=YES
+    export USE_HEADERMAP\=YES
+    export USE_HEADER_SYMLINKS\=NO
+    export VALIDATE_DEVELOPMENT_ASSET_PATHS\=YES_ERROR
+    export VALIDATE_PRODUCT\=NO
+    export VALID_ARCHS\=arm64\ arm64e\ armv7\ armv7s
+    export VERBOSE_PBXCP\=NO
+    export VERSIONPLIST_PATH\=Thesisproject.app/version.plist
+    export VERSION_INFO_BUILDER\=amitkundu
+    export VERSION_INFO_FILE\=Thesisproject_vers.c
+    export VERSION_INFO_STRING\=\"@\(\#\)PROGRAM:Thesisproject\ \ PROJECT:iosApp-1\"
+    export WORKSPACE_DIR\=/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp.xcodeproj
+    export WRAPPER_EXTENSION\=app
+    export WRAPPER_NAME\=Thesisproject.app
+    export WRAPPER_SUFFIX\=.app
+    export WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES\=NO
+    export XCODE_APP_SUPPORT_DIR\=/Applications/Xcode.app/Contents/Developer/Library/Xcode
+    export XCODE_PRODUCT_BUILD_VERSION\=17F113
+    export XCODE_VERSION_ACTUAL\=2660
+    export XCODE_VERSION_MAJOR\=2600
+    export XCODE_VERSION_MINOR\=2660
+    export XPCSERVICES_FOLDER_PATH\=Thesisproject.app/XPCServices
+    export YACC\=yacc
+    export _DISCOVER_COMMAND_LINE_LINKER_INPUTS\=YES
+    export _DISCOVER_COMMAND_LINE_LINKER_INPUTS_INCLUDE_WL\=YES
+    export _LD_MULTIARCH\=YES
+    export _WRAPPER_CONTENTS_DIR_SHALLOW_BUNDLE_NO\=/Contents
+    export _WRAPPER_PARENT_PATH_SHALLOW_BUNDLE_NO\=/..
+    export _WRAPPER_RESOURCES_DIR_SHALLOW_BUNDLE_NO\=/Resources
+    export __DIAGNOSE_DEPRECATED_ARCHS\=YES
+    export __IS_NOT_MACOS\=YES
+    export __IS_NOT_MACOS_macosx\=NO
+    export __IS_NOT_SIMULATOR\=YES
+    export __IS_NOT_SIMULATOR_simulator\=NO
+    export __ORIGINAL_SDK_DEFINED_LLVM_TARGET_TRIPLE_SYS\=ios
+    export arch\=undefined_arch
+    export variant\=normal
+    /bin/sh -c /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Script-B9DA97F42DC1497100A4DA20.sh
+Reusing configuration cache.
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain UP-TO-DATE
+> Task :composeApp:kmpPartiallyResolvedDependenciesChecker
+> Task :composeApp:copyNonXmlValueResourcesForAppleMain NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForIosMain NO-SOURCE
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:kmpPartiallyResolvedDependenciesChecker
+> Task :composeApp:copyNonXmlValueResourcesForNativeMain NO-SOURCE
+> Task :composeApp:createBuildSystemDirectory
+> Task :composeApp:convertXmlValueResourcesForIosArm64Main NO-SOURCE
+> Task :composeApp:generateComposeResClass UP-TO-DATE
+> Task :composeApp:copyNonXmlValueResourcesForIosMain NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForAppleMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForIosArm64Main NO-SOURCE
+> Task :shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:checkCanSyncComposeResourcesForIos
+> Task :composeApp:prepareComposeResourcesTaskForIosMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForIosArm64Main NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForIosSimulatorArm64Main NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForNativeMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForIosArm64Main NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForIosSimulatorArm64Main NO-SOURCE
+> Task :composeApp:iosArm64ResolveResourcesFromDependencies UP-TO-DATE
+> Task :composeApp:prepareComposeResourcesTaskForIosSimulatorArm64Main NO-SOURCE
+> Task :composeApp:iosSimulatorArm64ResolveResourcesFromDependencies UP-TO-DATE
+> Task :composeApp:iosX64ResolveResourcesFromDependencies UP-TO-DATE
+> Task :composeApp:generateResourceAccessorsForIosMain NO-SOURCE
+> Task :composeApp:symbolicLinkToAssembleDebugAppleFrameworkForXcodeIosArm64 UP-TO-DATE
+> Task :composeApp:prepareComposeResourcesTaskForNativeMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForAppleMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForIosX64Main NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForNativeMain NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForIosX64Main NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForAppleMain NO-SOURCE
+> Task :composeApp:checkSandboxAndWriteProtection
+> Task :composeApp:prepareComposeResourcesTaskForIosX64Main NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain UP-TO-DATE
+> Task :composeApp:generateResourceAccessorsForCommonMain UP-TO-DATE
+> Task :composeApp:assembleIosArm64MainResources UP-TO-DATE
+> Task :composeApp:assembleIosSimulatorArm64MainResources UP-TO-DATE
+> Task :composeApp:assembleIosX64MainResources UP-TO-DATE
+> Task :composeApp:iosSimulatorArm64ResolveSelfResourcesCopyHierarchicalMultiplatformResources UP-TO-DATE
+> Task :composeApp:iosArm64ResolveSelfResourcesCopyHierarchicalMultiplatformResources UP-TO-DATE
+> Task :composeApp:iosSimulatorArm64AggregateResources UP-TO-DATE
+> Task :composeApp:iosArm64AggregateResources UP-TO-DATE
+> Task :composeApp:generateActualResourceCollectorsForIosArm64Main UP-TO-DATE
+> Task :composeApp:iosX64ResolveSelfResourcesCopyHierarchicalMultiplatformResources UP-TO-DATE
+> Task :composeApp:iosX64AggregateResources UP-TO-DATE
+> Task :composeApp:syncComposeResourcesForIos UP-TO-DATE
+> Task :composeApp:downloadKotlinNativeDistribution UP-TO-DATE
+> Task :shared:downloadKotlinNativeDistribution UP-TO-DATE
+> Task :shared:kspKotlinIosArm64 UP-TO-DATE
+> Task :shared:copyRoomSchemas NO-SOURCE
+> Task :shared:compileKotlinIosArm64 UP-TO-DATE
+> Task :composeApp:compileKotlinIosArm64 UP-TO-DATE
+> Task :composeApp:linkDebugFrameworkIosArm64 UP-TO-DATE
+> Task :composeApp:assembleDebugAppleFrameworkForXcodeIosArm64 UP-TO-DATE
+> Task :composeApp:copyDsymForEmbedAndSignAppleFrameworkForXcode SKIPPED
+> Task :composeApp:embedAndSignAppleFrameworkForXcode SKIPPED
+
+BUILD SUCCESSFUL in 709ms
+32 actionable tasks: 5 executed, 27 up-to-date
+Configuration cache entry reused.
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/Info.plist /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp/Info.plist (in target 'iosApp' from project 'iosApp')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    builtin-infoPlistUtility /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosApp/Info.plist -producttype com.apple.product-type.application -genpkginfo /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/Info.plist
+
+CopySwiftLibs /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app (in target 'iosApp' from project 'iosApp')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    builtin-swiftStdLibTool --copy --verbose --sign B64D278CE6C7BC679236D8544BD267E3D946628C --scan-executable /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/Thesisproject.debug.dylib --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/Frameworks --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/PlugIns --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/SystemExtensions --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/Thesisproject.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/Info.plist /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosAppPerformanceTests.build/empty-iosAppPerformanceTests.plist (in target 'iosAppPerformanceTests' from project 'iosApp')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    builtin-infoPlistUtility /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosAppPerformanceTests.build/empty-iosAppPerformanceTests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosAppPerformanceTests.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/Info.plist
+
+CopySwiftLibs /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest (in target 'iosAppPerformanceTests' from project 'iosApp')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp
+    builtin-swiftStdLibTool --copy --verbose --sign B64D278CE6C7BC679236D8544BD267E3D946628C --scan-executable /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/iosAppPerformanceTests --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/Frameworks --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/PlugIns --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/SystemExtensions --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Products/Debug-iphoneos/iosAppPerformanceTests-Runner.app/PlugIns/iosAppPerformanceTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-kmp/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosAppPerformanceTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+2026-08-23 12:08:35.147745+0300 iosAppPerformanceTests-Runner[91398:8202238] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-08-23 12:08:35.188.
+Test Suite 'iosAppPerformanceTests.xctest' started at 2026-08-23 12:08:35.189.
+Test Suite 'ScrollBenchmark' started at 2026-08-23 12:08:35.189.
+Test Case '-[iosAppPerformanceTests.ScrollBenchmark testScrollPerformance]' started.
+    t =     0.00s Start Test at 2026-08-23 12:08:35.189
+    t =     0.01s Set Up
+    t =     0.01s     Open com.example.thesisproject.Thesisproject
+    t =     0.01s         Launch com.example.thesisproject.Thesisproject
+2026-08-23 12:08:35.278 xcodebuild[20508:367317] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:08:35.278 xcodebuild[20508:367317] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     2.75s             Setting up automation session
+    t =     2.88s             Wait for com.example.thesisproject.Thesisproject to idle
+    t =     3.96s     Waiting 20.0s for "article_list" Other to exist
+    t =     4.97s         Checking `Expect predicate `existsNoRetry == 1` for object "article_list" Other`
+    t =     4.98s             Checking existence of `"article_list" Other`
+    t =     4.99s                 Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =     5.06s                 Find: Descendants matching type Other
+    t =     5.06s                 Find: Elements matching predicate '"article_list" IN identifiers'
+    t =     6.07s Checking existence of `"article_list" Other`
+    t =     6.08s     Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =     6.12s     Find: Descendants matching type Other
+    t =     6.12s     Find: Elements matching predicate '"article_list" IN identifiers'
+    t =     6.13s Swipe up "article_list" Other
+    t =     6.13s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =     6.13s     Find the "article_list" Other
+    t =     6.14s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =     6.17s         Find: Descendants matching type Other
+    t =     6.17s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =     6.17s     Check for interrupting elements affecting "article_list" Other
+    t =     6.19s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =     6.22s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =     6.22s     Synthesize event
+    t =     6.70s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =     8.56s Swipe up "article_list" Other
+    t =     8.56s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =     8.56s     Find the "article_list" Other
+    t =     8.56s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =     8.63s         Find: Descendants matching type Other
+    t =     8.63s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =     8.63s     Check for interrupting elements affecting "article_list" Other
+    t =     8.64s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =     8.66s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =     8.66s     Synthesize event
+    t =     9.11s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    10.48s Swipe up "article_list" Other
+    t =    10.48s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    10.48s     Find the "article_list" Other
+    t =    10.48s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    10.51s         Find: Descendants matching type Other
+    t =    10.51s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    10.51s     Check for interrupting elements affecting "article_list" Other
+    t =    10.52s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    10.54s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    10.54s     Synthesize event
+    t =    11.01s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    11.72s Swipe up "article_list" Other
+    t =    11.72s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    11.75s     Find the "article_list" Other
+    t =    11.75s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    11.76s         Find: Descendants matching type Other
+    t =    11.77s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    11.77s     Check for interrupting elements affecting "article_list" Other
+    t =    11.77s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    11.80s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    11.80s     Synthesize event
+    t =    12.25s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    12.96s Swipe up "article_list" Other
+    t =    12.96s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    12.97s     Find the "article_list" Other
+    t =    12.97s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    12.99s         Find: Descendants matching type Other
+    t =    12.99s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    12.99s     Check for interrupting elements affecting "article_list" Other
+    t =    13.00s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    13.02s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    13.02s     Synthesize event
+    t =    13.49s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    14.19s Swipe up "article_list" Other
+    t =    14.19s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    14.19s     Find the "article_list" Other
+    t =    14.19s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    14.22s         Find: Descendants matching type Other
+    t =    14.22s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    14.22s     Check for interrupting elements affecting "article_list" Other
+    t =    14.25s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    14.27s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    14.27s     Synthesize event
+    t =    14.72s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    15.42s Swipe up "article_list" Other
+    t =    15.42s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    15.42s     Find the "article_list" Other
+    t =    15.42s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    15.43s         Find: Descendants matching type Other
+    t =    15.43s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    15.43s     Check for interrupting elements affecting "article_list" Other
+    t =    15.44s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    15.46s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    15.46s     Synthesize event
+    t =    15.91s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    16.63s Swipe up "article_list" Other
+    t =    16.63s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    16.63s     Find the "article_list" Other
+    t =    16.64s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    16.66s         Find: Descendants matching type Other
+    t =    16.66s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    16.66s     Check for interrupting elements affecting "article_list" Other
+    t =    16.67s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    16.69s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    16.69s     Synthesize event
+    t =    17.16s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    17.85s Swipe up "article_list" Other
+    t =    17.85s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    17.85s     Find the "article_list" Other
+    t =    17.86s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    17.90s         Find: Descendants matching type Other
+    t =    17.90s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    17.91s     Check for interrupting elements affecting "article_list" Other
+    t =    17.91s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    17.93s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    17.94s     Synthesize event
+    t =    18.38s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    19.07s Swipe up "article_list" Other
+    t =    19.07s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    19.08s     Find the "article_list" Other
+    t =    19.08s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    19.09s         Find: Descendants matching type Other
+    t =    19.09s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    19.09s     Check for interrupting elements affecting "article_list" Other
+    t =    19.10s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    19.12s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    19.12s     Synthesize event
+    t =    19.57s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    20.29s Swipe up "article_list" Other
+    t =    20.29s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    20.29s     Find the "article_list" Other
+    t =    20.29s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    20.31s         Find: Descendants matching type Other
+    t =    20.31s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    20.32s     Check for interrupting elements affecting "article_list" Other
+    t =    20.32s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    20.34s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    20.34s     Synthesize event
+    t =    20.82s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    21.51s Swipe up "article_list" Other
+    t =    21.51s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    21.53s     Find the "article_list" Other
+    t =    21.53s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    21.57s         Find: Descendants matching type Other
+    t =    21.57s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    21.57s     Check for interrupting elements affecting "article_list" Other
+    t =    21.58s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    21.60s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    21.60s     Synthesize event
+    t =    22.04s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    22.74s Swipe up "article_list" Other
+    t =    22.74s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    22.75s     Find the "article_list" Other
+    t =    22.75s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    22.77s         Find: Descendants matching type Other
+    t =    22.77s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    22.77s     Check for interrupting elements affecting "article_list" Other
+    t =    22.79s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    22.81s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    22.81s     Synthesize event
+    t =    23.29s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    23.97s Swipe up "article_list" Other
+    t =    23.97s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    23.98s     Find the "article_list" Other
+    t =    23.98s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    24.02s         Find: Descendants matching type Other
+    t =    24.02s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    24.02s     Check for interrupting elements affecting "article_list" Other
+    t =    24.03s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    24.05s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    24.05s     Synthesize event
+    t =    24.49s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    25.18s Swipe up "article_list" Other
+    t =    25.18s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    25.19s     Find the "article_list" Other
+    t =    25.19s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    25.21s         Find: Descendants matching type Other
+    t =    25.21s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    25.21s     Check for interrupting elements affecting "article_list" Other
+    t =    25.22s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    25.24s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    25.25s     Synthesize event
+    t =    25.70s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    26.40s Swipe up "article_list" Other
+    t =    26.40s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    26.40s     Find the "article_list" Other
+    t =    26.40s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    26.43s         Find: Descendants matching type Other
+    t =    26.43s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    26.43s     Check for interrupting elements affecting "article_list" Other
+    t =    26.44s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    26.46s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    26.46s     Synthesize event
+    t =    27.01s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    27.70s Swipe up "article_list" Other
+    t =    27.70s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    27.70s     Find the "article_list" Other
+    t =    27.70s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    27.74s         Find: Descendants matching type Other
+    t =    27.74s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    27.74s     Check for interrupting elements affecting "article_list" Other
+    t =    27.75s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    27.77s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    27.77s     Synthesize event
+    t =    28.22s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    28.90s Swipe up "article_list" Other
+    t =    28.90s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    28.91s     Find the "article_list" Other
+    t =    28.91s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    28.96s         Find: Descendants matching type Other
+    t =    28.96s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    28.96s     Check for interrupting elements affecting "article_list" Other
+    t =    28.97s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    28.98s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    28.99s     Synthesize event
+    t =    29.44s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    30.13s Swipe up "article_list" Other
+    t =    30.13s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    30.14s     Find the "article_list" Other
+    t =    30.14s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    30.16s         Find: Descendants matching type Other
+    t =    30.16s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    30.16s     Check for interrupting elements affecting "article_list" Other
+    t =    30.18s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    30.20s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    30.20s     Synthesize event
+    t =    30.66s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    31.35s Swipe up "article_list" Other
+    t =    31.35s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    31.35s     Find the "article_list" Other
+    t =    31.35s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    31.38s         Find: Descendants matching type Other
+    t =    31.38s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    31.38s     Check for interrupting elements affecting "article_list" Other
+    t =    31.39s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    31.41s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    31.41s     Synthesize event
+    t =    31.89s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    32.58s Swipe up "article_list" Other
+    t =    32.58s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    32.58s     Find the "article_list" Other
+    t =    32.58s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    32.61s         Find: Descendants matching type Other
+    t =    32.61s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    32.61s     Check for interrupting elements affecting "article_list" Other
+    t =    32.62s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    32.66s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    32.66s     Synthesize event
+    t =    33.11s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    33.81s Swipe up "article_list" Other
+    t =    33.81s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    33.81s     Find the "article_list" Other
+    t =    33.81s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    33.83s         Find: Descendants matching type Other
+    t =    33.83s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    33.83s     Check for interrupting elements affecting "article_list" Other
+    t =    33.84s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    33.86s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    33.86s     Synthesize event
+    t =    34.31s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    35.00s Swipe up "article_list" Other
+    t =    35.00s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    35.00s     Find the "article_list" Other
+    t =    35.01s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    35.03s         Find: Descendants matching type Other
+    t =    35.03s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    35.03s     Check for interrupting elements affecting "article_list" Other
+    t =    35.04s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    35.07s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    35.07s     Synthesize event
+    t =    35.51s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    36.20s Swipe up "article_list" Other
+    t =    36.20s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    36.20s     Find the "article_list" Other
+    t =    36.20s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    36.23s         Find: Descendants matching type Other
+    t =    36.23s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    36.23s     Check for interrupting elements affecting "article_list" Other
+    t =    36.24s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    36.26s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    36.26s     Synthesize event
+    t =    36.74s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    37.42s Swipe up "article_list" Other
+    t =    37.42s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    37.43s     Find the "article_list" Other
+    t =    37.43s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    37.45s         Find: Descendants matching type Other
+    t =    37.45s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    37.45s     Check for interrupting elements affecting "article_list" Other
+    t =    37.49s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    37.50s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    37.50s     Synthesize event
+    t =    37.96s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    38.64s Swipe up "article_list" Other
+    t =    38.64s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    38.64s     Find the "article_list" Other
+    t =    38.64s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    38.69s         Find: Descendants matching type Other
+    t =    38.69s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    38.69s     Check for interrupting elements affecting "article_list" Other
+    t =    38.70s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    38.72s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    38.73s     Synthesize event
+    t =    39.17s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    39.86s Swipe up "article_list" Other
+    t =    39.86s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    39.87s     Find the "article_list" Other
+    t =    39.87s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    39.89s         Find: Descendants matching type Other
+    t =    39.89s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    39.89s     Check for interrupting elements affecting "article_list" Other
+    t =    39.90s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    39.92s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    39.92s     Synthesize event
+    t =    40.37s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    41.06s Swipe up "article_list" Other
+    t =    41.06s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    41.07s     Find the "article_list" Other
+    t =    41.08s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    41.09s         Find: Descendants matching type Other
+    t =    41.09s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    41.10s     Check for interrupting elements affecting "article_list" Other
+    t =    41.11s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    41.13s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    41.13s     Synthesize event
+    t =    41.62s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    42.32s Swipe up "article_list" Other
+    t =    42.32s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    42.32s     Find the "article_list" Other
+    t =    42.32s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    42.35s         Find: Descendants matching type Other
+    t =    42.35s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    42.35s     Check for interrupting elements affecting "article_list" Other
+    t =    42.36s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    42.40s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    42.40s     Synthesize event
+    t =    42.84s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    43.52s Swipe up "article_list" Other
+    t =    43.52s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    43.52s     Find the "article_list" Other
+    t =    43.52s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    43.58s         Find: Descendants matching type Other
+    t =    43.58s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    43.58s     Check for interrupting elements affecting "article_list" Other
+    t =    43.59s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    43.60s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    43.60s     Synthesize event
+    t =    44.05s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    44.74s Swipe up "article_list" Other
+    t =    44.74s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    44.77s     Find the "article_list" Other
+    t =    44.77s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    44.79s         Find: Descendants matching type Other
+    t =    44.79s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    44.79s     Check for interrupting elements affecting "article_list" Other
+    t =    44.80s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    44.81s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    44.81s     Synthesize event
+    t =    45.27s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    45.97s Swipe up "article_list" Other
+    t =    45.97s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    45.98s     Find the "article_list" Other
+    t =    45.98s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    46.00s         Find: Descendants matching type Other
+    t =    46.00s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    46.00s     Check for interrupting elements affecting "article_list" Other
+    t =    46.01s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    46.03s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    46.03s     Synthesize event
+    t =    46.51s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    47.19s Swipe up "article_list" Other
+    t =    47.19s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    47.19s     Find the "article_list" Other
+    t =    47.20s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    47.22s         Find: Descendants matching type Other
+    t =    47.22s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    47.22s     Check for interrupting elements affecting "article_list" Other
+    t =    47.23s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    47.28s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    47.28s     Synthesize event
+    t =    47.73s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    48.41s Swipe up "article_list" Other
+    t =    48.41s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    48.41s     Find the "article_list" Other
+    t =    48.41s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    48.46s         Find: Descendants matching type Other
+    t =    48.46s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    48.46s     Check for interrupting elements affecting "article_list" Other
+    t =    48.47s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    48.49s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    48.49s     Synthesize event
+    t =    48.95s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    49.63s Swipe up "article_list" Other
+    t =    49.63s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    49.65s     Find the "article_list" Other
+    t =    49.65s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    49.67s         Find: Descendants matching type Other
+    t =    49.67s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    49.67s     Check for interrupting elements affecting "article_list" Other
+    t =    49.68s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    49.69s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    49.69s     Synthesize event
+    t =    50.13s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    50.81s Swipe up "article_list" Other
+    t =    50.81s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    50.82s     Find the "article_list" Other
+    t =    50.83s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    50.84s         Find: Descendants matching type Other
+    t =    50.84s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    50.84s     Check for interrupting elements affecting "article_list" Other
+    t =    50.85s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    50.87s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    50.87s     Synthesize event
+    t =    51.33s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    52.01s Swipe up "article_list" Other
+    t =    52.01s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    52.01s     Find the "article_list" Other
+    t =    52.02s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    52.03s         Find: Descendants matching type Other
+    t =    52.03s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    52.04s     Check for interrupting elements affecting "article_list" Other
+    t =    52.04s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    52.06s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    52.07s     Synthesize event
+    t =    52.50s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    53.20s Swipe up "article_list" Other
+    t =    53.20s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    53.21s     Find the "article_list" Other
+    t =    53.21s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    53.23s         Find: Descendants matching type Other
+    t =    53.24s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    53.24s     Check for interrupting elements affecting "article_list" Other
+    t =    53.24s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    53.27s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    53.27s     Synthesize event
+    t =    53.74s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    54.43s Swipe up "article_list" Other
+    t =    54.43s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    54.43s     Find the "article_list" Other
+    t =    54.43s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    54.46s         Find: Descendants matching type Other
+    t =    54.46s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    54.46s     Check for interrupting elements affecting "article_list" Other
+    t =    54.47s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    54.51s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    54.51s     Synthesize event
+    t =    54.97s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    55.64s Swipe up "article_list" Other
+    t =    55.64s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    55.66s     Find the "article_list" Other
+    t =    55.66s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    55.68s         Find: Descendants matching type Other
+    t =    55.68s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    55.68s     Check for interrupting elements affecting "article_list" Other
+    t =    55.69s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    55.71s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    55.71s     Synthesize event
+    t =    56.17s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    56.88s Swipe up "article_list" Other
+    t =    56.88s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    56.88s     Find the "article_list" Other
+    t =    56.88s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    56.90s         Find: Descendants matching type Other
+    t =    56.90s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    56.90s     Check for interrupting elements affecting "article_list" Other
+    t =    56.91s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    56.93s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    56.93s     Synthesize event
+    t =    57.40s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    58.09s Swipe up "article_list" Other
+    t =    58.09s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    58.09s     Find the "article_list" Other
+    t =    58.09s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    58.14s         Find: Descendants matching type Other
+    t =    58.14s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    58.14s     Check for interrupting elements affecting "article_list" Other
+    t =    58.15s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    58.17s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    58.17s     Synthesize event
+    t =    58.61s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    59.31s Swipe up "article_list" Other
+    t =    59.31s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    59.33s     Find the "article_list" Other
+    t =    59.33s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    59.34s         Find: Descendants matching type Other
+    t =    59.34s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    59.35s     Check for interrupting elements affecting "article_list" Other
+    t =    59.35s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    59.37s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    59.37s     Synthesize event
+    t =    59.82s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    60.51s Swipe up "article_list" Other
+    t =    60.51s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    60.51s     Find the "article_list" Other
+    t =    60.51s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    60.54s         Find: Descendants matching type Other
+    t =    60.54s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    60.54s     Check for interrupting elements affecting "article_list" Other
+    t =    60.55s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    60.57s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    60.57s     Synthesize event
+    t =    61.04s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    61.72s Swipe up "article_list" Other
+    t =    61.72s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    61.73s     Find the "article_list" Other
+    t =    61.73s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    61.78s         Find: Descendants matching type Other
+    t =    61.78s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    61.78s     Check for interrupting elements affecting "article_list" Other
+    t =    61.79s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    61.80s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    61.80s     Synthesize event
+    t =    62.25s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    62.94s Swipe up "article_list" Other
+    t =    62.94s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    62.96s     Find the "article_list" Other
+    t =    62.96s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    62.97s         Find: Descendants matching type Other
+    t =    62.97s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    62.98s     Check for interrupting elements affecting "article_list" Other
+    t =    62.98s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    63.01s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    63.02s     Synthesize event
+    t =    63.47s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    64.17s Swipe up "article_list" Other
+    t =    64.17s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    64.18s     Find the "article_list" Other
+    t =    64.18s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    64.21s         Find: Descendants matching type Other
+    t =    64.21s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    64.21s     Check for interrupting elements affecting "article_list" Other
+    t =    64.22s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    64.24s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    64.25s     Synthesize event
+    t =    64.72s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    65.39s Swipe up "article_list" Other
+    t =    65.39s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    65.40s     Find the "article_list" Other
+    t =    65.40s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    65.42s         Find: Descendants matching type Other
+    t =    65.42s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    65.42s     Check for interrupting elements affecting "article_list" Other
+    t =    65.45s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    65.47s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    65.47s     Synthesize event
+    t =    65.92s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    66.60s Swipe up "article_list" Other
+    t =    66.60s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    66.62s     Find the "article_list" Other
+    t =    66.63s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    66.64s         Find: Descendants matching type Other
+    t =    66.64s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    66.65s     Check for interrupting elements affecting "article_list" Other
+    t =    66.66s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    66.67s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    66.67s     Synthesize event
+    t =    67.11s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    67.81s Swipe up "article_list" Other
+    t =    67.81s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    67.82s     Find the "article_list" Other
+    t =    67.82s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    67.84s         Find: Descendants matching type Other
+    t =    67.84s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    67.84s     Check for interrupting elements affecting "article_list" Other
+    t =    67.85s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    67.86s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    67.87s     Synthesize event
+    t =    68.31s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    69.01s Swipe up "article_list" Other
+    t =    69.01s     Wait for com.example.thesisproject.Thesisproject to idle
+    t =    69.02s     Find the "article_list" Other
+    t =    69.02s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    69.05s         Find: Descendants matching type Other
+    t =    69.05s         Find: Elements matching predicate '"article_list" IN identifiers'
+    t =    69.05s     Check for interrupting elements affecting "article_list" Other
+    t =    69.07s         Requesting snapshot of accessibility hierarchy for app with pid 91399
+    t =    69.10s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    69.11s     Synthesize event
+    t =    69.55s     Wait for com.example.thesisproject.Thesisproject to idle
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosAppPerformanceTests/ScrollBenchmark.swift:20: Test Case '-[iosAppPerformanceTests.ScrollBenchmark testScrollPerformance]' measured [Number of Hitches (Thesisproject), hitches] average: 0.000, relative standard deviation: 0.000%, values: [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.dt.XCTMetric_Hitch-Thesisproject.number, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosAppPerformanceTests/ScrollBenchmark.swift:20: Test Case '-[iosAppPerformanceTests.ScrollBenchmark testScrollPerformance]' measured [Clock Monotonic Time, s] average: 0.532, relative standard deviation: 3.101%, values: [0.552654, 0.528828, 0.549785, 0.527265, 0.537307, 0.527558, 0.529152, 0.529481, 0.527924, 0.534080, 0.541442, 0.542142, 0.521481, 0.529075, 0.608782, 0.524630, 0.534047, 0.534807, 0.540196, 0.533648, 0.505750, 0.515534, 0.541103, 0.529425, 0.529977, 0.509067, 0.564215, 0.518621, 0.534980, 0.547039, 0.532902, 0.532902, 0.540092, 0.504249, 0.517367, 0.509901, 0.534022, 0.538330, 0.550132, 0.527020, 0.520069, 0.516150, 0.530036, 0.523962, 0.546832, 0.540454, 0.521086, 0.515874, 0.515080, 0.536292], performanceMetricID:com.apple.dt.XCTMetric_Clock.time.monotonic, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosAppPerformanceTests/ScrollBenchmark.swift:20: Test Case '-[iosAppPerformanceTests.ScrollBenchmark testScrollPerformance]' measured [Hitch Time Ratio (Thesisproject), ms per s] average: 0.000, relative standard deviation: 0.000%, values: [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.dt.XCTMetric_Hitch-Thesisproject.time.ratio, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/kmp-app/iosApp/iosAppPerformanceTests/ScrollBenchmark.swift:20: Test Case '-[iosAppPerformanceTests.ScrollBenchmark testScrollPerformance]' measured [Hitches Total Duration (Thesisproject), s] average: 0.000, relative standard deviation: 0.000%, values: [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.dt.XCTMetric_Hitch-Thesisproject.total.duration, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+    t =    70.26s Tear Down
+Test Case '-[iosAppPerformanceTests.ScrollBenchmark testScrollPerformance]' passed (71.063 seconds).
+Test Suite 'ScrollBenchmark' passed at 2026-08-23 12:09:46.254.
+	 Executed 1 test, with 0 failures (0 unexpected) in 71.063 (71.065) seconds
+Test Suite 'iosAppPerformanceTests.xctest' passed at 2026-08-23 12:09:46.256.
+	 Executed 1 test, with 0 failures (0 unexpected) in 71.063 (71.067) seconds
+Test Suite 'Selected tests' passed at 2026-08-23 12:09:46.257.
+	 Executed 1 test, with 0 failures (0 unexpected) in 71.063 (71.069) seconds
+2026-08-23 12:09:46.624 xcodebuild[20508:367317] [MT] IDETestOperationsObserverDebug: 73.883 elapsed -- Testing started completed.
+2026-08-23 12:09:46.624 xcodebuild[20508:367317] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-08-23 12:09:46.624 xcodebuild[20508:367317] [MT] IDETestOperationsObserverDebug: 73.883 sec, +73.883 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/kmp-ios/ScrollBenchmark_testScrollPerformance.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

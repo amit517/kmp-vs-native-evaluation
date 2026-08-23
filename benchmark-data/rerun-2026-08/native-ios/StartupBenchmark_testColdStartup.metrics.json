@@ -1,0 +1,64 @@
+[
+  {
+    "testIdentifier" : "StartupBenchmark/testColdStartup()",
+    "testIdentifierURL" : "test://com.apple.xcode/IosNativeBuild/IosNativeBuildPerformanceTests/StartupBenchmark/testColdStartup",
+    "testRuns" : [
+      {
+        "device" : {
+          "deviceId" : "00008140-0005309E3687001C",
+          "deviceName" : "Amit’s iPhone"
+        },
+        "metrics" : [
+          {
+            "baselineAverage" : 0,
+            "baselineName" : "",
+            "displayName" : "Duration (AppLaunch)",
+            "identifier" : "com.apple.dt.XCTMetric_OSSignpost-AppLaunch.duration",
+            "maxPercentRegression" : 10,
+            "maxPercentRelativeStandardDeviation" : 10,
+            "maxRegression" : 0,
+            "maxStandardDeviation" : 10,
+            "measurements" : [
+              0.287348209,
+              0.26719637500000004,
+              0.25695516700000004,
+              0.259350666,
+              0.271281875,
+              0.26378412500000004,
+              0.27126300000000003,
+              0.277908209,
+              0.274123291,
+              0.279004542,
+              0.26046162500000003,
+              0.265971041,
+              0.323449417,
+              0.33045962500000003,
+              0.32862887500000004,
+              0.290348667,
+              0.297405958,
+              0.279308,
+              0.277601875,
+              0.266469,
+              0.267679208,
+              0.267722042,
+              0.27195170900000004,
+              0.25909691700000004,
+              0.26315025000000003,
+              0.267642041,
+              0.25854291700000004,
+              0.29379133300000004,
+              0.264233875,
+              0.27645541700000004
+            ],
+            "polarity" : "prefers smaller",
+            "unitOfMeasurement" : "s"
+          }
+        ],
+        "testPlanConfiguration" : {
+          "configurationId" : "1",
+          "configurationName" : "Test Scheme Action"
+        }
+      }
+    ]
+  }
+]

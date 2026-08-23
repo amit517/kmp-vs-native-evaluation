@@ -1,0 +1,84 @@
+[
+  {
+    "testIdentifier" : "StartupBenchmark/testWarmStartup()",
+    "testIdentifierURL" : "test://com.apple.xcode/iosApp/iosAppPerformanceTests/StartupBenchmark/testWarmStartup",
+    "testRuns" : [
+      {
+        "device" : {
+          "deviceId" : "00008140-0005309E3687001C",
+          "deviceName" : "Amit’s iPhone"
+        },
+        "metrics" : [
+          {
+            "baselineAverage" : 0,
+            "baselineName" : "",
+            "displayName" : "Clock Monotonic Time",
+            "identifier" : "com.apple.dt.XCTMetric_Clock.time.monotonic",
+            "maxPercentRegression" : 10,
+            "maxPercentRelativeStandardDeviation" : 10,
+            "maxRegression" : 0,
+            "maxStandardDeviation" : 10,
+            "measurements" : [
+              1.1557968470000002,
+              1.157035375,
+              1.163526413,
+              1.168369661,
+              1.1667012890000001,
+              1.14071717,
+              1.16077724,
+              1.141152795,
+              1.140636113,
+              1.1404440690000002,
+              1.156937303,
+              1.142946709,
+              1.173881865,
+              1.1428366650000001,
+              1.159487831,
+              1.1644369,
+              1.146262584,
+              1.146119863,
+              1.139109068,
+              1.1358498140000002,
+              1.173954312,
+              1.1412091290000002,
+              1.164145554,
+              1.136898758,
+              1.1426074750000002,
+              1.15812741,
+              1.153979727,
+              1.170640979,
+              1.120628851,
+              1.1389739730000001,
+              1.156514306,
+              1.1261265,
+              1.1391929950000002,
+              1.158127082,
+              1.136831026,
+              1.145938315,
+              1.1813281210000002,
+              1.149317576,
+              1.161626596,
+              1.138960771,
+              1.137337253,
+              1.177346119,
+              1.1629175630000002,
+              1.154196945,
+              1.140798924,
+              1.156020666,
+              1.1708398290000002,
+              1.1702255670000001,
+              1.149604125,
+              1.1439904870000002
+            ],
+            "polarity" : "prefers smaller",
+            "unitOfMeasurement" : "s"
+          }
+        ],
+        "testPlanConfiguration" : {
+          "configurationId" : "1",
+          "configurationName" : "Test Scheme Action"
+        }
+      }
+    ]
+  }
+]

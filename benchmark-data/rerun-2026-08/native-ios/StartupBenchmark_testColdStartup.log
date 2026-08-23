@@ -1,0 +1,493 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild.xcodeproj -scheme IosNativeBuild -destination platform=iOS,id=00008140-0005309E3687001C -derivedDataPath /private/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native -resultBundlePath benchmark-data/rerun-2026-08/native-ios/StartupBenchmark_testColdStartup.xcresult "-only-testing:IosNativeBuildPerformanceTests/StartupBenchmark/testColdStartup" -allowProvisioningUpdates
+
+Writing result bundle at path:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/native-ios/StartupBenchmark_testColdStartup.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'IosNativeBuildPerformanceTests' in project 'IosNativeBuild'
+        ➜ Explicit dependency on target 'IosNativeBuild' in project 'IosNativeBuild'
+    Target 'IosNativeBuild' in project 'IosNativeBuild' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: be9c509ee688d095c8d7bf060e765aba
+Build description path: /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/XCBuildData/be9c509ee688d095c8d7bf060e765aba.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Info.plist /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Info.plist (in target 'IosNativeBuild' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-infoPlistUtility /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Info.plist -producttype com.apple.product-type.application -genpkginfo /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuild.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Info.plist
+
+CopySwiftLibs /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app (in target 'IosNativeBuild' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-swiftStdLibTool --copy --verbose --sign B64D278CE6C7BC679236D8544BD267E3D946628C --scan-executable /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/IosNativeBuild.debug.dylib --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Frameworks --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/PlugIns --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/SystemExtensions --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuild.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Info.plist /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/empty-IosNativeBuildPerformanceTests.plist (in target 'IosNativeBuildPerformanceTests' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-infoPlistUtility /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/empty-IosNativeBuildPerformanceTests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Info.plist
+
+CopySwiftLibs /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest (in target 'IosNativeBuildPerformanceTests' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-swiftStdLibTool --copy --verbose --sign B64D278CE6C7BC679236D8544BD267E3D946628C --scan-executable /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/IosNativeBuildPerformanceTests --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Frameworks --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/PlugIns --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/SystemExtensions --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+2026-08-23 12:36:53.540585+0300 IosNativeBuildPerformanceTests-Runner[91658:8241321] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-08-23 12:36:53.604.
+Test Suite 'IosNativeBuildPerformanceTests.xctest' started at 2026-08-23 12:36:53.604.
+Test Suite 'StartupBenchmark' started at 2026-08-23 12:36:53.604.
+Test Case '-[IosNativeBuildPerformanceTests.StartupBenchmark testColdStartup]' started.
+    t =     0.00s Start Test at 2026-08-23 12:36:53.605
+    t =     0.03s Set Up
+    t =     0.03s Open com.amit.IosNativeBuild
+    t =     0.03s     Launch com.amit.IosNativeBuild
+2026-08-23 12:36:53.915 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:36:53.915 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     3.35s         Setting up automation session
+    t =     3.48s         Wait for com.amit.IosNativeBuild to idle
+    t =     4.62s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =     5.63s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =     5.63s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =     5.64s             Requesting snapshot of accessibility hierarchy for app with pid 91660
+    t =     5.74s             Find: Descendants matching type ScrollView
+    t =     5.75s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =     5.75s Terminate com.amit.IosNativeBuild:91660
+    t =     8.69s Open com.amit.IosNativeBuild
+    t =     8.69s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:02.348 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:02.348 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     8.93s         Setting up automation session
+    t =     9.01s         Wait for com.amit.IosNativeBuild to idle
+    t =    10.11s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    11.13s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    11.13s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    11.14s             Requesting snapshot of accessibility hierarchy for app with pid 91663
+    t =    11.24s             Find: Descendants matching type ScrollView
+    t =    11.24s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    11.24s Terminate com.amit.IosNativeBuild:91663
+    t =    13.93s Open com.amit.IosNativeBuild
+    t =    13.93s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:07.591 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:07.592 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    14.17s         Setting up automation session
+    t =    14.26s         Wait for com.amit.IosNativeBuild to idle
+    t =    15.37s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    16.37s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    16.38s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    16.38s             Requesting snapshot of accessibility hierarchy for app with pid 91665
+    t =    16.48s             Find: Descendants matching type ScrollView
+    t =    16.48s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    16.49s Terminate com.amit.IosNativeBuild:91665
+    t =    19.20s Open com.amit.IosNativeBuild
+    t =    19.20s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:12.858 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:12.858 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    19.43s         Setting up automation session
+    t =    19.50s         Wait for com.amit.IosNativeBuild to idle
+    t =    20.61s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    21.63s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    21.64s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    21.65s             Requesting snapshot of accessibility hierarchy for app with pid 91666
+    t =    21.74s             Find: Descendants matching type ScrollView
+    t =    21.75s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    21.75s Terminate com.amit.IosNativeBuild:91666
+    t =    24.44s Open com.amit.IosNativeBuild
+    t =    24.45s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:18.102 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:18.102 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    24.68s         Setting up automation session
+    t =    24.76s         Wait for com.amit.IosNativeBuild to idle
+    t =    25.87s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    26.91s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    26.91s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    26.92s             Requesting snapshot of accessibility hierarchy for app with pid 91668
+    t =    27.02s             Find: Descendants matching type ScrollView
+    t =    27.02s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    27.03s Terminate com.amit.IosNativeBuild:91668
+    t =    29.73s Open com.amit.IosNativeBuild
+    t =    29.73s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:23.393 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:23.393 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    29.98s         Setting up automation session
+    t =    30.08s         Wait for com.amit.IosNativeBuild to idle
+    t =    31.18s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    32.19s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    32.19s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    32.20s             Requesting snapshot of accessibility hierarchy for app with pid 91669
+    t =    32.30s             Find: Descendants matching type ScrollView
+    t =    32.30s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    32.31s Terminate com.amit.IosNativeBuild:91669
+    t =    35.02s Open com.amit.IosNativeBuild
+    t =    35.02s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:28.672 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:28.672 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    35.24s         Setting up automation session
+    t =    35.31s         Wait for com.amit.IosNativeBuild to idle
+    t =    36.43s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    37.46s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    37.46s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    37.47s             Requesting snapshot of accessibility hierarchy for app with pid 91671
+    t =    37.56s             Find: Descendants matching type ScrollView
+    t =    37.57s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    37.57s Terminate com.amit.IosNativeBuild:91671
+    t =    40.26s Open com.amit.IosNativeBuild
+    t =    40.26s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:33.918 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:33.918 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    40.50s         Setting up automation session
+    t =    40.58s         Wait for com.amit.IosNativeBuild to idle
+    t =    41.70s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    42.73s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    42.73s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    42.74s             Requesting snapshot of accessibility hierarchy for app with pid 91673
+    t =    42.84s             Find: Descendants matching type ScrollView
+    t =    42.84s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    42.84s Terminate com.amit.IosNativeBuild:91673
+    t =    45.53s Open com.amit.IosNativeBuild
+    t =    45.53s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:39.190 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:39.190 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    45.77s         Setting up automation session
+    t =    45.84s         Wait for com.amit.IosNativeBuild to idle
+    t =    46.94s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    47.96s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    47.96s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    47.97s             Requesting snapshot of accessibility hierarchy for app with pid 91675
+    t =    48.07s             Find: Descendants matching type ScrollView
+    t =    48.07s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    48.07s Terminate com.amit.IosNativeBuild:91675
+    t =    50.84s Open com.amit.IosNativeBuild
+    t =    50.84s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:44.496 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:44.496 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    51.07s         Setting up automation session
+    t =    51.16s         Wait for com.amit.IosNativeBuild to idle
+    t =    52.28s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    53.32s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    53.32s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    53.33s             Requesting snapshot of accessibility hierarchy for app with pid 91676
+    t =    53.43s             Find: Descendants matching type ScrollView
+    t =    53.43s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    53.43s Terminate com.amit.IosNativeBuild:91676
+    t =    56.12s Open com.amit.IosNativeBuild
+    t =    56.12s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:49.773 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:49.773 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    56.35s         Setting up automation session
+    t =    56.45s         Wait for com.amit.IosNativeBuild to idle
+    t =    57.56s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    58.58s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    58.58s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    58.59s             Requesting snapshot of accessibility hierarchy for app with pid 91678
+    t =    58.69s             Find: Descendants matching type ScrollView
+    t =    58.69s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    58.70s Terminate com.amit.IosNativeBuild:91678
+    t =    61.40s Open com.amit.IosNativeBuild
+    t =    61.40s     Launch com.amit.IosNativeBuild
+2026-08-23 12:37:55.062 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:37:55.062 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    61.64s         Setting up automation session
+    t =    61.73s         Wait for com.amit.IosNativeBuild to idle
+    t =    62.84s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    63.86s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    63.86s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    63.87s             Requesting snapshot of accessibility hierarchy for app with pid 91679
+    t =    63.96s             Find: Descendants matching type ScrollView
+    t =    63.97s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    63.97s Terminate com.amit.IosNativeBuild:91679
+    t =    66.69s Open com.amit.IosNativeBuild
+    t =    66.69s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:00.348 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:00.348 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    66.93s         Setting up automation session
+    t =    67.01s         Wait for com.amit.IosNativeBuild to idle
+    t =    68.12s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    69.15s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    69.15s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    69.16s             Requesting snapshot of accessibility hierarchy for app with pid 91681
+    t =    69.26s             Find: Descendants matching type ScrollView
+    t =    69.26s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    69.26s Terminate com.amit.IosNativeBuild:91681
+    t =    72.21s Open com.amit.IosNativeBuild
+    t =    72.21s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:05.867 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:05.867 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    72.45s         Setting up automation session
+    t =    72.55s         Wait for com.amit.IosNativeBuild to idle
+    t =    73.69s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    74.70s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    74.71s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    74.72s             Requesting snapshot of accessibility hierarchy for app with pid 91688
+    t =    74.81s             Find: Descendants matching type ScrollView
+    t =    74.81s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    74.82s Terminate com.amit.IosNativeBuild:91688
+    t =    77.65s Open com.amit.IosNativeBuild
+    t =    77.66s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:11.312 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:11.312 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    77.92s         Setting up automation session
+    t =    78.05s         Wait for com.amit.IosNativeBuild to idle
+    t =    79.17s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    80.19s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    80.19s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    80.20s             Requesting snapshot of accessibility hierarchy for app with pid 91692
+    t =    80.33s             Find: Descendants matching type ScrollView
+    t =    80.33s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    80.35s Terminate com.amit.IosNativeBuild:91692
+    t =    82.98s Open com.amit.IosNativeBuild
+2026-08-23 12:38:16.635 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:16.635 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    82.98s     Launch com.amit.IosNativeBuild
+    t =    83.22s         Setting up automation session
+    t =    83.35s         Wait for com.amit.IosNativeBuild to idle
+    t =    84.48s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    85.51s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    85.51s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    85.52s             Requesting snapshot of accessibility hierarchy for app with pid 91698
+    t =    85.62s             Find: Descendants matching type ScrollView
+    t =    85.63s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    85.63s Terminate com.amit.IosNativeBuild:91698
+    t =    88.34s Open com.amit.IosNativeBuild
+    t =    88.34s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:22.000 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:22.000 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    88.58s         Setting up automation session
+    t =    88.68s         Wait for com.amit.IosNativeBuild to idle
+    t =    89.81s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    90.84s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    90.84s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    90.85s             Requesting snapshot of accessibility hierarchy for app with pid 91700
+    t =    90.95s             Find: Descendants matching type ScrollView
+    t =    90.95s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    90.96s Terminate com.amit.IosNativeBuild:91700
+    t =    93.68s Open com.amit.IosNativeBuild
+    t =    93.68s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:27.337 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:27.337 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    93.92s         Setting up automation session
+    t =    94.04s         Wait for com.amit.IosNativeBuild to idle
+    t =    95.15s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =    96.18s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =    96.18s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =    96.19s             Requesting snapshot of accessibility hierarchy for app with pid 91701
+    t =    96.28s             Find: Descendants matching type ScrollView
+    t =    96.29s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    96.30s Terminate com.amit.IosNativeBuild:91701
+    t =    99.02s Open com.amit.IosNativeBuild
+    t =    99.02s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:32.683 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:32.683 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    99.27s         Setting up automation session
+    t =    99.37s         Wait for com.amit.IosNativeBuild to idle
+    t =   100.49s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   101.52s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   101.52s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   101.53s             Requesting snapshot of accessibility hierarchy for app with pid 91703
+    t =   101.62s             Find: Descendants matching type ScrollView
+    t =   101.63s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   101.63s Terminate com.amit.IosNativeBuild:91703
+    t =   104.31s Open com.amit.IosNativeBuild
+    t =   104.31s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:37.970 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:37.971 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   104.55s         Setting up automation session
+    t =   104.65s         Wait for com.amit.IosNativeBuild to idle
+    t =   105.77s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   106.77s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   106.77s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   106.78s             Requesting snapshot of accessibility hierarchy for app with pid 91704
+    t =   106.88s             Find: Descendants matching type ScrollView
+    t =   106.88s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   106.89s Terminate com.amit.IosNativeBuild:91704
+    t =   109.57s Open com.amit.IosNativeBuild
+    t =   109.57s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:43.233 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:43.234 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   109.81s         Setting up automation session
+    t =   109.90s         Wait for com.amit.IosNativeBuild to idle
+    t =   111.01s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   112.03s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   112.03s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   112.04s             Requesting snapshot of accessibility hierarchy for app with pid 91706
+    t =   112.14s             Find: Descendants matching type ScrollView
+    t =   112.14s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   112.14s Terminate com.amit.IosNativeBuild:91706
+    t =   114.84s Open com.amit.IosNativeBuild
+    t =   114.85s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:48.504 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:48.504 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   115.07s         Setting up automation session
+    t =   115.15s         Wait for com.amit.IosNativeBuild to idle
+    t =   116.26s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   117.28s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   117.28s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   117.29s             Requesting snapshot of accessibility hierarchy for app with pid 91707
+    t =   117.39s             Find: Descendants matching type ScrollView
+    t =   117.39s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   117.40s Terminate com.amit.IosNativeBuild:91707
+    t =   120.09s Open com.amit.IosNativeBuild
+    t =   120.09s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:53.751 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:53.751 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   120.33s         Setting up automation session
+    t =   120.44s         Wait for com.amit.IosNativeBuild to idle
+    t =   121.53s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   122.55s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   122.55s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   122.56s             Requesting snapshot of accessibility hierarchy for app with pid 91709
+    t =   122.66s             Find: Descendants matching type ScrollView
+    t =   122.66s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   122.67s Terminate com.amit.IosNativeBuild:91709
+    t =   125.35s Open com.amit.IosNativeBuild
+    t =   125.35s     Launch com.amit.IosNativeBuild
+2026-08-23 12:38:59.014 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:38:59.015 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   125.59s         Setting up automation session
+    t =   125.68s         Wait for com.amit.IosNativeBuild to idle
+    t =   126.79s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   127.82s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   127.82s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   127.83s             Requesting snapshot of accessibility hierarchy for app with pid 91710
+    t =   127.93s             Find: Descendants matching type ScrollView
+    t =   127.93s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   127.94s Terminate com.amit.IosNativeBuild:91710
+    t =   130.65s Open com.amit.IosNativeBuild
+    t =   130.65s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:04.307 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:04.307 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   130.88s         Setting up automation session
+    t =   130.94s         Wait for com.amit.IosNativeBuild to idle
+    t =   132.05s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   133.08s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   133.08s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   133.09s             Requesting snapshot of accessibility hierarchy for app with pid 91712
+    t =   133.19s             Find: Descendants matching type ScrollView
+    t =   133.20s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   133.20s Terminate com.amit.IosNativeBuild:91712
+    t =   135.90s Open com.amit.IosNativeBuild
+    t =   135.90s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:09.564 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:09.564 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   136.15s         Setting up automation session
+    t =   136.22s         Wait for com.amit.IosNativeBuild to idle
+    t =   137.33s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   138.35s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   138.35s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   138.37s             Requesting snapshot of accessibility hierarchy for app with pid 91713
+    t =   138.46s             Find: Descendants matching type ScrollView
+    t =   138.46s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   138.47s Terminate com.amit.IosNativeBuild:91713
+    t =   141.16s Open com.amit.IosNativeBuild
+    t =   141.16s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:14.822 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:14.822 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   141.41s         Setting up automation session
+    t =   141.56s         Wait for com.amit.IosNativeBuild to idle
+    t =   142.66s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   143.68s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   143.69s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   143.69s             Requesting snapshot of accessibility hierarchy for app with pid 91716
+    t =   143.79s             Find: Descendants matching type ScrollView
+    t =   143.79s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   143.80s Terminate com.amit.IosNativeBuild:91716
+    t =   146.50s Open com.amit.IosNativeBuild
+    t =   146.50s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:20.159 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:20.159 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   146.74s         Setting up automation session
+    t =   146.82s         Wait for com.amit.IosNativeBuild to idle
+    t =   147.93s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   148.95s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   148.95s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   148.96s             Requesting snapshot of accessibility hierarchy for app with pid 91717
+    t =   149.06s             Find: Descendants matching type ScrollView
+    t =   149.06s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   149.17s Terminate com.amit.IosNativeBuild:91717
+    t =   151.84s Open com.amit.IosNativeBuild
+    t =   151.84s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:25.501 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:25.501 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   152.08s         Setting up automation session
+    t =   152.20s         Wait for com.amit.IosNativeBuild to idle
+    t =   153.30s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   154.31s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   154.31s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   154.32s             Requesting snapshot of accessibility hierarchy for app with pid 91719
+    t =   154.41s             Find: Descendants matching type ScrollView
+    t =   154.42s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   154.42s Terminate com.amit.IosNativeBuild:91719
+    t =   157.12s Open com.amit.IosNativeBuild
+    t =   157.12s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:30.787 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:30.787 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   157.37s         Setting up automation session
+    t =   157.45s         Wait for com.amit.IosNativeBuild to idle
+    t =   158.56s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   159.58s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   159.58s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   159.59s             Requesting snapshot of accessibility hierarchy for app with pid 91721
+    t =   159.68s             Find: Descendants matching type ScrollView
+    t =   159.69s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   159.69s Terminate com.amit.IosNativeBuild:91721
+    t =   162.36s Open com.amit.IosNativeBuild
+    t =   162.36s     Launch com.amit.IosNativeBuild
+2026-08-23 12:39:36.022 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 12:39:36.022 xcodebuild[22608:412919] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =   162.60s         Setting up automation session
+    t =   162.71s         Wait for com.amit.IosNativeBuild to idle
+    t =   163.81s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =   164.81s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =   164.81s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =   164.82s             Requesting snapshot of accessibility hierarchy for app with pid 91723
+    t =   164.92s             Find: Descendants matching type ScrollView
+    t =   164.93s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   164.93s Terminate com.amit.IosNativeBuild:91723
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuildPerformanceTests/StartupBenchmark.swift:9: Test Case '-[IosNativeBuildPerformanceTests.StartupBenchmark testColdStartup]' measured [Duration (AppLaunch), s] average: 0.277, relative standard deviation: 7.073%, values: [0.287348, 0.267196, 0.256955, 0.259351, 0.271282, 0.263784, 0.271263, 0.277908, 0.274123, 0.279005, 0.260462, 0.265971, 0.323449, 0.330460, 0.328629, 0.290349, 0.297406, 0.279308, 0.277602, 0.266469, 0.267679, 0.267722, 0.271952, 0.259097, 0.263150, 0.267642, 0.258543, 0.293791, 0.264234, 0.276455], performanceMetricID:com.apple.dt.XCTMetric_OSSignpost-AppLaunch.duration, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+    t =   167.66s Tear Down
+Test Case '-[IosNativeBuildPerformanceTests.StartupBenchmark testColdStartup]' passed (168.214 seconds).
+Test Suite 'StartupBenchmark' passed at 2026-08-23 12:39:41.823.
+	 Executed 1 test, with 0 failures (0 unexpected) in 168.214 (168.219) seconds
+Test Suite 'IosNativeBuildPerformanceTests.xctest' passed at 2026-08-23 12:39:41.825.
+	 Executed 1 test, with 0 failures (0 unexpected) in 168.214 (168.221) seconds
+Test Suite 'Selected tests' passed at 2026-08-23 12:39:41.829.
+	 Executed 1 test, with 0 failures (0 unexpected) in 168.214 (168.225) seconds
+2026-08-23 12:39:42.188 xcodebuild[22608:412919] [MT] IDETestOperationsObserverDebug: 171.227 elapsed -- Testing started completed.
+2026-08-23 12:39:42.188 xcodebuild[22608:412919] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-08-23 12:39:42.188 xcodebuild[22608:412919] [MT] IDETestOperationsObserverDebug: 171.227 sec, +171.227 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/native-ios/StartupBenchmark_testColdStartup.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
+Test suite 'Selected tests' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91658)'
+Test suite 'IosNativeBuildPerformanceTests.xctest' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91658)'
+Test suite 'StartupBenchmark' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91658)'
+Test case 'StartupBenchmark.testColdStartup()' passed on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (91658)' (168.214 seconds)

@@ -1,0 +1,9 @@
+StartupBenchmark/testColdStartup	PASS
+StartupBenchmark/testWarmStartup	PASS
+StartupBenchmark/testHotStartup	PASS
+ScrollBenchmark/testScrollPerformance	PASS
+ScrollBenchmark/testFastScrollStress	PASS
+NetworkDatabaseBenchmark/testInitialDataLoad	PASS
+NetworkDatabaseBenchmark/testCategoryFilterPerformance	PASS
+NetworkDatabaseBenchmark/testSearchPerformance	PASS
+NetworkDatabaseBenchmark/testImageLoadingPerformance	PASS

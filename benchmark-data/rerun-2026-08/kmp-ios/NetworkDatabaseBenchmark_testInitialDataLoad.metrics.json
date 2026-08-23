@@ -1,0 +1,64 @@
+[
+  {
+    "testIdentifier" : "NetworkDatabaseBenchmark/testInitialDataLoad()",
+    "testIdentifierURL" : "test://com.apple.xcode/iosApp/iosAppPerformanceTests/NetworkDatabaseBenchmark/testInitialDataLoad",
+    "testRuns" : [
+      {
+        "device" : {
+          "deviceId" : "00008140-0005309E3687001C",
+          "deviceName" : "Amit’s iPhone"
+        },
+        "metrics" : [
+          {
+            "baselineAverage" : 0,
+            "baselineName" : "",
+            "displayName" : "Clock Monotonic Time",
+            "identifier" : "com.apple.dt.XCTMetric_Clock.time.monotonic",
+            "maxPercentRegression" : 10,
+            "maxPercentRelativeStandardDeviation" : 10,
+            "maxRegression" : 0,
+            "maxStandardDeviation" : 10,
+            "measurements" : [
+              3.5259861420000003,
+              3.557643472,
+              3.5296446130000003,
+              3.52332598,
+              3.5203625410000003,
+              3.5672355860000002,
+              3.451460196,
+              3.526610572,
+              3.487716783,
+              3.5210552770000003,
+              3.4385709440000003,
+              3.504302554,
+              3.570465935,
+              3.501344855,
+              3.49010655,
+              3.5185256590000002,
+              3.5382791310000004,
+              3.5975443030000003,
+              3.537029984,
+              3.5267322190000003,
+              3.485313978,
+              3.523079365,
+              3.663567013,
+              3.5412148950000004,
+              3.546825294,
+              3.5429150010000003,
+              3.48882202,
+              3.516895007,
+              3.5126522450000004,
+              3.531368499
+            ],
+            "polarity" : "prefers smaller",
+            "unitOfMeasurement" : "s"
+          }
+        ],
+        "testPlanConfiguration" : {
+          "configurationId" : "1",
+          "configurationName" : "Test Scheme Action"
+        }
+      }
+    ]
+  }
+]

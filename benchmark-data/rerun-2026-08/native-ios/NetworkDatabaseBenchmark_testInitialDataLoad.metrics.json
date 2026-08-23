@@ -1,0 +1,64 @@
+[
+  {
+    "testIdentifier" : "NetworkDatabaseBenchmark/testInitialDataLoad()",
+    "testIdentifierURL" : "test://com.apple.xcode/IosNativeBuild/IosNativeBuildPerformanceTests/NetworkDatabaseBenchmark/testInitialDataLoad",
+    "testRuns" : [
+      {
+        "device" : {
+          "deviceId" : "00008140-0005309E3687001C",
+          "deviceName" : "Amit’s iPhone"
+        },
+        "metrics" : [
+          {
+            "baselineAverage" : 0,
+            "baselineName" : "",
+            "displayName" : "Clock Monotonic Time",
+            "identifier" : "com.apple.dt.XCTMetric_Clock.time.monotonic",
+            "maxPercentRegression" : 10,
+            "maxPercentRelativeStandardDeviation" : 10,
+            "maxRegression" : 0,
+            "maxStandardDeviation" : 10,
+            "measurements" : [
+              3.5360185140000002,
+              3.5199579940000003,
+              3.5383627300000002,
+              3.617705807,
+              3.5480511530000003,
+              3.5092399380000003,
+              3.533232523,
+              3.552853073,
+              3.571936195,
+              3.5699215370000004,
+              3.5695344970000003,
+              3.5683087610000004,
+              3.5389090960000003,
+              3.546884785,
+              3.5424518650000003,
+              3.566387337,
+              3.555657268,
+              3.546471382,
+              3.55846052,
+              3.535986862,
+              3.537933091,
+              3.536864344,
+              3.552110399,
+              3.568779031,
+              3.5546510870000003,
+              3.551456121,
+              3.568743115,
+              3.5557184810000004,
+              3.537500746,
+              3.5687409420000002
+            ],
+            "polarity" : "prefers smaller",
+            "unitOfMeasurement" : "s"
+          }
+        ],
+        "testPlanConfiguration" : {
+          "configurationId" : "1",
+          "configurationName" : "Test Scheme Action"
+        }
+      }
+    ]
+  }
+]

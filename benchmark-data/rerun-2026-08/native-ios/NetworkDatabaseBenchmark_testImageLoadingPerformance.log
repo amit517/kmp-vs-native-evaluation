@@ -1,0 +1,783 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild.xcodeproj -scheme IosNativeBuild -destination platform=iOS,id=00008140-0005309E3687001C -derivedDataPath /private/tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native -resultBundlePath benchmark-data/rerun-2026-08/native-ios/NetworkDatabaseBenchmark_testImageLoadingPerformance.xcresult "-only-testing:IosNativeBuildPerformanceTests/NetworkDatabaseBenchmark/testImageLoadingPerformance" -allowProvisioningUpdates
+
+Writing result bundle at path:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/native-ios/NetworkDatabaseBenchmark_testImageLoadingPerformance.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'IosNativeBuildPerformanceTests' in project 'IosNativeBuild'
+        ➜ Explicit dependency on target 'IosNativeBuild' in project 'IosNativeBuild'
+    Target 'IosNativeBuild' in project 'IosNativeBuild' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 28c9c7a76938dab38dac108af84a60d1
+Build description path: /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/XCBuildData/28c9c7a76938dab38dac108af84a60d1.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/SDKStatCaches.noindex/iphoneos26.5-23F81a-32daed1954a7d5dd0789fcaf2a9bb78b.sdkstatcache
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Info.plist /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Info.plist (in target 'IosNativeBuild' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-infoPlistUtility /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuild/Info.plist -producttype com.apple.product-type.application -genpkginfo /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuild.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuild.app/Info.plist
+
+ProcessInfoPlistFile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Info.plist /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/empty-IosNativeBuildPerformanceTests.plist (in target 'IosNativeBuildPerformanceTests' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-infoPlistUtility /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/empty-IosNativeBuildPerformanceTests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Info.plist
+
+CopySwiftLibs /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest (in target 'IosNativeBuildPerformanceTests' from project 'IosNativeBuild')
+    cd /Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app
+    builtin-swiftStdLibTool --copy --verbose --sign B64D278CE6C7BC679236D8544BD267E3D946628C --scan-executable /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/IosNativeBuildPerformanceTests --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Frameworks --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/PlugIns --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/SystemExtensions --scan-folder /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Products/Debug-iphoneos/IosNativeBuildPerformanceTests-Runner.app/PlugIns/IosNativeBuildPerformanceTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/claude-503/-Users-amitkundu/9c9a7ece-05d9-4358-aed1-f55147009142/scratchpad/dd-native/Build/Intermediates.noindex/IosNativeBuild.build/Debug-iphoneos/IosNativeBuildPerformanceTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+2026-08-23 13:14:43.393042+0300 IosNativeBuildPerformanceTests-Runner[92046:8306764] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-08-23 13:14:43.433.
+Test Suite 'IosNativeBuildPerformanceTests.xctest' started at 2026-08-23 13:14:43.433.
+Test Suite 'NetworkDatabaseBenchmark' started at 2026-08-23 13:14:43.433.
+Test Case '-[IosNativeBuildPerformanceTests.NetworkDatabaseBenchmark testImageLoadingPerformance]' started.
+    t =     0.00s Start Test at 2026-08-23 13:14:43.433
+    t =     0.01s Set Up
+    t =     0.01s Open com.amit.IosNativeBuild
+2026-08-23 13:14:43.535 xcodebuild[24625:470773] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-08-23 13:14:43.535 xcodebuild[24625:470773] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     0.01s     Launch com.amit.IosNativeBuild
+    t =     3.75s         Setting up automation session
+    t =     3.80s         Wait for com.amit.IosNativeBuild to idle
+    t =     4.93s Waiting 20.0s for "news_list_scroll_view" ScrollView to exist
+    t =     5.95s     Checking `Expect predicate `existsNoRetry == 1` for object "news_list_scroll_view" ScrollView`
+    t =     5.96s         Checking existence of `"news_list_scroll_view" ScrollView`
+    t =     5.97s             Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =     6.07s             Find: Descendants matching type ScrollView
+    t =     6.07s             Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =     7.09s Swipe up "news_list_scroll_view" ScrollView
+    t =     7.09s     Wait for com.amit.IosNativeBuild to idle
+    t =     7.10s     Find the "news_list_scroll_view" ScrollView
+    t =     7.10s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =     7.16s         Find: Descendants matching type ScrollView
+    t =     7.17s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =     7.17s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =     7.19s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =     7.24s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =     7.25s     Synthesize event
+    t =     7.79s     Wait for com.amit.IosNativeBuild to idle
+    t =     9.68s Swipe down "news_list_scroll_view" ScrollView
+    t =     9.68s     Wait for com.amit.IosNativeBuild to idle
+    t =     9.69s     Find the "news_list_scroll_view" ScrollView
+    t =     9.69s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =     9.76s         Find: Descendants matching type ScrollView
+    t =     9.77s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =     9.77s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =     9.79s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =     9.85s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =     9.86s     Synthesize event
+    t =    10.39s     Wait for com.amit.IosNativeBuild to idle
+    t =    15.53s Swipe up "news_list_scroll_view" ScrollView
+    t =    15.53s     Wait for com.amit.IosNativeBuild to idle
+    t =    15.54s     Find the "news_list_scroll_view" ScrollView
+    t =    15.54s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    15.61s         Find: Descendants matching type ScrollView
+    t =    15.61s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    15.61s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    15.63s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    15.69s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    15.70s     Synthesize event
+    t =    16.23s     Wait for com.amit.IosNativeBuild to idle
+    t =    18.12s Swipe down "news_list_scroll_view" ScrollView
+    t =    18.12s     Wait for com.amit.IosNativeBuild to idle
+    t =    18.12s     Find the "news_list_scroll_view" ScrollView
+    t =    18.13s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    18.20s         Find: Descendants matching type ScrollView
+    t =    18.20s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    18.20s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    18.22s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    18.28s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    18.29s     Synthesize event
+    t =    18.83s     Wait for com.amit.IosNativeBuild to idle
+    t =    22.85s Swipe up "news_list_scroll_view" ScrollView
+    t =    22.85s     Wait for com.amit.IosNativeBuild to idle
+    t =    22.85s     Find the "news_list_scroll_view" ScrollView
+    t =    22.86s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    22.92s         Find: Descendants matching type ScrollView
+    t =    22.92s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    22.93s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    22.95s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    23.00s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    23.01s     Synthesize event
+    t =    23.54s     Wait for com.amit.IosNativeBuild to idle
+    t =    25.46s Swipe down "news_list_scroll_view" ScrollView
+    t =    25.46s     Wait for com.amit.IosNativeBuild to idle
+    t =    25.46s     Find the "news_list_scroll_view" ScrollView
+    t =    25.47s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    25.54s         Find: Descendants matching type ScrollView
+    t =    25.54s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    25.54s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    25.56s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    25.63s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    25.63s     Synthesize event
+    t =    26.18s     Wait for com.amit.IosNativeBuild to idle
+    t =    30.78s Swipe up "news_list_scroll_view" ScrollView
+    t =    30.78s     Wait for com.amit.IosNativeBuild to idle
+    t =    30.79s     Find the "news_list_scroll_view" ScrollView
+    t =    30.80s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    30.86s         Find: Descendants matching type ScrollView
+    t =    30.86s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    30.87s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    30.89s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    30.95s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    30.95s     Synthesize event
+    t =    31.50s     Wait for com.amit.IosNativeBuild to idle
+    t =    33.36s Swipe down "news_list_scroll_view" ScrollView
+    t =    33.36s     Wait for com.amit.IosNativeBuild to idle
+    t =    33.37s     Find the "news_list_scroll_view" ScrollView
+    t =    33.38s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    33.44s         Find: Descendants matching type ScrollView
+    t =    33.44s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    33.45s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    33.47s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    33.53s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    33.53s     Synthesize event
+    t =    34.06s     Wait for com.amit.IosNativeBuild to idle
+    t =    38.59s Swipe up "news_list_scroll_view" ScrollView
+    t =    38.59s     Wait for com.amit.IosNativeBuild to idle
+    t =    38.62s     Find the "news_list_scroll_view" ScrollView
+    t =    38.62s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    38.67s         Find: Descendants matching type ScrollView
+    t =    38.68s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    38.68s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    38.70s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    38.76s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    38.77s     Synthesize event
+    t =    39.30s     Wait for com.amit.IosNativeBuild to idle
+    t =    41.22s Swipe down "news_list_scroll_view" ScrollView
+    t =    41.22s     Wait for com.amit.IosNativeBuild to idle
+    t =    41.22s     Find the "news_list_scroll_view" ScrollView
+    t =    41.23s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    41.30s         Find: Descendants matching type ScrollView
+    t =    41.30s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    41.30s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    41.32s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    41.38s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    41.39s     Synthesize event
+    t =    41.93s     Wait for com.amit.IosNativeBuild to idle
+    t =    46.53s Swipe up "news_list_scroll_view" ScrollView
+    t =    46.53s     Wait for com.amit.IosNativeBuild to idle
+    t =    46.53s     Find the "news_list_scroll_view" ScrollView
+    t =    46.54s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    46.61s         Find: Descendants matching type ScrollView
+    t =    46.61s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    46.61s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    46.63s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    46.69s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    46.69s     Synthesize event
+    t =    47.22s     Wait for com.amit.IosNativeBuild to idle
+    t =    49.10s Swipe down "news_list_scroll_view" ScrollView
+    t =    49.10s     Wait for com.amit.IosNativeBuild to idle
+    t =    49.11s     Find the "news_list_scroll_view" ScrollView
+    t =    49.12s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    49.18s         Find: Descendants matching type ScrollView
+    t =    49.18s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    49.19s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    49.21s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    49.26s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    49.27s     Synthesize event
+    t =    49.81s     Wait for com.amit.IosNativeBuild to idle
+    t =    54.31s Swipe up "news_list_scroll_view" ScrollView
+    t =    54.31s     Wait for com.amit.IosNativeBuild to idle
+    t =    54.32s     Find the "news_list_scroll_view" ScrollView
+    t =    54.33s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    54.39s         Find: Descendants matching type ScrollView
+    t =    54.39s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    54.40s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    54.42s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    54.47s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    54.47s     Synthesize event
+    t =    55.00s     Wait for com.amit.IosNativeBuild to idle
+    t =    56.91s Swipe down "news_list_scroll_view" ScrollView
+    t =    56.91s     Wait for com.amit.IosNativeBuild to idle
+    t =    56.92s     Find the "news_list_scroll_view" ScrollView
+    t =    56.92s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    56.99s         Find: Descendants matching type ScrollView
+    t =    56.99s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    57.00s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    57.02s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    57.08s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    57.08s     Synthesize event
+    t =    57.62s     Wait for com.amit.IosNativeBuild to idle
+    t =    62.24s Swipe up "news_list_scroll_view" ScrollView
+    t =    62.24s     Wait for com.amit.IosNativeBuild to idle
+    t =    62.24s     Find the "news_list_scroll_view" ScrollView
+    t =    62.25s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    62.31s         Find: Descendants matching type ScrollView
+    t =    62.31s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    62.32s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    62.34s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    62.39s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    62.40s     Synthesize event
+    t =    62.94s     Wait for com.amit.IosNativeBuild to idle
+    t =    64.85s Swipe down "news_list_scroll_view" ScrollView
+    t =    64.85s     Wait for com.amit.IosNativeBuild to idle
+    t =    64.85s     Find the "news_list_scroll_view" ScrollView
+    t =    64.86s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    64.93s         Find: Descendants matching type ScrollView
+    t =    64.93s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    64.93s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    64.95s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    65.01s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    65.02s     Synthesize event
+    t =    65.55s     Wait for com.amit.IosNativeBuild to idle
+    t =    70.18s Swipe up "news_list_scroll_view" ScrollView
+    t =    70.19s     Wait for com.amit.IosNativeBuild to idle
+    t =    70.19s     Find the "news_list_scroll_view" ScrollView
+    t =    70.20s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    70.26s         Find: Descendants matching type ScrollView
+    t =    70.27s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    70.27s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    70.29s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    70.34s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    70.35s     Synthesize event
+    t =    70.89s     Wait for com.amit.IosNativeBuild to idle
+    t =    72.80s Swipe down "news_list_scroll_view" ScrollView
+    t =    72.80s     Wait for com.amit.IosNativeBuild to idle
+    t =    72.81s     Find the "news_list_scroll_view" ScrollView
+    t =    72.81s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    72.88s         Find: Descendants matching type ScrollView
+    t =    72.88s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    72.89s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    72.91s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    72.97s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    72.97s     Synthesize event
+    t =    73.50s     Wait for com.amit.IosNativeBuild to idle
+    t =    78.11s Swipe up "news_list_scroll_view" ScrollView
+    t =    78.11s     Wait for com.amit.IosNativeBuild to idle
+    t =    78.12s     Find the "news_list_scroll_view" ScrollView
+    t =    78.12s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    78.19s         Find: Descendants matching type ScrollView
+    t =    78.19s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    78.19s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    78.21s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    78.27s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    78.27s     Synthesize event
+    t =    78.81s     Wait for com.amit.IosNativeBuild to idle
+    t =    80.69s Swipe down "news_list_scroll_view" ScrollView
+    t =    80.69s     Wait for com.amit.IosNativeBuild to idle
+    t =    80.69s     Find the "news_list_scroll_view" ScrollView
+    t =    80.70s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    80.77s         Find: Descendants matching type ScrollView
+    t =    80.77s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    80.77s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    80.79s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    80.85s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    80.86s     Synthesize event
+    t =    81.41s     Wait for com.amit.IosNativeBuild to idle
+    t =    86.03s Swipe up "news_list_scroll_view" ScrollView
+    t =    86.03s     Wait for com.amit.IosNativeBuild to idle
+    t =    86.04s     Find the "news_list_scroll_view" ScrollView
+    t =    86.05s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    86.11s         Find: Descendants matching type ScrollView
+    t =    86.12s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    86.12s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    86.14s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    86.20s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    86.20s     Synthesize event
+    t =    86.74s     Wait for com.amit.IosNativeBuild to idle
+    t =    88.62s Swipe down "news_list_scroll_view" ScrollView
+    t =    88.62s     Wait for com.amit.IosNativeBuild to idle
+    t =    88.63s     Find the "news_list_scroll_view" ScrollView
+    t =    88.64s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    88.70s         Find: Descendants matching type ScrollView
+    t =    88.71s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    88.71s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    88.73s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    88.79s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    88.80s     Synthesize event
+    t =    89.34s     Wait for com.amit.IosNativeBuild to idle
+    t =    93.94s Swipe up "news_list_scroll_view" ScrollView
+    t =    93.94s     Wait for com.amit.IosNativeBuild to idle
+    t =    93.95s     Find the "news_list_scroll_view" ScrollView
+    t =    93.95s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    94.02s         Find: Descendants matching type ScrollView
+    t =    94.02s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    94.02s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    94.04s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    94.10s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    94.11s     Synthesize event
+    t =    94.65s     Wait for com.amit.IosNativeBuild to idle
+    t =    96.53s Swipe down "news_list_scroll_view" ScrollView
+    t =    96.53s     Wait for com.amit.IosNativeBuild to idle
+    t =    96.53s     Find the "news_list_scroll_view" ScrollView
+    t =    96.54s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    96.61s         Find: Descendants matching type ScrollView
+    t =    96.61s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =    96.61s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =    96.63s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =    96.69s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =    96.70s     Synthesize event
+    t =    97.24s     Wait for com.amit.IosNativeBuild to idle
+    t =   101.84s Swipe up "news_list_scroll_view" ScrollView
+    t =   101.84s     Wait for com.amit.IosNativeBuild to idle
+    t =   101.85s     Find the "news_list_scroll_view" ScrollView
+    t =   101.85s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   101.92s         Find: Descendants matching type ScrollView
+    t =   101.92s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   101.92s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   101.94s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   102.00s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   102.01s     Synthesize event
+    t =   102.54s     Wait for com.amit.IosNativeBuild to idle
+    t =   104.43s Swipe down "news_list_scroll_view" ScrollView
+    t =   104.43s     Wait for com.amit.IosNativeBuild to idle
+    t =   104.44s     Find the "news_list_scroll_view" ScrollView
+    t =   104.44s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   104.51s         Find: Descendants matching type ScrollView
+    t =   104.51s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   104.52s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   104.54s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   104.60s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   104.61s     Synthesize event
+    t =   105.15s     Wait for com.amit.IosNativeBuild to idle
+    t =   109.37s Swipe up "news_list_scroll_view" ScrollView
+    t =   109.37s     Wait for com.amit.IosNativeBuild to idle
+    t =   109.38s     Find the "news_list_scroll_view" ScrollView
+    t =   109.39s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   109.45s         Find: Descendants matching type ScrollView
+    t =   109.46s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   109.46s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   109.48s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   109.53s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   109.54s     Synthesize event
+    t =   110.07s     Wait for com.amit.IosNativeBuild to idle
+    t =   111.94s Swipe down "news_list_scroll_view" ScrollView
+    t =   111.94s     Wait for com.amit.IosNativeBuild to idle
+    t =   111.94s     Find the "news_list_scroll_view" ScrollView
+    t =   111.95s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   112.02s         Find: Descendants matching type ScrollView
+    t =   112.02s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   112.02s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   112.04s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   112.10s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   112.11s     Synthesize event
+    t =   112.64s     Wait for com.amit.IosNativeBuild to idle
+    t =   116.97s Swipe up "news_list_scroll_view" ScrollView
+    t =   116.97s     Wait for com.amit.IosNativeBuild to idle
+    t =   116.98s     Find the "news_list_scroll_view" ScrollView
+    t =   116.98s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   117.05s         Find: Descendants matching type ScrollView
+    t =   117.05s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   117.06s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   117.07s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   117.13s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   117.13s     Synthesize event
+    t =   117.66s     Wait for com.amit.IosNativeBuild to idle
+    t =   119.57s Swipe down "news_list_scroll_view" ScrollView
+    t =   119.57s     Wait for com.amit.IosNativeBuild to idle
+    t =   119.58s     Find the "news_list_scroll_view" ScrollView
+    t =   119.59s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   119.66s         Find: Descendants matching type ScrollView
+    t =   119.66s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   119.66s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   119.68s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   119.74s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   119.75s     Synthesize event
+    t =   120.29s     Wait for com.amit.IosNativeBuild to idle
+    t =   124.88s Swipe up "news_list_scroll_view" ScrollView
+    t =   124.88s     Wait for com.amit.IosNativeBuild to idle
+    t =   124.89s     Find the "news_list_scroll_view" ScrollView
+    t =   124.89s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   124.96s         Find: Descendants matching type ScrollView
+    t =   124.96s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   124.96s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   124.98s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   125.04s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   125.04s     Synthesize event
+    t =   125.58s     Wait for com.amit.IosNativeBuild to idle
+    t =   127.48s Swipe down "news_list_scroll_view" ScrollView
+    t =   127.48s     Wait for com.amit.IosNativeBuild to idle
+    t =   127.48s     Find the "news_list_scroll_view" ScrollView
+    t =   127.49s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   127.56s         Find: Descendants matching type ScrollView
+    t =   127.56s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   127.57s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   127.59s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   127.65s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   127.65s     Synthesize event
+    t =   128.20s     Wait for com.amit.IosNativeBuild to idle
+    t =   132.79s Swipe up "news_list_scroll_view" ScrollView
+    t =   132.79s     Wait for com.amit.IosNativeBuild to idle
+    t =   132.80s     Find the "news_list_scroll_view" ScrollView
+    t =   132.80s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   132.87s         Find: Descendants matching type ScrollView
+    t =   132.87s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   132.87s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   132.89s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   132.95s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   132.96s     Synthesize event
+    t =   133.49s     Wait for com.amit.IosNativeBuild to idle
+    t =   135.40s Swipe down "news_list_scroll_view" ScrollView
+    t =   135.40s     Wait for com.amit.IosNativeBuild to idle
+    t =   135.41s     Find the "news_list_scroll_view" ScrollView
+    t =   135.41s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   135.48s         Find: Descendants matching type ScrollView
+    t =   135.48s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   135.49s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   135.51s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   135.57s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   135.57s     Synthesize event
+    t =   136.10s     Wait for com.amit.IosNativeBuild to idle
+    t =   140.73s Swipe up "news_list_scroll_view" ScrollView
+    t =   140.73s     Wait for com.amit.IosNativeBuild to idle
+    t =   140.74s     Find the "news_list_scroll_view" ScrollView
+    t =   140.75s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   140.81s         Find: Descendants matching type ScrollView
+    t =   140.81s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   140.82s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   140.83s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   140.89s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   140.90s     Synthesize event
+    t =   141.43s     Wait for com.amit.IosNativeBuild to idle
+    t =   143.32s Swipe down "news_list_scroll_view" ScrollView
+    t =   143.32s     Wait for com.amit.IosNativeBuild to idle
+    t =   143.33s     Find the "news_list_scroll_view" ScrollView
+    t =   143.33s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   143.40s         Find: Descendants matching type ScrollView
+    t =   143.40s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   143.40s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   143.43s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   143.49s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   143.49s     Synthesize event
+    t =   144.02s     Wait for com.amit.IosNativeBuild to idle
+    t =   148.63s Swipe up "news_list_scroll_view" ScrollView
+    t =   148.63s     Wait for com.amit.IosNativeBuild to idle
+    t =   148.64s     Find the "news_list_scroll_view" ScrollView
+    t =   148.64s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   148.71s         Find: Descendants matching type ScrollView
+    t =   148.71s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   148.72s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   148.74s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   148.79s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   148.80s     Synthesize event
+    t =   149.34s     Wait for com.amit.IosNativeBuild to idle
+    t =   151.24s Swipe down "news_list_scroll_view" ScrollView
+    t =   151.24s     Wait for com.amit.IosNativeBuild to idle
+    t =   151.25s     Find the "news_list_scroll_view" ScrollView
+    t =   151.26s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   151.33s         Find: Descendants matching type ScrollView
+    t =   151.33s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   151.33s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   151.35s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   151.41s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   151.42s     Synthesize event
+    t =   151.96s     Wait for com.amit.IosNativeBuild to idle
+    t =   156.57s Swipe up "news_list_scroll_view" ScrollView
+    t =   156.57s     Wait for com.amit.IosNativeBuild to idle
+    t =   156.58s     Find the "news_list_scroll_view" ScrollView
+    t =   156.59s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   156.65s         Find: Descendants matching type ScrollView
+    t =   156.65s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   156.66s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   156.68s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   156.73s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   156.74s     Synthesize event
+    t =   157.28s     Wait for com.amit.IosNativeBuild to idle
+    t =   159.16s Swipe down "news_list_scroll_view" ScrollView
+    t =   159.16s     Wait for com.amit.IosNativeBuild to idle
+    t =   159.17s     Find the "news_list_scroll_view" ScrollView
+    t =   159.18s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   159.24s         Find: Descendants matching type ScrollView
+    t =   159.25s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   159.25s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   159.27s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   159.33s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   159.33s     Synthesize event
+    t =   159.87s     Wait for com.amit.IosNativeBuild to idle
+    t =   164.49s Swipe up "news_list_scroll_view" ScrollView
+    t =   164.49s     Wait for com.amit.IosNativeBuild to idle
+    t =   164.49s     Find the "news_list_scroll_view" ScrollView
+    t =   164.50s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   164.56s         Find: Descendants matching type ScrollView
+    t =   164.56s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   164.57s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   164.59s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   164.65s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   164.65s     Synthesize event
+    t =   165.19s     Wait for com.amit.IosNativeBuild to idle
+    t =   167.07s Swipe down "news_list_scroll_view" ScrollView
+    t =   167.07s     Wait for com.amit.IosNativeBuild to idle
+    t =   167.07s     Find the "news_list_scroll_view" ScrollView
+    t =   167.08s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   167.15s         Find: Descendants matching type ScrollView
+    t =   167.15s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   167.15s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   167.17s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   167.23s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   167.24s     Synthesize event
+    t =   167.77s     Wait for com.amit.IosNativeBuild to idle
+    t =   172.39s Swipe up "news_list_scroll_view" ScrollView
+    t =   172.39s     Wait for com.amit.IosNativeBuild to idle
+    t =   172.40s     Find the "news_list_scroll_view" ScrollView
+    t =   172.40s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   172.47s         Find: Descendants matching type ScrollView
+    t =   172.47s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   172.47s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   172.49s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   172.55s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   172.55s     Synthesize event
+    t =   173.09s     Wait for com.amit.IosNativeBuild to idle
+    t =   174.97s Swipe down "news_list_scroll_view" ScrollView
+    t =   174.97s     Wait for com.amit.IosNativeBuild to idle
+    t =   174.98s     Find the "news_list_scroll_view" ScrollView
+    t =   174.99s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   175.05s         Find: Descendants matching type ScrollView
+    t =   175.06s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   175.06s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   175.08s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   175.14s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   175.15s     Synthesize event
+    t =   175.68s     Wait for com.amit.IosNativeBuild to idle
+    t =   180.30s Swipe up "news_list_scroll_view" ScrollView
+    t =   180.30s     Wait for com.amit.IosNativeBuild to idle
+    t =   180.31s     Find the "news_list_scroll_view" ScrollView
+    t =   180.31s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   180.38s         Find: Descendants matching type ScrollView
+    t =   180.38s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   180.38s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   180.40s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   180.46s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   180.47s     Synthesize event
+    t =   181.01s     Wait for com.amit.IosNativeBuild to idle
+    t =   182.90s Swipe down "news_list_scroll_view" ScrollView
+    t =   182.90s     Wait for com.amit.IosNativeBuild to idle
+    t =   182.90s     Find the "news_list_scroll_view" ScrollView
+    t =   182.91s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   182.98s         Find: Descendants matching type ScrollView
+    t =   182.98s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   182.98s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   183.00s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   183.06s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   183.07s     Synthesize event
+    t =   183.61s     Wait for com.amit.IosNativeBuild to idle
+    t =   188.21s Swipe up "news_list_scroll_view" ScrollView
+    t =   188.21s     Wait for com.amit.IosNativeBuild to idle
+    t =   188.22s     Find the "news_list_scroll_view" ScrollView
+    t =   188.23s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   188.29s         Find: Descendants matching type ScrollView
+    t =   188.29s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   188.30s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   188.32s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   188.37s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   188.38s     Synthesize event
+    t =   188.92s     Wait for com.amit.IosNativeBuild to idle
+    t =   190.82s Swipe down "news_list_scroll_view" ScrollView
+    t =   190.82s     Wait for com.amit.IosNativeBuild to idle
+    t =   190.82s     Find the "news_list_scroll_view" ScrollView
+    t =   190.83s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   190.90s         Find: Descendants matching type ScrollView
+    t =   190.90s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   190.91s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   190.93s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   190.99s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   190.99s     Synthesize event
+    t =   191.52s     Wait for com.amit.IosNativeBuild to idle
+    t =   196.14s Swipe up "news_list_scroll_view" ScrollView
+    t =   196.14s     Wait for com.amit.IosNativeBuild to idle
+    t =   196.15s     Find the "news_list_scroll_view" ScrollView
+    t =   196.15s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   196.21s         Find: Descendants matching type ScrollView
+    t =   196.22s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   196.22s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   196.24s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   196.30s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   196.30s     Synthesize event
+    t =   196.83s     Wait for com.amit.IosNativeBuild to idle
+    t =   198.74s Swipe down "news_list_scroll_view" ScrollView
+    t =   198.74s     Wait for com.amit.IosNativeBuild to idle
+    t =   198.75s     Find the "news_list_scroll_view" ScrollView
+    t =   198.76s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   198.82s         Find: Descendants matching type ScrollView
+    t =   198.83s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   198.83s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   198.85s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   198.91s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   198.92s     Synthesize event
+    t =   199.46s     Wait for com.amit.IosNativeBuild to idle
+    t =   204.10s Swipe up "news_list_scroll_view" ScrollView
+    t =   204.10s     Wait for com.amit.IosNativeBuild to idle
+    t =   204.11s     Find the "news_list_scroll_view" ScrollView
+    t =   204.12s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   204.18s         Find: Descendants matching type ScrollView
+    t =   204.18s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   204.18s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   204.21s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   204.26s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   204.27s     Synthesize event
+    t =   204.80s     Wait for com.amit.IosNativeBuild to idle
+    t =   206.71s Swipe down "news_list_scroll_view" ScrollView
+    t =   206.71s     Wait for com.amit.IosNativeBuild to idle
+    t =   206.72s     Find the "news_list_scroll_view" ScrollView
+    t =   206.73s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   206.79s         Find: Descendants matching type ScrollView
+    t =   206.80s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   206.80s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   206.82s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   206.88s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   206.89s     Synthesize event
+    t =   207.42s     Wait for com.amit.IosNativeBuild to idle
+    t =   212.02s Swipe up "news_list_scroll_view" ScrollView
+    t =   212.03s     Wait for com.amit.IosNativeBuild to idle
+    t =   212.03s     Find the "news_list_scroll_view" ScrollView
+    t =   212.04s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   212.10s         Find: Descendants matching type ScrollView
+    t =   212.10s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   212.11s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   212.13s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   212.18s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   212.19s     Synthesize event
+    t =   212.72s     Wait for com.amit.IosNativeBuild to idle
+    t =   214.71s Swipe down "news_list_scroll_view" ScrollView
+    t =   214.71s     Wait for com.amit.IosNativeBuild to idle
+    t =   214.72s     Find the "news_list_scroll_view" ScrollView
+    t =   214.72s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   214.79s         Find: Descendants matching type ScrollView
+    t =   214.79s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   214.80s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   214.82s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   214.88s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   214.89s     Synthesize event
+    t =   215.42s     Wait for com.amit.IosNativeBuild to idle
+    t =   220.04s Swipe up "news_list_scroll_view" ScrollView
+    t =   220.04s     Wait for com.amit.IosNativeBuild to idle
+    t =   220.05s     Find the "news_list_scroll_view" ScrollView
+    t =   220.05s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   220.12s         Find: Descendants matching type ScrollView
+    t =   220.12s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   220.13s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   220.15s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   220.20s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   220.21s     Synthesize event
+    t =   220.74s     Wait for com.amit.IosNativeBuild to idle
+    t =   222.66s Swipe down "news_list_scroll_view" ScrollView
+    t =   222.66s     Wait for com.amit.IosNativeBuild to idle
+    t =   222.66s     Find the "news_list_scroll_view" ScrollView
+    t =   222.67s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   222.74s         Find: Descendants matching type ScrollView
+    t =   222.74s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   222.74s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   222.76s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   222.82s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   222.83s     Synthesize event
+    t =   223.37s     Wait for com.amit.IosNativeBuild to idle
+    t =   227.99s Swipe up "news_list_scroll_view" ScrollView
+    t =   227.99s     Wait for com.amit.IosNativeBuild to idle
+    t =   228.00s     Find the "news_list_scroll_view" ScrollView
+    t =   228.00s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   228.07s         Find: Descendants matching type ScrollView
+    t =   228.07s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   228.07s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   228.09s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   228.15s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   228.16s     Synthesize event
+    t =   228.70s     Wait for com.amit.IosNativeBuild to idle
+    t =   230.63s Swipe down "news_list_scroll_view" ScrollView
+    t =   230.63s     Wait for com.amit.IosNativeBuild to idle
+    t =   230.63s     Find the "news_list_scroll_view" ScrollView
+    t =   230.64s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   230.71s         Find: Descendants matching type ScrollView
+    t =   230.71s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   230.72s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   230.74s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   230.79s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   230.80s     Synthesize event
+    t =   231.33s     Wait for com.amit.IosNativeBuild to idle
+    t =   235.94s Swipe up "news_list_scroll_view" ScrollView
+    t =   235.94s     Wait for com.amit.IosNativeBuild to idle
+    t =   235.94s     Find the "news_list_scroll_view" ScrollView
+    t =   235.95s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   236.01s         Find: Descendants matching type ScrollView
+    t =   236.01s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   236.01s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   236.03s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   236.08s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   236.09s     Synthesize event
+    t =   236.62s     Wait for com.amit.IosNativeBuild to idle
+    t =   238.51s Swipe down "news_list_scroll_view" ScrollView
+    t =   238.52s     Wait for com.amit.IosNativeBuild to idle
+    t =   238.52s     Find the "news_list_scroll_view" ScrollView
+    t =   238.53s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   238.59s         Find: Descendants matching type ScrollView
+    t =   238.60s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   238.60s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   238.62s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   238.68s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   238.69s     Synthesize event
+    t =   239.22s     Wait for com.amit.IosNativeBuild to idle
+    t =   243.82s Swipe up "news_list_scroll_view" ScrollView
+    t =   243.83s     Wait for com.amit.IosNativeBuild to idle
+    t =   243.83s     Find the "news_list_scroll_view" ScrollView
+    t =   243.84s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   243.90s         Find: Descendants matching type ScrollView
+    t =   243.91s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   243.91s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   243.93s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   243.98s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   243.99s     Synthesize event
+    t =   244.53s     Wait for com.amit.IosNativeBuild to idle
+    t =   246.46s Swipe down "news_list_scroll_view" ScrollView
+    t =   246.46s     Wait for com.amit.IosNativeBuild to idle
+    t =   246.46s     Find the "news_list_scroll_view" ScrollView
+    t =   246.47s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   246.54s         Find: Descendants matching type ScrollView
+    t =   246.54s         Find: Elements matching predicate '"news_list_scroll_view" IN identifiers'
+    t =   246.54s     Check for interrupting elements affecting "news_list_scroll_view" ScrollView
+    t =   246.57s         Requesting snapshot of accessibility hierarchy for app with pid 92048
+    t =   246.62s         Find: Descendants matching predicate identifier == "NotificationShortLookView" OR elementType == 7
+    t =   246.63s     Synthesize event
+    t =   247.17s     Wait for com.amit.IosNativeBuild to idle
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuildPerformanceTests/NetworkDatabaseBenchmark.swift:93: Test Case '-[IosNativeBuildPerformanceTests.NetworkDatabaseBenchmark testImageLoadingPerformance]' measured [Number of Hitches (IosNativeBuild), hitches] average: 0.000, relative standard deviation: 0.000%, values: [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.dt.XCTMetric_Hitch-IosNativeBuild.number, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuildPerformanceTests/NetworkDatabaseBenchmark.swift:93: Test Case '-[IosNativeBuildPerformanceTests.NetworkDatabaseBenchmark testImageLoadingPerformance]' measured [Hitches Total Duration (IosNativeBuild), s] average: 0.000, relative standard deviation: 0.000%, values: [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.dt.XCTMetric_Hitch-IosNativeBuild.total.duration, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuildPerformanceTests/NetworkDatabaseBenchmark.swift:93: Test Case '-[IosNativeBuildPerformanceTests.NetworkDatabaseBenchmark testImageLoadingPerformance]' measured [Clock Monotonic Time, s] average: 5.077, relative standard deviation: 2.741%, values: [4.529334, 5.139536, 5.011099, 5.138021, 4.997324, 5.128163, 5.156908, 5.127022, 5.123160, 5.102903, 5.101561, 4.748794, 4.801464, 5.116935, 5.111754, 5.140621, 5.104435, 5.141776, 5.105938, 5.097966, 5.116664, 5.109812, 5.122271, 5.165918, 5.125976, 5.222462, 5.146324, 5.150108, 5.095386, 5.143955], performanceMetricID:com.apple.dt.XCTMetric_Clock.time.monotonic, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/native-ios-app/IosNativeBuildPerformanceTests/NetworkDatabaseBenchmark.swift:93: Test Case '-[IosNativeBuildPerformanceTests.NetworkDatabaseBenchmark testImageLoadingPerformance]' measured [Hitch Time Ratio (IosNativeBuild), ms per s] average: 0.000, relative standard deviation: 0.000%, values: [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.dt.XCTMetric_Hitch-IosNativeBuild.time.ratio, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.000, maxStandardDeviation: 0.000
+    t =   251.82s Tear Down
+Test Case '-[IosNativeBuildPerformanceTests.NetworkDatabaseBenchmark testImageLoadingPerformance]' passed (252.640 seconds).
+Test Suite 'NetworkDatabaseBenchmark' passed at 2026-08-23 13:18:56.076.
+	 Executed 1 test, with 0 failures (0 unexpected) in 252.640 (252.642) seconds
+Test Suite 'IosNativeBuildPerformanceTests.xctest' passed at 2026-08-23 13:18:56.077.
+	 Executed 1 test, with 0 failures (0 unexpected) in 252.640 (252.644) seconds
+Test Suite 'Selected tests' passed at 2026-08-23 13:18:56.079.
+	 Executed 1 test, with 0 failures (0 unexpected) in 252.640 (252.646) seconds
+2026-08-23 13:18:56.491 xcodebuild[24625:470773] [MT] IDETestOperationsObserverDebug: 255.584 elapsed -- Testing started completed.
+2026-08-23 13:18:56.491 xcodebuild[24625:470773] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-08-23 13:18:56.491 xcodebuild[24625:470773] [MT] IDETestOperationsObserverDebug: 255.584 sec, +255.584 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/amitkundu/StudioProjects/kmp-vs-native-evaluation/benchmark-data/rerun-2026-08/native-ios/NetworkDatabaseBenchmark_testImageLoadingPerformance.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
+Test suite 'Selected tests' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (92046)'
+Test suite 'IosNativeBuildPerformanceTests.xctest' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (92046)'
+Test suite 'NetworkDatabaseBenchmark' started on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (92046)'
+Test case 'NetworkDatabaseBenchmark.testImageLoadingPerformance()' passed on 'Amit’s iPhone - IosNativeBuildPerformanceTests-Runner (92046)' (252.640 seconds)
