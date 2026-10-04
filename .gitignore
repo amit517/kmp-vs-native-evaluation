@@ -11,3 +11,6 @@ benchmark-data/**/*.xcresult/database.sqlite3
 # Python bytecode from scripts/
 __pycache__/
 *.pyc
+
+# Local assistant notes, not part of the project
+CLAUDE.md

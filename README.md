@@ -72,8 +72,7 @@ kmp-vs-native-evaluation/
 │   └── archive/                superseded material
 ├── scripts/                    benchmark runners, aggregation, backend IP sync
 ├── docs/                       SETUP.md, TESTING_GUIDE.md
-├── THESIS_HANDOFF.md           brief for writing the thesis
-└── CLAUDE_DESKTOP_PROMPT.md    ready-to-paste prompt for the write-up
+└── THESIS_HANDOFF.md           brief for writing the thesis
 ```
 
 ## Documentation

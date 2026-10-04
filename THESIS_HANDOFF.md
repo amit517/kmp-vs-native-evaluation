@@ -1,6 +1,6 @@
 # Thesis writing handoff
 
-For a fresh session (Claude Desktop or otherwise) that will draft or fill in the
+For a fresh writing session that will draft or fill in the
 thesis *Evaluating Cross-Platform Development: A Comparative Study of Kotlin
 Multiplatform, Jetpack Compose, and SwiftUI* (VAMK Master's).
 
