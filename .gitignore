@@ -14,3 +14,7 @@ __pycache__/
 
 # Local assistant notes, not part of the project
 CLAUDE.md
+
+# Build artefacts from the app-size extraction (archives, IPAs); large
+# binaries that also embed provisioning profiles.
+build/

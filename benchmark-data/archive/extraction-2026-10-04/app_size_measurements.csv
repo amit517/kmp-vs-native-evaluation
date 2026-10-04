@@ -1,0 +1,13 @@
+target,stage,unit,raw_value,bytes,mb
+kmp-ios,archived_app,KB,40712,41689088,39.758
+kmp-ios,main_binary,B,41565952,41565952,39.640
+kmp-ios,ipa_signed,B,13873834,13873834,13.231
+kmp-ios,ipa_signed_thinned,B,13873676,13873676,13.231
+kmp-ios,ipa_payload_uncompressed,B,41664618,41664618,39.734
+kmp-ios,dsym_dwarf,B,38608824,38608824,36.820
+native-ios,archived_app,KB,464,475136,0.453
+native-ios,main_binary,B,449520,449520,0.429
+native-ios,ipa_signed,B,164397,164397,0.157
+native-ios,ipa_signed_thinned,B,164672,164672,0.157
+native-ios,ipa_payload_uncompressed,B,465288,465288,0.444
+native-ios,dsym_dwarf,B,2635908,2635908,2.514

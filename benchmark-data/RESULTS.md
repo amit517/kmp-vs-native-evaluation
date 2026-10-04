@@ -249,8 +249,10 @@ they are now slightly low. Production and shared figures are unaffected.
 
 ## 6. Application size
 
-Built 2026-08-20 with Xcode 26.6 (17F113); `du -sk` for `.app` bundles, byte
-counts for single files. 1 MB = 1,048,576 bytes.
+Unstripped `.app` row built 2026-08-20 with Xcode 26.6 (17F113); the archive and
+IPA rows re-measured 2026-10-04 with Xcode 27.0 (27A266a) on macOS 27.0 from real
+signed archives. `du -sk` for `.app` bundles, byte counts for single files.
+1 MB = 1,048,576 bytes.
 
 ### The like-for-like iOS comparison
 
@@ -260,21 +262,36 @@ processed identically at each stage.
 | Stage | KMP iOS (Compose MP) | Native iOS (SwiftUI) | Ratio |
 |---|---|---|---|
 | Device `.app`, unstripped | **52.30 MB** | **1.49 MB** | **35×** |
-| Device `.app`, stripped | 39.78 MB | 0.45 MB | 88× |
-| Compressed | 13.17 MB (proxy) | 0.159 MB (real IPA) | 83× |
+| Device `.app`, from archive | **39.76 MB** | **0.45 MB** | **88×** |
+| Signed IPA | **13.23 MB** | **0.157 MB** | **84×** |
 | Main binary, unstripped | 54,736,760 B | 1,539,840 B | 36× |
-| Main binary, stripped | 41,610,120 B | 447,856 B | 93× |
+| Main binary, from archive | 41,565,952 B | 449,520 B | 92× |
 
 **A genuine framework finding.** Compose Multiplatform statically links the Skia
 renderer, the Compose runtime and the Kotlin/Native runtime into a single 52.20 MB
 Mach-O with no `Frameworks/` directory, whereas SwiftUI draws on frameworks
 already present in iOS and ships almost nothing.
 
-Caveats: the KMP stripped and compressed figures are **local proxies**
-(`strip -rSTx`, then `zip`), because KMP iOS archiving is blocked by provisioning;
-the native column at those rows is a real archive and a real signed IPA. Expect a
-true KMP archive near the proxy but not exactly on it. Neither app uses app
-thinning or on-demand resources.
+The archive and IPA rows are real artefacts on both sides: both apps were
+archived with `xcodebuild archive` and exported as signed IPAs (method
+`debugging`, `stripSwiftSymbols`) on 2026-10-04 — same toolchain, same day, both
+`.app` bundles code-signed arm64-only Mach-O, verified with `codesign -dv` and
+`lipo -info`. The **unstripped** row is the exception: it predates these
+(Xcode 26.6, and the KMP side was built unsigned), so it is not strictly
+same-toolchain with the rows below it. An archive does not emit an unstripped
+`.app`, so re-deriving it would need a separate build; sub-1 % toolchain drift
+would not move a 35× ratio.
+
+Exporting again with `thinning = iPhone17,3` changes nothing material — the KMP
+IPA shrinks 158 B and the native IPA *grows* 275 B, because thinning metadata in
+`Info.plist` roughly cancels the asset-catalog slicing. Neither app uses
+on-demand resources.
+
+The earlier stripped/compressed figures for KMP were local proxies (39.78 MB
+`strip -rSTx` `.app`, 13.17 MB `zip`); the real archive and IPA came in at
+39.76 MB (−0.06 %) and 13.23 MB (+0.42 %), so the proxies were accurate and the
+headline ratios are essentially unchanged. Full detail:
+[`archive/extraction-2026-10-04/app_size_archive.md`](archive/extraction-2026-10-04/app_size_archive.md).
 
 ### Android — do not pair against the IPA
 
@@ -309,6 +326,7 @@ profile/non-profile size delta can be reported.
 6. Android and iOS ran on different dates and devices; only the iOS pair is matched.
 7. **Free provisioning profile** capped the device at 3 app IDs, so the two iOS
    targets could not be installed simultaneously and runs were serialised.
-8. No real KMP iOS signed IPA; stripped/compressed KMP sizes are local proxies.
+8. The unstripped `.app` size row predates the archive/IPA rows by one Xcode
+   major version and is not same-toolchain with them (§6).
 9. Feature parity between the KMP and native iOS codebases was not audited.
 10. One session per scenario per target; between-session variance unmeasured.
