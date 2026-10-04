@@ -12,8 +12,9 @@ benchmark-data/**/*.xcresult/database.sqlite3
 __pycache__/
 *.pyc
 
-# Local assistant notes, not part of the project
+# Local assistant notes and config, not part of the project
 CLAUDE.md
+.claude/
 
 # Build artefacts from the app-size extraction (archives, IPAs); large
 # binaries that also embed provisioning profiles.
